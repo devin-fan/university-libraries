@@ -1,5 +1,5 @@
 class FilmsController < ApplicationController
-    before_action :set_film, only: [:show]
+    before_action :set_film, only: [:show, :download]
      
     def index
         @base_films = Film.base_films.alphabetical
@@ -9,7 +9,7 @@ class FilmsController < ApplicationController
     end
 
     def download
-        send_file(@film.film_path, type: "application/mov")
+        send_file(File.join(Rails.root, 'private', @film.film_path))
     end
 
     def new
