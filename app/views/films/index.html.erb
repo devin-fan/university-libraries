@@ -1,0 +1,7 @@
+<ul>
+	<% @base_films.each do |film| %>
+		<li><%= @base_film.title %></li>
+		<li><%= @base_films.director %></li>
+		<li><%= link_to 'Download film', film_download_path %></li>
+	<% end %>
+</ul>
