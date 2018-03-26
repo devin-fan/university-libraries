@@ -1,5 +1,5 @@
-class FilmController < ApplicationController
-    before_action :set_film, only: [:show, :download]
+class FilmsController < ApplicationController
+    before_action :set_film, only: [:show]
      
     def index
         @base_films = Film.base_films.alphabetical
@@ -20,7 +20,7 @@ class FilmController < ApplicationController
     
     private 
     def set_film
-        @film = Film.find_params[:id]
+        @film = Film.find(params[:id])
     end
 
     def film_params
