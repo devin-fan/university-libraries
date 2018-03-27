@@ -9,8 +9,8 @@
   		<!-- PLACEHOLDER -->
   		<ul>
 		<% @base_films.each do |film| %>
-			<li><%= @base_film.title %></li>
-			<li><%= @base_films.director %></li>
+			<li><%= @film.title %></li>
+			<li><%= @films.director %></li>
 			<li><%= link_to("Download Now!", "#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3') %></li>
 		<% end %>
 		</ul>
