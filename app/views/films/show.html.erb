@@ -1,23 +1,28 @@
+<!-- Navigation -->
+<%= render partial: "partials/nav" %>
+
 
   <div class="container">
-  	<h1 class=" blue-text text-lighten-1 center"><%= @film.title %></h1>
+  	<h2 class=" blue-text text-darken-3 center"><%= @film.title %></h2>
   	
   	<div class="center">
-  		<div id="film" >
+  		<div id="film">
   		"Film Art Work"
+  		<!-- <img src="">  -->
 	  	</div>
 	  	<br>
 	  	<br>
 	  	<div id="download">
-	  		<%= link_to("Download Now!", "#{@film.id}/download", class: 'waves-effect waves-light btn-large blue lighten-1') %>
+	  		<%= link_to("Download Now!", "#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3') %>
 	  	</div>
 
   	</div>
   	
 
+
   </div>
 
-
+	<!--  <footer class="page-footer blue darken-3"></footer> -->
 
 
 
