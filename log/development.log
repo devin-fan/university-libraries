@@ -309,3 +309,117 @@ ActionView::Template::Error (undefined method `title' for nil:NilClass):
   Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
   Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.8ms)
+
+
+Started GET "/films/1" for ::1 at 2018-03-27 01:54:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (0.5ms)
+  Rendered films/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 83ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-03-27 01:54:39 -0400
+
+
+Started GET "/films" for ::1 at 2018-03-27 01:54:42 -0400
+Processing by FilmsController#index as HTML
+  [1m[36mFilm Load (0.2ms)[0m  [1mSELECT "films".* FROM "films"[0m
+  Rendered partials/_nav.html.erb (0.2ms)
+  Rendered films/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+     9:   		<!-- PLACEHOLDER -->
+    10:   		<ul>
+    11: 		<% @base_films.each do |film| %>
+    12: 			<li><%= @film.title %></li>
+    13: 			<li><%= @films.director %></li>
+    14: 			<li><%= link_to("Download Now!", "#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3') %></li>
+    15: 		<% end %>
+  app/views/films/index.html.erb:12:in `block in _app_views_films_index_html_erb___3821988154722043441_70223731716860'
+  app/views/films/index.html.erb:11:in `each'
+  app/views/films/index.html.erb:11:in `_app_views_films_index_html_erb___3821988154722043441_70223731716860'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "film_tags"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "film_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "films"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "films" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "film_type" integer, "director" varchar, "film_path" varchar, "essay_path" varchar, "permission" integer, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "tags"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role" integer, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "film_tags"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "film_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "films"
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "films" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "film_type" integer, "director" varchar, "film_path" varchar, "essay_path" varchar, "permission" integer, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "tags"
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "users"
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role" integer, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ten Minutes to Live"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4"], ["permission", 0], ["description", "Ten Minutes to Live is a 1932 American film directed by Oscar Micheaux.  A movie producer offers a nightclub singer a role in his latest film, but all he really wants to do is bed her. She knows, but accepts anyway. Meanwhile, a patron at the club gets a note saying that she'll soon get another note, and that she will be killed ten minutes after that."], ["created_at", "2018-03-27 06:36:42.296888"], ["updated_at", "2018-03-27 06:36:42.296888"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Swing"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/swing.mp4"], ["permission", 0], ["description", "Swing! is a 1938 American race film directed, produced and written by Oscar Micheaux.  Mandy Jenkins (Cora Green), an African American cook for a wealthy white family in Birmingham, Alabama, discovers her husband Cornell is having an affair with Eloise Jackson (Hazel Diaz). When she confronts her husband and Eloise at a nightclub, a violent fight ensues. Eloise leaves Birmingham and relocates to the Harlem section of New York City, where she gets a job as a cabaret vocalist under the false name of Cora Smith. She is followed to Harlem by her husband, Lem, who becomes mixed up in the local crime scene. Mandy also arrives in New York, having left Cornell. She gets a job as the wardrobe mistress at the cabaret where Eloise is performing. When Eloise breaks her leg during a drunken fall, Mandy is recruited as the last-minute substitute and becomes a musical star as the revue is transferred to Broadway. Cornell, who is now destitute, reunites with Mandy and agrees never to cheat on her again."], ["created_at", "2018-03-27 06:36:42.301834"], ["updated_at", "2018-03-27 06:36:42.301834"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Notorious Elinor Lee"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/the_notorious_elinor_lee.mp4"], ["permission", 0], ["description", "The Notorious Elinor Lee is a 1940 race film directed, written, and co-produced by the African-American filmmaker Oscar Micheaux.  Elinor Lee, a gangster’s moll living in the Harlem section of New York City, has signed up-and-coming boxer Benny Blue to a 10-year contract. Lee and a pair of corrupt fight promoter scheme to build up Blue as a potential champion, with the goal of betting against him when they force him to take a dive in a champion fight. Lee conspires to hire Fredi, an old friend of Blue and an escaped convict hiding from the law, to be his sweetheart and to control him for Lee and her partners.\n\nThe plans are derailed when Blue loses a key fight to a German boxer, but he works to regain his standing in the sport and is able to meet the German in a rematch after two years have passed. Lee and her partners bet against Blue, but they are financially ruined when Blue prevails in the fight and comes out the winner."], ["created_at", "2018-03-27 06:36:42.304187"], ["updated_at", "2018-03-27 06:36:42.304187"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Underworld"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/underworld.mp4"], ["permission", 0], ["description", "A young college student falls under the influence of a murderous gambler."], ["created_at", "2018-03-27 06:36:42.306473"], ["updated_at", "2018-03-27 06:36:42.306473"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Exile"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/the_exile.mp4"], ["permission", 0], ["description", "The Exile is a 1931 American film by Oscar Micheaux with the co-direction of the Dances and Ensemble by Leonard Harper. A drama–romance of the race film genre, it was Micheaux's first feature-length talkie, and the first African American talkie. Adapted from Micheaux's first novel, The Conquest (1913), it has some autobiographical elements: like the film's central character Jean Baptiste (played by Stanley Morrell), Micheaux spent several years as a cattle rancher in an otherwise all-white area of South Dakota."], ["created_at", "2018-03-27 06:36:42.308717"], ["updated_at", "2018-03-27 06:36:42.308717"]]
+  [1m[35m (0.9ms)[0m  commit transaction
