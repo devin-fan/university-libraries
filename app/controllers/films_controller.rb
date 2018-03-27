@@ -2,7 +2,8 @@ class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download]
      
     def index
-        @base_films = Film.all.to_a
+        @base_films = Film.base_films
+        puts @base_films
     end
       
     def show
