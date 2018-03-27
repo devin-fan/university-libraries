@@ -6,16 +6,16 @@
   	<h2 class=" blue-text text-darken-3 center"><%= @film.title %></h2>
   	
   	<div class="center">
-  		<div id="film">
-  		"Film Art Work"
-  		<!-- <img src="">  -->
+  		<div id="film_info">
+        By: <strong><%= @film.director %></strong> <br />
+        <%= @film.description %> <br /> <br />
 	  	</div>
+      <div id="download">
+        <%= link_to("Download Now!", "/films/#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3', download: 'download')%>
+      </div>
 	  	<br>
+      <%= video_tag "/films/#{@film.id}/download", :controls => true %>
 	  	<br>
-	  	<div id="download">
-	  		<%= link_to("Download Now!", "#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3') %>
-	  	</div>
-
   	</div>
   	
 

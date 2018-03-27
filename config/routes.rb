@@ -1,4 +1,6 @@
 UniversityLibraries::Application.routes.draw do
+    root 'films#index'
+
     resources :films
     get 'films/:id/download' => 'films#download'
 

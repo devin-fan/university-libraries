@@ -1,3 +1,4 @@
-/db
-/tmp
+/db/
+/tmp/
+/log/development.log
 .DS_Store
