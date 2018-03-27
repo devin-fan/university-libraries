@@ -123,3 +123,60 @@ Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-03-27 00:08:47 -0400
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2018-03-27 00:08:47 -0400
+
+
+Started GET "/films/1" for ::1 at 2018-03-27 00:10:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFilm Load (0.3ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (0.8ms)
+  Rendered films/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 93ms (Views: 58.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-03-27 00:10:26 -0400
+
+
+Started GET "/films/1/download" for ::1 at 2018-03-27 00:10:28 -0400
+Processing by FilmsController#download as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.2ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT 1[0m  [["id", 1]]
+Sent file https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4 (0.3ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+ActionController::MissingFile (Cannot read file https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4):
+  app/controllers/films_controller.rb:12:in `download'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.3ms)
+
+
+Started GET "/films/1/download" for ::1 at 2018-03-27 00:11:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#download as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4
+Completed 302 Found in 32ms (ActiveRecord: 0.7ms)

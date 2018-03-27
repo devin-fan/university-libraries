@@ -9,7 +9,7 @@ class FilmsController < ApplicationController
     end
 
     def download
-        send_file(File.join(Rails.root, 'private', @film.film_path))
+        redirect_to @film.film_path
     end
 
     def new
