@@ -2,18 +2,18 @@
 
 one:
   title: MyString
+  film_type: 1
   director: MyString
-  description: MyText
-  type: 1
   film_path: MyString
   essay_path: MyString
   permission: 1
+  description: MyText
 
 two:
   title: MyString
+  film_type: 1
   director: MyString
-  description: MyText
-  type: 1
   film_path: MyString
   essay_path: MyString
   permission: 1
+  description: MyText
