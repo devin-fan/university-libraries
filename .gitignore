@@ -1,4 +1,4 @@
 /db/
 /tmp/
-/log/
+/log/development.log
 .DS_Store
