@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 #Gem to handle uploading video files and essays
 gem 'carrierwave'
 
+#Simple forms for uploaders
+gem 'simple_form'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

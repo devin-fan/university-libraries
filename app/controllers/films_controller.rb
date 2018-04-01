@@ -14,9 +14,20 @@ class FilmsController < ApplicationController
     end
 
     def new
+        @film = Film.new
     end
 
     def create
+        @film = Film.new(film_params)
+        @film.type = 
+        if @film.save 
+            redirect_to film_path(@film)
+        else
+            render action 'new'
+        end
+    end
+
+    def edit
     end
     
     private 

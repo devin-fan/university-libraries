@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: video_db_dev
   pool: 5
-  username: video_db
+  username: postgres
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: video_db_test
   pool: 5
-  username: video_db
+  username: postgres
   password:
 
 production:
@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: video_db_prod
   pool: 5
-  username: video_db
+  username: postgres
   password:
