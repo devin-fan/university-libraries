@@ -3,7 +3,7 @@
     <%= f.input :title %>
     <%= f.input :director %>
     <%# Put in nested form for tags later %>
-    <%= f.input :tags %>
+    <%= f.input :tag_names %>
     <%= f.input :description, as: :text %>
     <%= f.input :film_path, as: :file %>
     <%= f.input :permission, as: :radio_buttons, collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first %>
