@@ -36,6 +36,7 @@ class FilmsController < ApplicationController
                 @film_tag.tag_id = @tag.id
                 @film_tag.save
             end 
+            redirect_to film_path(@film)
         else
             redirect_to films_path
         end
