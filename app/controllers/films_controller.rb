@@ -24,6 +24,18 @@ class FilmsController < ApplicationController
         end
         #Create and save all film tags
         if @film.save 
+            for tag_name in @film.tag_names.split
+                @film_tag = FilmTag.new
+                @tag = Tag.has_name(tag_name).to_a.first
+                if tag.nil?
+                    @tag = Tag.new
+                    @tag.name = tag_name
+                    @tag.save
+                end
+                @film_tag.film = @film
+                @film_tag.tag = @tag
+                @film_tag.save
+            end 
             redirect_to film_path(@film)
         else
             render action 'new'
