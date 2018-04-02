@@ -19,8 +19,8 @@ class FilmsController < ApplicationController
     def create
         @film = Film.new(film_params)
         #if the admin uploader has not specified the type, then it is set to student and not base
-        if film.type.nil? 
-            @film.type = 'student'
+        if film.type.nil?
+            @film.type = 1
         end
         #Create and save all film tags
         if @film.save 
