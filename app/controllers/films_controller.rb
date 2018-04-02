@@ -3,7 +3,6 @@ class FilmsController < ApplicationController
      
     def index
         @base_films = Film.base_films
-        puts @base_films
     end
       
     def show
