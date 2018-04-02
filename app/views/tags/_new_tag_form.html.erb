@@ -1,0 +1,10 @@
+<%= simple_form_for @tag, html: { :class => 'form-horizontal' }, remote: true do |f| %>
+    <%= f.input :name, label: "Tag", input_html: {class: "avg"} %>
+
+    <p>&nbsp;</p>
+    <div class="form-actions">
+        <%= f.submit nil, class: 'button tiny radius' %>
+        <%= link_to 'Cancel', film_path(params[:film_id]), class: 'button tiny radius alert' %>
+    </div>
+<% end %>
+

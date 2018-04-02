@@ -2,6 +2,7 @@ UniversityLibraries::Application.routes.draw do
     root 'films#index'
 
     resources :films
+    resources :tags
     get 'films/:id/download' => 'films#download'
 
   # The priority is based upon order of creation: first created -> highest priority.
