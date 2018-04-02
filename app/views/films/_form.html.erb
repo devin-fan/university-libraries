@@ -1,15 +1,15 @@
-<%= simple_form_for @film do |f| %>
+<%= simple_form_for @film, html: {multipart: true} do |f| %>
     <div id="film_form">
     <%= f.input :title %>
     <%= f.input :director %>
     <%# Put in nested form for tags later %>
     <%= f.input :tag_names %>
     <%= f.input :description, as: :text %>
-    <%= f.input :film_path, :label => "Films ", as: :file  %>
+    <%= f.file_field :film_path, :label => "Films "%>
     <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> 
 
 
-    <%= f.input :essay_path, :label => "Essays ", as: :file %>
+    <%= f.file_field :essay_path, :label => "Essays "%>
     <%= f.button :submit, :class => "blue darken-3"%>
 
 

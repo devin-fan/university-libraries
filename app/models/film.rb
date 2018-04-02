@@ -4,10 +4,10 @@ class Film < ActiveRecord::Base
 
     attr_accessor :tag_names
 
-    mount_uploader :student_film, StudentFilmUploader
-    mount_uploader :essay, EssayUploader
+    mount_uploader :film_path, StudentFilmUploader
+    mount_uploader :essay_path, EssayUploader
 
-    validates_presence_of :title, :tags, :essay_path, :film_type, :director, :film_path, :description
+    validates_presence_of :title, :tag_names, :essay_path, :film_type, :director, :film_path, :description
     validates_inclusion_of :permission, in: [0,1,2]
 
     scope :alphabetical,  -> { order(title: :asc) }
