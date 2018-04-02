@@ -1,9 +1,17 @@
-<h1>Upload Film</h1>
+<%= render partial: "partials/nav" %>
 
-<div class="row">
-    <div class="col-sm-12">
-        <%= render 'form' %>
-    </div>
+	<div class="container">
+		<h3 class=" blue-text text-darken-3 center">Upload Film</h1>
+
+		<div class="center row">
+		    <div class="col-sm-12">
+		        <%= render 'form' %>
+		    </div>
+		</div>
+
+	<%= link_to image_tag('back.png'), films_path %>
+
+
 </div>
 
-<%= link_to 'Films', films_path %>
+
