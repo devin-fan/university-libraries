@@ -5,11 +5,11 @@
     <%# Put in nested form for tags later %>
     <%= f.input :tag_names %>
     <%= f.input :description, as: :text %>
-    <%= f.input :film_path, :label => "Films ", as: :file  %>
+    <%= f.input :film_path, :label => "Film: ", as: :file,  :class => "center" %>
     <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> 
 
 
-    <%= f.input :essay_path, :label => "Essays ", as: :file %>
+    <%= f.input :essay_path, :label => "Essay: ", as: :file %>
     <%= f.button :submit, :class => "blue darken-3"%>
 
 
