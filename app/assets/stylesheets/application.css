@@ -27,3 +27,10 @@ body {
   select {
   display: block !important;
 }
+
+
+#film_film_path, #film_essay_path{
+	display: block;
+	margin: auto;
+}
+
