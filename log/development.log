@@ -423,6 +423,232 @@ ActionView::Template::Error (undefined method `title' for nil:NilClass):
   [1m[35m (0.0ms)[0m  begin transaction
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The Exile"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/the_exile.mp4"], ["permission", 0], ["description", "The Exile is a 1931 American film by Oscar Micheaux with the co-direction of the Dances and Ensemble by Leonard Harper. A drama–romance of the race film genre, it was Micheaux's first feature-length talkie, and the first African American talkie. Adapted from Micheaux's first novel, The Conquest (1913), it has some autobiographical elements: like the film's central character Jean Baptiste (played by Stanley Morrell), Micheaux spent several years as a cattle rancher in an otherwise all-white area of South Dakota."], ["created_at", "2018-03-27 06:36:42.308717"], ["updated_at", "2018-03-27 06:36:42.308717"]]
   [1m[35m (0.9ms)[0m  commit transaction
+<<<<<<< HEAD
+  [1m[36m (27.3ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (19.6ms)[0m  CREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (12.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180327040507')
+  [1m[36m (5.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180318183121')[0m
+  [1m[35m (6.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180320203150')
+  [1m[36m (5.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180320203320')[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180327040507')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180318183121')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180320203150')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180320203320')
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ten Minutes to Live"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4"], ["permission", 0], ["description", "Ten Minutes to Live is a 1932 American film directed by Oscar Micheaux.  A movie producer offers a nightclub singer a role in his latest film, but all he really wants to do is bed her. She knows, but accepts anyway. Meanwhile, a patron at the club gets a note saying that she'll soon get another note, and that she will be killed ten minutes after that."], ["created_at", "2018-04-02 02:33:02.243841"], ["updated_at", "2018-04-02 02:33:02.243841"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Swing"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/swing.mp4"], ["permission", 0], ["description", "Swing! is a 1938 American race film directed, produced and written by Oscar Micheaux.  Mandy Jenkins (Cora Green), an African American cook for a wealthy white family in Birmingham, Alabama, discovers her husband Cornell is having an affair with Eloise Jackson (Hazel Diaz). When she confronts her husband and Eloise at a nightclub, a violent fight ensues. Eloise leaves Birmingham and relocates to the Harlem section of New York City, where she gets a job as a cabaret vocalist under the false name of Cora Smith. She is followed to Harlem by her husband, Lem, who becomes mixed up in the local crime scene. Mandy also arrives in New York, having left Cornell. She gets a job as the wardrobe mistress at the cabaret where Eloise is performing. When Eloise breaks her leg during a drunken fall, Mandy is recruited as the last-minute substitute and becomes a musical star as the revue is transferred to Broadway. Cornell, who is now destitute, reunites with Mandy and agrees never to cheat on her again."], ["created_at", "2018-04-02 02:33:02.257165"], ["updated_at", "2018-04-02 02:33:02.257165"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Notorious Elinor Lee"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/the_notorious_elinor_lee.mp4"], ["permission", 0], ["description", "The Notorious Elinor Lee is a 1940 race film directed, written, and co-produced by the African-American filmmaker Oscar Micheaux.  Elinor Lee, a gangster’s moll living in the Harlem section of New York City, has signed up-and-coming boxer Benny Blue to a 10-year contract. Lee and a pair of corrupt fight promoter scheme to build up Blue as a potential champion, with the goal of betting against him when they force him to take a dive in a champion fight. Lee conspires to hire Fredi, an old friend of Blue and an escaped convict hiding from the law, to be his sweetheart and to control him for Lee and her partners.\n\nThe plans are derailed when Blue loses a key fight to a German boxer, but he works to regain his standing in the sport and is able to meet the German in a rematch after two years have passed. Lee and her partners bet against Blue, but they are financially ruined when Blue prevails in the fight and comes out the winner."], ["created_at", "2018-04-02 02:33:02.267159"], ["updated_at", "2018-04-02 02:33:02.267159"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Underworld"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/underworld.mp4"], ["permission", 0], ["description", "A young college student falls under the influence of a murderous gambler."], ["created_at", "2018-04-02 02:33:02.277330"], ["updated_at", "2018-04-02 02:33:02.277330"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Exile"], ["film_type", 1], ["director", "Oscar Micheaux"], ["film_path", "https://1548544621.rsc.cdn77.org/the_exile.mp4"], ["permission", 0], ["description", "The Exile is a 1931 American film by Oscar Micheaux with the co-direction of the Dances and Ensemble by Leonard Harper. A drama–romance of the race film genre, it was Micheaux's first feature-length talkie, and the first African American talkie. Adapted from Micheaux's first novel, The Conquest (1913), it has some autobiographical elements: like the film's central character Jean Baptiste (played by Stanley Morrell), Micheaux spent several years as a cattle rancher in an otherwise all-white area of South Dakota."], ["created_at", "2018-04-02 02:33:02.287410"], ["updated_at", "2018-04-02 02:33:02.287410"]]
+  [1m[35m (5.2ms)[0m  COMMIT
+
+
+Started GET "/films/1" for ::1 at 2018-04-01 22:34:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  [1m[35mFilm Load (6.9ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (1.0ms)
+  Rendered films/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 568ms (Views: 517.7ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:34:15 -0400
+
+
+Started GET "/films/1/download" for ::1 at 2018-04-01 22:34:16 -0400
+Processing by FilmsController#download as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:34:20 -0400
+Processing by FilmsController#new as HTML
+  Rendered films/new.html.erb within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `new_tag_path' for #<#<Class:0x007fc25f381408>:0x007fc25f063d70>):
+    2: 
+    3: <div class="row">
+    4:     <div class="col-sm-12">
+    5:         <%= link_to(new_tag_path(film_id: @film.id), id: 'new_tag_link', class: 'button tiny radius', remote: true) do %> 
+    6:             Add New Tag 
+    7:         <% end %>
+    8:     </div>
+  app/views/films/new.html.erb:5:in `_app_views_films_new_html_erb___79400693231461124_70236397311000'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:34:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  Rendered films/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 75ms (Views: 40.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:34:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:34:59 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:35:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:35:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:35:00 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:35:00 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:35:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:35:00 -0400
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:35:02 -0400
+
+ActionController::RoutingError (uninitialized constant TagsController):
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+=======
 
 
 Started GET "/films" for ::1 at 2018-04-01 21:28:36 -0400
@@ -451,6 +677,7 @@ PG::ConnectionBad (could not connect to server: No such file or directory
   activerecord (4.2.7) lib/active_record/connection_handling.rb:87:in `connection'
   activerecord (4.2.7) lib/active_record/migration.rb:383:in `connection'
   activerecord (4.2.7) lib/active_record/migration.rb:370:in `call'
+>>>>>>> b5d33256a2d91db677189028eecc29174f47bdcf
   actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
   activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
   activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
@@ -478,6 +705,58 @@ PG::ConnectionBad (could not connect to server: No such file or directory
   rack (1.6.9) lib/rack/lock.rb:17:in `call'
   rack (1.6.9) lib/rack/content_length.rb:15:in `call'
   rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (26.9ms)
+
+
+Started GET "/films" for ::1 at 2018-04-01 22:35:16 -0400
+Processing by FilmsController#index as HTML
+  [1m[35mFilm Load (5.9ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
+  Rendered partials/_nav.html.erb (1.2ms)
+  Rendered films/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 42ms (Views: 21.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:35:21 -0400
+Processing by FilmsController#new as HTML
+  Rendered films/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:35:21 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:36:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+=======
   /Users/obedappiah-agyeman/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
   /Users/obedappiah-agyeman/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
   /Users/obedappiah-agyeman/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
@@ -729,26 +1008,1732 @@ ORDER BY c.conname
 Started GET "/" for ::1 at 2018-04-01 21:37:01 -0400
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by FilmsController#index as HTML
+>>>>>>> b5d33256a2d91db677189028eecc29174f47bdcf
 DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
 
 You can opt into the new behavior and remove this warning by setting:
 
   config.active_record.raise_in_transactional_callbacks = true
 
+<<<<<<< HEAD
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+=======
  (called from <class:Film> at /Users/obedappiah-agyeman/Documents/17-18/Spring Sem/IS/university-libraries/app/models/film.rb:2)
+>>>>>>> b5d33256a2d91db677189028eecc29174f47bdcf
 DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
 
 You can opt into the new behavior and remove this warning by setting:
 
   config.active_record.raise_in_transactional_callbacks = true
 
+<<<<<<< HEAD
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+=======
  (called from <class:Film> at /Users/obedappiah-agyeman/Documents/17-18/Spring Sem/IS/university-libraries/app/models/film.rb:2)
+>>>>>>> b5d33256a2d91db677189028eecc29174f47bdcf
 DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
 
 You can opt into the new behavior and remove this warning by setting:
 
   config.active_record.raise_in_transactional_callbacks = true
 
+<<<<<<< HEAD
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  Rendered films/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 78ms (Views: 52.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:36:20 -0400
+Processing by FilmsController#new as HTML
+  Rendered films/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:36:20 -0400
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:36:22 -0400
+
+ActionController::RoutingError (uninitialized constant TagsController):
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (27.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:39:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  Rendered films/_form.html.erb (70.5ms)
+  Rendered films/new.html.erb within layouts/application (76.9ms)
+Completed 200 OK in 152ms (Views: 115.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:39:41 -0400
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:39:49 -0400
+
+ActionController::RoutingError (uninitialized constant TagsController):
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.7) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (27.5ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:43:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  Rendered films/_form.html.erb (68.8ms)
+  Rendered films/new.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 154ms (Views: 121.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:43:57 -0400
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:43:58 -0400
+Processing by TagsController#new as JS
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.3ms)
+
+ActionView::MissingTemplate (Missing template tags/new, application/new with {:locale=>[:en], :formats=>[:js, "application/ecmascript", "application/x-ecmascript", :html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/devinfan/private/67373/university-libraries/app/views"
+):
+  actionview (4.2.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:44:55 -0400
+Processing by TagsController#new as JS
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template tags/new, application/new with {:locale=>[:en], :formats=>[:js, "application/ecmascript", "application/x-ecmascript", :html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/devinfan/private/67373/university-libraries/app/views"
+):
+  actionview (4.2.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:44:56 -0400
+Processing by TagsController#new as JS
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template tags/new, application/new with {:locale=>[:en], :formats=>[:js, "application/ecmascript", "application/x-ecmascript", :html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/devinfan/private/67373/university-libraries/app/views"
+):
+  actionview (4.2.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:50:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  Rendered films/_form.html.erb (61.5ms)
+  Rendered films/new.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 142ms (Views: 113.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:50:24 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:50:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:50:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:50:25 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:50:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:50:25 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:50:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:50:25 -0400
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:50:26 -0400
+Processing by TagsController#new as JS
+  Rendered tags/_new_tag_form.html.erb (22.9ms)
+  Rendered tags/new.js.erb (43.6ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"films", :id=>nil} missing required keys: [:id]):
+    4:     <p>&nbsp;</p>
+    5:     <div class="form-actions">
+    6:         <%= f.submit nil, class: 'button tiny radius' %>
+    7:         <%= link_to 'Cancel', film_path(params[:film_id]), class: 'button tiny radius alert' %>
+    8:     </div>
+    9: <% end %>
+  app/views/tags/_new_tag_form.html.erb:7:in `block in _app_views_tags__new_tag_form_html_erb___2193479198392302705_70241998576720'
+  app/views/tags/_new_tag_form.html.erb:1:in `_app_views_tags__new_tag_form_html_erb___2193479198392302705_70241998576720'
+  app/views/tags/new.js.erb:1:in `_app_views_tags_new_js_erb___3503600964995097054_70241998656920'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (53.6ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:51:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+  Rendered films/_form.html.erb (55.4ms)
+  Rendered films/new.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 148ms (Views: 109.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:51:53 -0400
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:51:54 -0400
+Processing by TagsController#new as JS
+  Rendered tags/_new_tag_form.html.erb (2.8ms)
+  Rendered tags/new.js.erb (22.4ms)
+Completed 200 OK in 54ms (Views: 47.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:52:01 -0400
+Processing by TagsController#new as JS
+  Rendered tags/_new_tag_form.html.erb (4.6ms)
+  Rendered tags/new.js.erb (22.3ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:52:07 -0400
+Processing by TagsController#new as JS
+  Rendered tags/_new_tag_form.html.erb (1.8ms)
+  Rendered tags/new.js.erb (19.3ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tags/new" for ::1 at 2018-04-01 22:52:10 -0400
+Processing by TagsController#new as JS
+  Rendered tags/_new_tag_form.html.erb (1.9ms)
+  Rendered tags/new.js.erb (24.0ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tags" for ::1 at 2018-04-01 22:52:14 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>{"name"=>"asdfasdfas"}, "commit"=>"Create Tag"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.7) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.7) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.7) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:164:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.3ms)
+
+
+Started GET "/films/1" for ::1 at 2018-04-01 22:58:08 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (0.5ms)
+  Rendered films/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 102ms (Views: 43.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 22:58:09 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 22:58:10 -0400
+Processing by FilmsController#new as HTML
+  Rendered films/_form.html.erb (74.4ms)
+  Rendered films/new.html.erb within layouts/application (76.9ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Could not find the association :film_tags in model Film):
+    3:     <%= f.input :title %>
+    4:     <%= f.input :director %>
+    5:     <%# Put in nested form for tags later %>
+    6:     <%= f.input :tags %>
+    7:     <%= f.input :description, as: :text %>
+    8:     <%= f.input :film_path, as: :file %>
+    9:     <%= f.input :permission, as: :radio_buttons, collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first %>
+  app/views/films/_form.html.erb:6:in `block in _app_views_films__form_html_erb___3100650856402264010_70218195494100'
+  app/views/films/_form.html.erb:1:in `_app_views_films__form_html_erb___3100650856402264010_70218195494100'
+  app/views/films/new.html.erb:5:in `_app_views_films_new_html_erb__1354706625170509314_70218195526800'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:02:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+  Rendered films/_form.html.erb (52.0ms)
+  Rendered films/new.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 134ms (Views: 97.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:09:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+  Rendered films/_form.html.erb (61.9ms)
+  Rendered films/new.html.erb within layouts/application (71.8ms)
+Completed 200 OK in 170ms (Views: 118.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:09:09 -0400
+
+
+Started POST "/films" for ::1 at 2018-04-01 23:09:20 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YyDWbfTfFzECsp7bYni5uVgh3A/gAgGjCk0bNP1nlhjDvNp5iCAVG57NMoGWWT63p8MADbGbQndA8gcY59rxCg==", "film"=>{"title"=>"", "director"=>"", "description"=>""}, "no_model_fields"=>{"tags"=>"asdf asdf1"}, "commit"=>"Create Film"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :film_tags in model Film):
+  app/controllers/films_controller.rb:22:in `create'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.3ms)
+
+
+Started GET "/films" for ::1 at 2018-04-01 23:10:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+  Rendered partials/_nav.html.erb (0.6ms)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 88ms (Views: 53.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:10:18 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:10:21 -0400
+Processing by FilmsController#new as HTML
+  Rendered films/_form.html.erb (62.7ms)
+  Rendered films/new.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 85ms (Views: 77.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:10:21 -0400
+
+
+Started POST "/films" for ::1 at 2018-04-01 23:10:25 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NwScFJeVeBoLutm62+jcJf5T/2QGgZkVUhFGgBY1Hg+XmJAA62p6MJfFdeAvyVsrAbEjZlcY2sEYrlqsDIh5HQ==", "film"=>{"title"=>"", "director"=>"", "description"=>""}, "no_model_fields"=>{"tags"=>"asdf asdf1"}, "commit"=>"Create Film"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `tags' for nil:NilClass):
+  app/controllers/films_controller.rb:22:in `create'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.2ms)
+
+
+Started GET "/films" for ::1 at 2018-04-01 23:13:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+  Rendered partials/_nav.html.erb (0.5ms)
+  [1m[35mFilm Load (1.3ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 90ms (Views: 56.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:13:34 -0400
+  [1m[36m (40.4ms)[0m  [1mDROP TABLE "film_tags" CASCADE[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mDROP TABLE "films" CASCADE[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.1ms)[0m  [1mDROP TABLE "tags" CASCADE[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (16.5ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:3)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (2.6ms)[0m  [1mDROP TABLE "film_tags" CASCADE[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.5ms)[0m  [1mDROP TABLE "films" CASCADE[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mDROP TABLE "tags" CASCADE[0m
+  [1m[35m (5.2ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.4ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.8ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (3.2ms)[0m  [1mDROP TABLE "film_tags" CASCADE[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mDROP TABLE "films" CASCADE[0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mDROP TABLE "tags" CASCADE[0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.5ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.5ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (8.6ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.0ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (2.3ms)[0m  [1mDROP TABLE "film_tags" CASCADE[0m
+  [1m[35m (3.8ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mDROP TABLE "films" CASCADE[0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "tags" CASCADE[0m
+  [1m[35m (4.1ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (5.0ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (8.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (12.0ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.2ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+
+
+Started GET "/films" for ::1 at 2018-04-01 23:22:11 -0400
+
+ActiveRecord::NoDatabaseError (FATAL:  database "video_db_dev" does not exist
+):
+  activerecord (4.2.7) lib/active_record/connection_adapters/postgresql_adapter.rb:661:in `rescue in connect'
+  activerecord (4.2.7) lib/active_record/connection_adapters/postgresql_adapter.rb:651:in `connect'
+  activerecord (4.2.7) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+  activerecord (4.2.7) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+  activerecord (4.2.7) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.7) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.7) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.7) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.7) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/devinfan/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.6ms)
+  [1m[36m (7.0ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180327040507')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180318183121')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180320203150')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180320203320')[0m
+  [1m[35m (6.7ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (8.7ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180327040507')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180318183121')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180320203150')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180320203320')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+=======
  (called from <class:Film> at /Users/obedappiah-agyeman/Documents/17-18/Spring Sem/IS/university-libraries/app/models/film.rb:2)
   [1m[35mFilm Load (0.3ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
   Rendered partials/_nav.html.erb (0.4ms)
@@ -1717,6 +3702,666 @@ Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:07:30 -0400
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:07:30 -0400
+>>>>>>> b5d33256a2d91db677189028eecc29174f47bdcf
+  [1m[36mSQL (1.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.9ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.4ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.9ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.3ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:26:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  Rendered films/_form.html.erb (0.8ms)
+  Rendered films/new.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.7ms)
+
+SyntaxError (/Users/devinfan/private/67373/university-libraries/app/views/films/_form.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/films/_form.html.erb:26: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/films/new.html.erb:5:in `_app_views_films_new_html_erb__2336220087088152170_70258604023040'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.8ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:33:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  Rendered films/_form.html.erb (87.0ms)
+  Rendered films/new.html.erb within layouts/application (92.1ms)
+Completed 200 OK in 193ms (Views: 154.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:33:27 -0400
+
+
+Started GET "/films" for ::1 at 2018-04-01 23:33:37 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.5ms)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:33:37 -0400
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.8ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (8.4ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.0ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.8ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/films" for ::1 at 2018-04-01 23:34:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  Rendered partials/_nav.html.erb (0.5ms)
+  [1m[35mFilm Load (2.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 85ms (Views: 51.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:34:08 -0400
+
+
+Started GET "/films/1" for ::1 at 2018-04-01 23:34:14 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 2.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Film with 'id'=1):
+  app/controllers/films_controller.rb:44:in `set_film'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.6ms)
+
+
+Started GET "/films" for ::1 at 2018-04-01 23:34:24 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.4ms)
+  [1m[35mFilm Load (0.2ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:34:24 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:34:30 -0400
+Processing by FilmsController#new as HTML
+  Rendered films/_form.html.erb (117.3ms)
+  Rendered films/new.html.erb within layouts/application (122.6ms)
+Completed 200 OK in 138ms (Views: 129.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:34:30 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:34:30 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:34:30 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:34:30 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:34:30 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:34:30 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:34:31 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:42:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  Rendered films/_form.html.erb (47.8ms)
+  Rendered films/new.html.erb within layouts/application (54.9ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 3.1ms)
+
+ActionView::Template::Error (undefined method `tag_names' for #<Film:0x007f939e1f0228>):
+    3:     <%= f.input :title %>
+    4:     <%= f.input :director %>
+    5:     <%# Put in nested form for tags later %>
+    6:     <%= f.input :tag_names %>
+    7:     <%= f.input :description, as: :text %>
+    8:     <%= f.input :film_path, as: :file %>
+    9:     <%= f.input :permission, as: :radio_buttons, collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first %>
+  app/views/films/_form.html.erb:6:in `block in _app_views_films__form_html_erb__2860090534765804020_70135994304560'
+  app/views/films/_form.html.erb:1:in `_app_views_films__form_html_erb__2860090534765804020_70135994304560'
+  app/views/films/new.html.erb:5:in `_app_views_films_new_html_erb___3474987127077725713_70135994457580'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.8ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:45:44 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  Rendered films/_form.html.erb (45.2ms)
+  Rendered films/new.html.erb within layouts/application (51.3ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 3.2ms)
+
+ActionView::Template::Error (undefined method `tag_names' for #<Film:0x007f880d6c2a68>):
+    3:     <%= f.input :title %>
+    4:     <%= f.input :director %>
+    5:     <%# Put in nested form for tags later %>
+    6:     <%= f.input :tag_names %>
+    7:     <%= f.input :description, as: :text %>
+    8:     <%= f.input :film_path, as: :file %>
+    9:     <%= f.input :permission, as: :radio_buttons, collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first %>
+  app/views/films/_form.html.erb:6:in `block in _app_views_films__form_html_erb___2978667320434813575_70111158295580'
+  app/views/films/_form.html.erb:1:in `_app_views_films__form_html_erb___2978667320434813575_70111158295580'
+  app/views/films/new.html.erb:5:in `_app_views_films_new_html_erb___3549554495009374789_70111184769140'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.9ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:47:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:5)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:6)
+  Rendered films/_form.html.erb (48.9ms)
+  Rendered films/new.html.erb within layouts/application (54.0ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 4.6ms)
+
+ActionView::Template::Error (No input found for fake):
+    3:     <%= f.input :title %>
+    4:     <%= f.input :director %>
+    5:     <%# Put in nested form for tags later %>
+    6:     <%= f.input :tag_names, as: :fake %>
+    7:     <%= f.input :description, as: :text %>
+    8:     <%= f.input :film_path, as: :file %>
+    9:     <%= f.input :permission, as: :radio_buttons, collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first %>
+  app/views/films/_form.html.erb:6:in `block in _app_views_films__form_html_erb__1769600973845890699_70300918694020'
+  app/views/films/_form.html.erb:1:in `_app_views_films__form_html_erb__1769600973845890699_70300918694020'
+  app/views/films/new.html.erb:5:in `_app_views_films_new_html_erb__2440636262061023091_70300918847400'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.5ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-01 23:51:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:7)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:7)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:7)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:8)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:8)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Film> at /Users/devinfan/private/67373/university-libraries/app/models/film.rb:8)
+  Rendered films/_form.html.erb (52.4ms)
+  Rendered films/new.html.erb within layouts/application (58.6ms)
+Completed 200 OK in 133ms (Views: 99.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-01 23:51:17 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-01 23:51:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-01 23:51:17 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-01 23:51:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-01 23:51:17 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-01 23:51:18 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-01 23:51:18 -0400
+
+
+<<<<<<< HEAD
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:07:30 -0400
 
 
 Started GET "/films/new" for ::1 at 2018-04-01 23:10:36 -0400
@@ -2416,3 +5061,6 @@ Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:53:24 -0400
 
 
 Started GET "/assets/back.png" for ::1 at 2018-04-01 23:53:24 -0400
+=======
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-01 23:51:18 -0400
+>>>>>>> 5ec2f96b3949181e82b03e7eccb1ea580e9b4bb6

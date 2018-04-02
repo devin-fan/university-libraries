@@ -3,7 +3,6 @@ class FilmsController < ApplicationController
      
     def index
         @base_films = Film.base_films
-        puts @base_films
     end
       
     def show
@@ -40,7 +39,7 @@ class FilmsController < ApplicationController
     end
 
     def film_params
-        params.require(:film).permit(:title, :tags, :essay_path, :type, :director, :film_path, :permission, :description)
+        params.require(:film).permit(:title, :tag_names, :essay_path, :type, :director, :film_path, :permission, :description)
     end
         
 end

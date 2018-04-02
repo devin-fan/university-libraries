@@ -1,6 +1,9 @@
 class Film < ActiveRecord::Base
     has_many :film_tags
     has_many :tags, through: :film_tags
+
+    attr_accessor :tag_names
+
     mount_uploader :student_film, StudentFilmUploader
     mount_uploader :essay, EssayUploader
 
