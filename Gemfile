@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 
-# Use sqlite3 as the database for Active Record, except when deployed to Heroku
-gem 'pg', '~> 0.15'
+# Use Postgres as the database
+gem 'pg', '~> 0.20.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -29,8 +29,6 @@ gem 'jbuilder', '~> 1.2'
 
 #Gem to handle uploading video files and essays
 gem 'carrierwave'
-
-gem 'streamio-ffmpeg'
 
 #Simple forms for uploaders
 gem 'simple_form'

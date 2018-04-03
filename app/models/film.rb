@@ -8,9 +8,14 @@ class Film < ActiveRecord::Base
     mount_uploader :essay_path, EssayUploader
 
     validates_presence_of :title, :film_type, :director, :description
+    validates_presence_of :base_film_path, if: :is_base?
     validates_inclusion_of :permission, in: [0,1,2]
 
     scope :alphabetical,  -> { order(title: :asc) }
     scope :base_films,    -> { where(film_type: 1) } # type 1 is base, type 0 is student
     scope :student_films, -> { where(film_type: 0) }
+
+    def is_base?
+        film_type == 1
+    end
 end
