@@ -11,10 +11,10 @@
         <%= @film.description %> <br /> <br />
 	  	</div>
       <div id="download">
-        <%= link_to("Download Now!", "/films/#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3', download: 'download')%>
+        <%= link_to("Download Now!", "/films/#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3', download: '')%>
       </div>
 	  	<br>
-      <%= video_tag "/films/#{@film.id}/download", :controls => true %>
+        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true %>
 	  	<br>
   	</div>
   	

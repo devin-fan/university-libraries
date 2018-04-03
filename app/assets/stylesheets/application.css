@@ -22,3 +22,15 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+
+  select {
+  display: block !important;
+}
+
+
+#film_film_path, #film_essay_path{
+	display: block;
+	margin: auto;
+}
+

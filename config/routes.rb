@@ -2,7 +2,9 @@ UniversityLibraries::Application.routes.draw do
     root 'films#index'
 
     resources :films
+    resources :tags
     get 'films/:id/download' => 'films#download'
+    get 'films/:id/view' => 'films#view'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
