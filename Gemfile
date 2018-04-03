@@ -30,8 +30,13 @@ gem 'jbuilder', '~> 1.2'
 #Gem to handle uploading video files and essays
 gem 'carrierwave'
 
+gem 'streamio-ffmpeg'
+
 #Simple forms for uploaders
 gem 'simple_form'
+
+#For passwords
+gem 'bcrypt'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

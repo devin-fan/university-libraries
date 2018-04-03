@@ -11,11 +11,19 @@
         <%= @film.description %> <br /> <br />
 	  	</div>
       <div id="download">
-        <%= link_to("Download Now!", "/films/#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3', download: 'download')%>
+        <%= link_to("Download Now!", "/films/#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3', download: '')%>
       </div>
 	  	<br>
-      <%= video_tag "/films/#{@film.id}/download", :controls => true %>
+      <%= video_tag @film.film_path_url.to_s, :controls => true %>
+      <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup="{}">
+          <source src='<%= @film.film_path_url %>' type='video/mp4'>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
 	  	<br>
+    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
   	</div>
   	
 

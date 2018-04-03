@@ -6,6 +6,11 @@ class FilmsController < ApplicationController
     end
       
     def show
+        movie = FFMPEG::Movie.new(@film.film_path.path)
+        transcoder_options = { preserve_aspect_ratio: :width, preserve_aspect_ratio: :height }
+        base_path = /^(.*[\\\/])/.match(@film.film_path.path)
+        @transcoded_movie = movie.transcode(base_path + , transcoder_options)
+        puts @transcoded_movie
     end
 
     def download
