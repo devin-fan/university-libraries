@@ -1,20 +1,37 @@
 class FilmsController < ApplicationController
-    before_action :set_film, only: [:show, :download]
+    before_action :set_film, only: [:show, :download, :view]
      
     def index
         @base_films = Film.base_films
     end
       
     def show
-#        movie = FFMPEG::Movie.new(@film.film_path.path)
-#        transcoder_options = { preserve_aspect_ratio: :width, preserve_aspect_ratio: :height }
-#        base_path = /^(.*[\\\/])/.match(@film.film_path.path)
-#        @transcoded_movie = movie.transcode(base_path + , transcoder_options)
-#        puts @transcoded_movie
     end
 
     def download
-        redirect_to @film.film_path.url
+        if(@film.film_type == 1)
+            redirect_to @film.base_film_path
+        else
+            redirect_to @film.film_path.url
+        end
+    end
+
+    def view
+        # movie = FFMPEG::Movie.new(@film.film_path.path)
+        # transcoder_options = { preserve_aspect_ratio: :width, preserve_aspect_ratio: :height }
+        # base_path = /^(.*[\\\/])/.match(@film.film_path.path)
+        # file_name = @film.film_path.path.split('/')[-1].split('.')[0]
+        # transcoded_movie = movie.transcode(base_path[0] + file_name + "_transcoded.mp4", transcoder_options)
+        # puts transcoded_movie.inspect
+        # @film_path = transcoded_movie.path.split('public')[1]
+
+        # send_file File.join([Rails.root, "public", @film_path]), 
+        #       :disposition => :inline, :stream => true
+        if(@film.film_type == 1)
+            redirect_to @film.base_film_path
+        else
+            send_file @film.film_path.path, :disposition => :inline, :stream => true
+        end
     end
 
     def new
@@ -25,7 +42,7 @@ class FilmsController < ApplicationController
         @film = Film.new(film_params)
         #if the admin uploader has not specified the type, then it is set to student and not base
         if @film.film_type.nil?
-            @film.film_type = 1
+            @film.film_type = 0
         end
         #Create and save all film tags
         if @film.save!
