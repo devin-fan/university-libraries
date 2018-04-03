@@ -6651,3 +6651,228 @@ Processing by FilmsController#download as */*
   [1m[35mFilm Load (11.1ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 2]]
 Redirected to http://localhost:3000/uploads/student_films/video-1517172393.mp4
 Completed 302 Found in 15ms (ActiveRecord: 11.1ms)
+  [1m[36mSQL (12.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (25.1ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.7ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (29.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.2ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (2.4ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (18.0ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.4ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.4ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (4.4ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (7.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/films" for ::1 at 2018-04-03 00:46:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/devinfan/private/67373/university-libraries/app/controllers/films_controller.rb:12: syntax error, unexpected ','
+...= movie.transcode(base_path + , transcoder_options)
+...                               ^):
+  app/controllers/films_controller.rb:12: syntax error, unexpected ','
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.9ms)
+
+
+Started GET "/films" for ::1 at 2018-04-03 00:48:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  [1m[35mFilm Load (6.5ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 119ms (Views: 62.2ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 00:48:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 00:48:09 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 00:48:09 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 00:48:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 00:48:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 00:48:10 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 00:48:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 00:48:10 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-03 00:48:13 -0400
+Processing by FilmsController#new as HTML
+  Rendered partials/_nav.html.erb (0.3ms)
+  Rendered films/_form.html.erb (78.9ms)
+  Rendered films/new.html.erb within layouts/application (84.2ms)
+Completed 200 OK in 124ms (Views: 94.7ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/assets/back.png" for ::1 at 2018-04-03 00:48:13 -0400
+
+
+Started POST "/films" for ::1 at 2018-04-03 00:48:45 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hheTe6pbdwfkL7/ywIhFWXUaOiIpr7oure+8zb97o88mi59v1qR1LXhQE6g0qcJXivjmIHg2+frnUKDhpcbE3Q==", "film"=>{"title"=>"asdf", "director"=>"asdf", "tag_names"=>"asdf asdf1", "description"=>"asdf", "film_path"=>#<ActionDispatch::Http::UploadedFile:0x007f9094263780 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180403-6116-qb1tmx.mp4>, @original_filename="video-1517172393.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"film[film_path]\"; filename=\"video-1517172393.mp4\"\r\nContent-Type: video/mp4\r\n">, "permission"=>"0", "essay_path"=>#<ActionDispatch::Http::UploadedFile:0x007f90942636b8 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180403-6116-nst651.docx>, @original_filename="Michael_Lin.Resume.Aug2017.docx", @content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document", @headers="Content-Disposition: form-data; name=\"film[essay_path]\"; filename=\"Michael_Lin.Resume.Aug2017.docx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n">}, "commit"=>"Create Film"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (13.4ms)[0m  INSERT INTO "films" ("title", "essay_path", "director", "film_path", "permission", "description", "film_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "asdf"], ["essay_path", "Michael_Lin.Resume.Aug2017.docx"], ["director", "asdf"], ["film_path", "video-1517172393.mp4"], ["permission", 0], ["description", "asdf"], ["film_type", 1], ["created_at", "2018-04-03 04:48:45.605749"], ["updated_at", "2018-04-03 04:48:45.605749"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mTag Load (6.3ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."name" = $1  [["name", "asdf"]]
+  [1m[36m (1.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "asdf"], ["created_at", "2018-04-03 04:48:45.682255"], ["updated_at", "2018-04-03 04:48:45.682255"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["film_id", 1], ["tag_id", 1], ["created_at", "2018-04-03 04:48:45.690166"], ["updated_at", "2018-04-03 04:48:45.690166"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1[0m  [["name", "asdf1"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdf1"], ["created_at", "2018-04-03 04:48:45.701179"], ["updated_at", "2018-04-03 04:48:45.701179"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["film_id", 1], ["tag_id", 2], ["created_at", "2018-04-03 04:48:45.707775"], ["updated_at", "2018-04-03 04:48:45.707775"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/films/1
+Completed 302 Found in 128ms (ActiveRecord: 43.2ms)
+
+
+Started GET "/films/1" for ::1 at 2018-04-03 00:48:45 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFilm Load (6.5ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (0.2ms)
+  Rendered films/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 10.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 00:48:45 -0400
+
+
+Started GET "/films/1" for ::1 at 2018-04-03 00:56:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFilm Load (0.5ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (3.7ms)
+  Rendered films/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 108ms (Views: 59.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 00:56:24 -0400
+
+
+Started GET "/films/1" for ::1 at 2018-04-03 00:57:20 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.2ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered partials/_nav.html.erb (0.7ms)
+  Rendered films/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
