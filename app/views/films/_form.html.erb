@@ -1,15 +1,16 @@
 <%= simple_form_for @film, html: {multipart: true} do |f| %>
     <div id="film_form">
-    <%= f.input :title %>
-    <%= f.input :director %>
+    Title: <%= f.input :title %>
+    Uploaded by: <%= f.input :director %>
     <%# Put in nested form for tags later %>
+    Tags (separated by space)
     <%= f.input :tag_names %>
-    <%= f.input :description, as: :text %>
-    <%= f.file_field :film_path, :label => "Films "%>
-    <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> 
+    Description: <%= f.input :description, as: :text %>
+    Upload film: <%= f.file_field :film_path, :label => "Films "%>
+    Permission: <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> 
 
 
-    <%= f.file_field :essay_path, :label => "Essays "%>
+    Upload essay: <%= f.file_field :essay_path, :label => "Essays "%>
 
     <%= f.button :submit, :class => "blue darken-3"%>
 
