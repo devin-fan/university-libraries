@@ -6876,3 +6876,71 @@ Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-08 21:10:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#new as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  Rendered films/_form.html.erb (70.8ms)
+  Rendered films/new.html.erb within layouts/application (82.3ms)
+Completed 200 OK in 221ms (Views: 165.9ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-08 21:10:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-08 21:10:22 -0400
+
+
+Started GET "/assets/back.png" for ::1 at 2018-04-08 21:10:22 -0400
+
+
+Started GET "/films" for ::1 at 2018-04-08 21:10:31 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.5ms)
+  [1m[35mFilm Load (6.2ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
+  Rendered films/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 67ms (Views: 35.6ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/films" for ::1 at 2018-04-08 21:10:34 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.3ms)
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1[0m  [["film_type", 1]]
+  Rendered films/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-04-08 21:10:36 -0400
+Processing by FilmsController#new as HTML
+  Rendered partials/_nav.html.erb (0.8ms)
+  Rendered films/_form.html.erb (40.2ms)
+  Rendered films/new.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 63ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films" for ::1 at 2018-04-08 21:10:38 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.4ms)
+  [1m[35mFilm Load (14.5ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
+  Rendered films/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 46ms (Views: 30.9ms | ActiveRecord: 14.5ms)

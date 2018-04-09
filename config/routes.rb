@@ -6,6 +6,12 @@ UniversityLibraries::Application.routes.draw do
     get 'films/:id/download' => 'films#download'
     get 'films/:id/view' => 'films#view'
 
+# Semi-static page routes
+    get 'home' => 'home#home', as: :home
+    get 'about' => 'home#about', as: :about
+
+    root :to => 'home#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
