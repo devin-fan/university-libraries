@@ -6876,6 +6876,7 @@ Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 00:57:20 -0400
+<<<<<<< HEAD
 
 
 Started GET "/films" for ::1 at 2018-04-12 19:28:52 -0400
@@ -6943,6 +6944,288 @@ PG::ConnectionBad (could not connect to server: No such file or directory
   [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+=======
+  [1m[36mSQL (6.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (25.5ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.3ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (5.0ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.4ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (12.1ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.5ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (7.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+
+
+Started GET "/films" for ::1 at 2018-04-03 12:01:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.9ms)
+  [1m[35mFilm Load (0.5ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 491ms (Views: 455.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 12:01:55 -0400
+
+
+Started GET "/films" for ::1 at 2018-04-03 12:01:59 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.6ms)
+  [1m[36mFilm Load (1.7ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1[0m  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 1.7ms)
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTags (20180318183121)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180318183121"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFilmTags (20180320203150)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180320203150"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20180320203320)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180320203320"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFilms (20180327040507)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180327040507"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddFilmTagIDs (20180402050925)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "film_tags" ADD "film_id" int[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "film_tags" ADD "tag_id" int
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180402050925"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (7.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'film_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'films'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+
+
+Started GET "/films" for ::1 at 2018-04-03 12:19:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  [1m[35mFilm Load (0.6ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 100ms (Views: 64.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 12:19:55 -0400
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.3ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.7ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) 
+  [1m[36m (10.0ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.9ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180402050925')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180318183121')
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180320203150')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20180320203320')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180327040507')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+
+
+Started GET "/films" for ::1 at 2018-04-03 12:20:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.6ms)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 0]]
+  Rendered films/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 78ms (Views: 48.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-03 12:20:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddBaseFilmPathToFilms (20180403161925)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mALTER TABLE "films" ADD "base_film_path" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180403161925"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+>>>>>>> Phase_1
 FROM pg_constraint c
 JOIN pg_class t1 ON c.conrelid = t1.oid
 JOIN pg_class t2 ON c.confrelid = t2.oid
@@ -6954,7 +7237,11 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+<<<<<<< HEAD
   [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+=======
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+>>>>>>> Phase_1
 FROM pg_constraint c
 JOIN pg_class t1 ON c.conrelid = t1.oid
 JOIN pg_class t2 ON c.confrelid = t2.oid
@@ -6966,7 +7253,11 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+<<<<<<< HEAD
   [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+=======
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+>>>>>>> Phase_1
 FROM pg_constraint c
 JOIN pg_class t1 ON c.conrelid = t1.oid
 JOIN pg_class t2 ON c.confrelid = t2.oid
@@ -6990,6 +7281,7 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+<<<<<<< HEAD
   [1m[36mSQL (1.1ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
   [1m[35m (9.1ms)[0m  DROP TABLE "film_tags" CASCADE
   [1m[36m (9.2ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
@@ -7071,3 +7363,517 @@ Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:34:21 -040
 
 
 Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:34:21 -0400
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ten Minutes to Live"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4"], ["permission", 0], ["description", "Ten Minutes to Live is a 1932 American film directed by Oscar Micheaux.  A movie producer offers a nightclub singer a role in his latest film, but all he really wants to do is bed her. She knows, but accepts anyway. Meanwhile, a patron at the club gets a note saying that she'll soon get another note, and that she will be killed ten minutes after that."], ["created_at", "2018-04-05 21:44:47.805970"], ["updated_at", "2018-04-05 21:44:47.805970"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Swing"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/swing.mp4"], ["permission", 0], ["description", "Swing! is a 1938 American race film directed, produced and written by Oscar Micheaux.  Mandy Jenkins (Cora Green), an African American cook for a wealthy white family in Birmingham, Alabama, discovers her husband Cornell is having an affair with Eloise Jackson (Hazel Diaz). When she confronts her husband and Eloise at a nightclub, a violent fight ensues. Eloise leaves Birmingham and relocates to the Harlem section of New York City, where she gets a job as a cabaret vocalist under the false name of Cora Smith. She is followed to Harlem by her husband, Lem, who becomes mixed up in the local crime scene. Mandy also arrives in New York, having left Cornell. She gets a job as the wardrobe mistress at the cabaret where Eloise is performing. When Eloise breaks her leg during a drunken fall, Mandy is recruited as the last-minute substitute and becomes a musical star as the revue is transferred to Broadway. Cornell, who is now destitute, reunites with Mandy and agrees never to cheat on her again."], ["created_at", "2018-04-05 21:44:47.813943"], ["updated_at", "2018-04-05 21:44:47.813943"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Notorious Elinor Lee"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/the_notorious_elinor_lee.mp4"], ["permission", 0], ["description", "The Notorious Elinor Lee is a 1940 race film directed, written, and co-produced by the African-American filmmaker Oscar Micheaux.  Elinor Lee, a gangster’s moll living in the Harlem section of New York City, has signed up-and-coming boxer Benny Blue to a 10-year contract. Lee and a pair of corrupt fight promoter scheme to build up Blue as a potential champion, with the goal of betting against him when they force him to take a dive in a champion fight. Lee conspires to hire Fredi, an old friend of Blue and an escaped convict hiding from the law, to be his sweetheart and to control him for Lee and her partners.\nThe plans are derailed when Blue loses a key fight to a German boxer, but he works to regain his standing in the sport and is able to meet the German in a rematch after two years have passed. Lee and her partners bet against Blue, but they are financially ruined when Blue prevails in the fight and comes out the winner."], ["created_at", "2018-04-05 21:44:47.816842"], ["updated_at", "2018-04-05 21:44:47.816842"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Underworld"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/underworld.mp4"], ["permission", 0], ["description", "A young college student falls under the influence of a murderous gambler."], ["created_at", "2018-04-05 21:44:47.819604"], ["updated_at", "2018-04-05 21:44:47.819604"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Exile"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/the_exile.mp4"], ["permission", 0], ["description", "The Exile is a 1931 American film by Oscar Micheaux with the co-direction of the Dances and Ensemble by Leonard Harper. A drama–romance of the race film genre, it was Micheaux's first feature-length talkie, and the first African American talkie. Adapted from Micheaux's first novel, The Conquest (1913), it has some autobiographical elements: like the film's central character Jean Baptiste (played by Stanley Morrell), Micheaux spent several years as a cattle rancher in an otherwise all-white area of South Dakota."], ["created_at", "2018-04-05 21:44:47.822145"], ["updated_at", "2018-04-05 21:44:47.822145"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.0ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (8.8ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (5.6ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "base_film_path" character varying) [0m
+  [1m[35m (2.4ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.8ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (9.1ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (2.8ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "base_film_path" character varying) [0m
+  [1m[35m (2.7ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20180403161925')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Ten Minutes to Live"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/10_minutes_to_live.mp4"], ["permission", 0], ["description", "Ten Minutes to Live is a 1932 American film directed by Oscar Micheaux.  A movie producer offers a nightclub singer a role in his latest film, but all he really wants to do is bed her. She knows, but accepts anyway. Meanwhile, a patron at the club gets a note saying that she'll soon get another note, and that she will be killed ten minutes after that."], ["created_at", "2018-04-05 21:44:53.686474"], ["updated_at", "2018-04-05 21:44:53.686474"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Swing"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/swing.mp4"], ["permission", 0], ["description", "Swing! is a 1938 American race film directed, produced and written by Oscar Micheaux.  Mandy Jenkins (Cora Green), an African American cook for a wealthy white family in Birmingham, Alabama, discovers her husband Cornell is having an affair with Eloise Jackson (Hazel Diaz). When she confronts her husband and Eloise at a nightclub, a violent fight ensues. Eloise leaves Birmingham and relocates to the Harlem section of New York City, where she gets a job as a cabaret vocalist under the false name of Cora Smith. She is followed to Harlem by her husband, Lem, who becomes mixed up in the local crime scene. Mandy also arrives in New York, having left Cornell. She gets a job as the wardrobe mistress at the cabaret where Eloise is performing. When Eloise breaks her leg during a drunken fall, Mandy is recruited as the last-minute substitute and becomes a musical star as the revue is transferred to Broadway. Cornell, who is now destitute, reunites with Mandy and agrees never to cheat on her again."], ["created_at", "2018-04-05 21:44:53.692016"], ["updated_at", "2018-04-05 21:44:53.692016"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "The Notorious Elinor Lee"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/the_notorious_elinor_lee.mp4"], ["permission", 0], ["description", "The Notorious Elinor Lee is a 1940 race film directed, written, and co-produced by the African-American filmmaker Oscar Micheaux.  Elinor Lee, a gangster’s moll living in the Harlem section of New York City, has signed up-and-coming boxer Benny Blue to a 10-year contract. Lee and a pair of corrupt fight promoter scheme to build up Blue as a potential champion, with the goal of betting against him when they force him to take a dive in a champion fight. Lee conspires to hire Fredi, an old friend of Blue and an escaped convict hiding from the law, to be his sweetheart and to control him for Lee and her partners.\nThe plans are derailed when Blue loses a key fight to a German boxer, but he works to regain his standing in the sport and is able to meet the German in a rematch after two years have passed. Lee and her partners bet against Blue, but they are financially ruined when Blue prevails in the fight and comes out the winner."], ["created_at", "2018-04-05 21:44:53.694713"], ["updated_at", "2018-04-05 21:44:53.694713"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Underworld"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/underworld.mp4"], ["permission", 0], ["description", "A young college student falls under the influence of a murderous gambler."], ["created_at", "2018-04-05 21:44:53.697412"], ["updated_at", "2018-04-05 21:44:53.697412"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "The Exile"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "https://1548544621.rsc.cdn77.org/the_exile.mp4"], ["permission", 0], ["description", "The Exile is a 1931 American film by Oscar Micheaux with the co-direction of the Dances and Ensemble by Leonard Harper. A drama–romance of the race film genre, it was Micheaux's first feature-length talkie, and the first African American talkie. Adapted from Micheaux's first novel, The Conquest (1913), it has some autobiographical elements: like the film's central character Jean Baptiste (played by Stanley Morrell), Micheaux spent several years as a cattle rancher in an otherwise all-white area of South Dakota."], ["created_at", "2018-04-05 21:44:53.700164"], ["updated_at", "2018-04-05 21:44:53.700164"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/films" for ::1 at 2018-04-05 17:58:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
+  Rendered films/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 94ms (Views: 62.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-05 17:58:48 -0400
+
+
+Started GET "/tags" for ::1 at 2018-04-05 17:58:58 -0400
+Processing by TagsController#index as HTML
+  Rendered tags/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-05 17:58:59 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-05 17:58:59 -0400
+
+
+Started GET "/tags" for ::1 at 2018-04-05 18:03:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  [1m[35mTag Load (1.6ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 73ms (Views: 51.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-05 18:03:32 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-05 18:03:32 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-05 18:03:50 -0400
+Processing by FilmsController#new as HTML
+  Rendered partials/_nav.html.erb (0.3ms)
+  Rendered films/_form.html.erb (73.1ms)
+  Rendered films/new.html.erb within layouts/application (80.5ms)
+Completed 200 OK in 127ms (Views: 97.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/back.png" for ::1 at 2018-04-05 18:03:50 -0400
+
+
+Started POST "/films" for ::1 at 2018-04-05 18:04:20 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mz+s5DXs27EAg449wahruGhgKGoYxepOFK9NRoTmg3M7o6DwSRPZm5z8Imc1iey2l4L0aElcqZpeEFFqnlvkYQ==", "film"=>{"title"=>"asdf", "director"=>"asdf", "tag_names"=>"asdf asdf1", "description"=>"asdf", "film_path"=>#<ActionDispatch::Http::UploadedFile:0x007f8564136c58 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180405-1994-1f7w4rz.mp4>, @original_filename="video-1517172393.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"film[film_path]\"; filename=\"video-1517172393.mp4\"\r\nContent-Type: video/mp4\r\n">, "permission"=>"0", "essay_path"=>#<ActionDispatch::Http::UploadedFile:0x007f8564136b68 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180405-1994-163ww92.docx>, @original_filename="Michael_Lin.Resume.Aug2017.docx", @content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document", @headers="Content-Disposition: form-data; name=\"film[essay_path]\"; filename=\"Michael_Lin.Resume.Aug2017.docx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n">}, "commit"=>"Create Film"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "films" ("title", "essay_path", "director", "film_path", "permission", "description", "film_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "asdf"], ["essay_path", "Michael_Lin.Resume.Aug2017.docx"], ["director", "asdf"], ["film_path", "video-1517172393.mp4"], ["permission", 0], ["description", "asdf"], ["film_type", 0], ["created_at", "2018-04-05 22:04:20.701264"], ["updated_at", "2018-04-05 22:04:20.701264"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."name" = $1  [["name", "asdf"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "asdf"], ["created_at", "2018-04-05 22:04:20.735646"], ["updated_at", "2018-04-05 22:04:20.735646"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["film_id", 6], ["tag_id", 1], ["created_at", "2018-04-05 22:04:20.738498"], ["updated_at", "2018-04-05 22:04:20.738498"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1[0m  [["name", "asdf1"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdf1"], ["created_at", "2018-04-05 22:04:20.742922"], ["updated_at", "2018-04-05 22:04:20.742922"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["film_id", 6], ["tag_id", 2], ["created_at", "2018-04-05 22:04:20.745140"], ["updated_at", "2018-04-05 22:04:20.745140"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/films/6
+Completed 302 Found in 70ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/films/6" for ::1 at 2018-04-05 18:04:20 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFilm Load (0.6ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered partials/_nav.html.erb (0.4ms)
+  Rendered films/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-05 18:04:20 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-05 18:04:20 -0400
+
+
+Started GET "/films/6/view" for ::1 at 2018-04-05 18:04:21 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517172393.mp4 (0.1ms)
+Completed 200 OK in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/films" for ::1 at 2018-04-05 18:04:23 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (0.4ms)
+  [1m[35mFilm Load (1.8ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
+  Rendered films/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/films/6/view" for ::1 at 2018-04-05 18:04:23 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517172393.mp4 (0.2ms)
+Completed 200 OK in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/tags" for ::1 at 2018-04-05 18:04:29 -0400
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.4ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-05 18:04:29 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-05 18:04:29 -0400
+
+
+Started GET "/tags" for ::1 at 2018-04-05 23:20:10 -0400
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.4ms)
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-05 23:20:11 -0400
+>>>>>>> Phase_1
+
+
+Started GET "/tags" for ::1 at 2018-04-12 19:35:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.6ms)
+  [1m[35mTag Load (1.6ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 56ms (Views: 39.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:35:52 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:35:52 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-04-12 19:35:55 -0400
+Processing by FilmsController#new as HTML
+  Rendered partials/_nav.html.erb (0.3ms)
+  Rendered films/_form.html.erb (72.1ms)
+  Rendered films/new.html.erb within layouts/application (76.8ms)
+Completed 200 OK in 137ms (Views: 90.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/back.png" for ::1 at 2018-04-12 19:35:55 -0400
+
+
+Started POST "/films" for ::1 at 2018-04-12 19:38:25 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"50btq4lvKaOEUVXDlKw8hfqWnmLVw7A2RPt1sdxoRtK6hEXdNvNIfL3uRO3/KhAnWelgAQAK+GYGaw6Dw/W1ew==", "film"=>{"title"=>"asdf", "director"=>"asdf", "tag_names"=>"asdf asdf2", "description"=>"asdf", "film_path"=>#<ActionDispatch::Http::UploadedFile:0x007ffceb0abcd0 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180412-13307-g2zbq4.mp4>, @original_filename="video-1517172393.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"film[film_path]\"; filename=\"video-1517172393.mp4\"\r\nContent-Type: video/mp4\r\n">, "permission"=>"", "essay_path"=>#<ActionDispatch::Http::UploadedFile:0x007ffceb0ab0c8 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180412-13307-5j888y.docx>, @original_filename="function-extrema.docx", @content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document", @headers="Content-Disposition: form-data; name=\"film[essay_path]\"; filename=\"function-extrema.docx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n">}, "commit"=>"Create Film"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 422 Unprocessable Entity in 20ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Permission is not included in the list):
+  app/controllers/films_controller.rb:48:in `create'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.8ms)
+
+
+Started POST "/films" for ::1 at 2018-04-12 19:38:38 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6UPJTJP9m1q2OJbLA2fphfG8TJgHHxKPOtgPtnW7m1a0gWE6LGH6hY+Hh+Vo4cUnUsOy+9LWWt94SHSEaiZo/w==", "film"=>{"title"=>"asdf", "director"=>"asdf", "tag_names"=>"asdf asdf2", "description"=>"asdf", "film_path"=>#<ActionDispatch::Http::UploadedFile:0x007ffcec8f04a8 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180412-13307-1vbmrdd.mp4>, @original_filename="video-1517172393.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"film[film_path]\"; filename=\"video-1517172393.mp4\"\r\nContent-Type: video/mp4\r\n">, "permission"=>"0", "essay_path"=>#<ActionDispatch::Http::UploadedFile:0x007ffcec903c60 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180412-13307-url4fx.docx>, @original_filename="function-extrema.docx", @content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document", @headers="Content-Disposition: form-data; name=\"film[essay_path]\"; filename=\"function-extrema.docx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n">}, "commit"=>"Create Film"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "films" ("title", "essay_path", "director", "film_path", "permission", "description", "film_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "asdf"], ["essay_path", "function-extrema.docx"], ["director", "asdf"], ["film_path", "video-1517172393.mp4"], ["permission", 0], ["description", "asdf"], ["film_type", 0], ["created_at", "2018-04-12 23:38:38.291343"], ["updated_at", "2018-04-12 23:38:38.291343"]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."name" = $1  [["name", "asdf"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "asdf"], ["created_at", "2018-04-12 23:38:38.327255"], ["updated_at", "2018-04-12 23:38:38.327255"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["film_id", 6], ["tag_id", 1], ["created_at", "2018-04-12 23:38:38.331103"], ["updated_at", "2018-04-12 23:38:38.331103"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1[0m  [["name", "asdf2"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdf2"], ["created_at", "2018-04-12 23:38:38.335320"], ["updated_at", "2018-04-12 23:38:38.335320"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["film_id", 6], ["tag_id", 2], ["created_at", "2018-04-12 23:38:38.338128"], ["updated_at", "2018-04-12 23:38:38.338128"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/films/6
+Completed 302 Found in 72ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/films/6" for ::1 at 2018-04-12 19:38:38 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFilm Load (1.4ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered partials/_nav.html.erb (0.3ms)
+  Rendered films/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:38:38 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:38:38 -0400
+
+
+Started GET "/films/6/view" for ::1 at 2018-04-12 19:38:38 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (0.8ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517172393.mp4 (0.3ms)
+Completed 200 OK in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/tags" for ::1 at 2018-04-12 19:38:43 -0400
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.3ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:38:44 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:38:44 -0400
+
+
+Started GET "/tags" for ::1 at 2018-04-12 19:42:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (1.2ms)
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 68ms (Views: 48.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:42:16 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:42:16 -0400
+
+
+Started GET "/tags/1" for ::1 at 2018-04-12 19:42:20 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFilm Load (0.6ms)[0m  SELECT "films".* FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  ORDER BY "films"."title" ASC  [["tag_id", 1]]
+  Rendered partials/_nav.html.erb (0.3ms)
+  Rendered tags/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 69ms (Views: 11.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:42:20 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:42:20 -0400
+
+
+Started GET "/films/6" for ::1 at 2018-04-12 19:42:27 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered partials/_nav.html.erb (0.7ms)
+  Rendered films/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/films/6/view" for ::1 at 2018-04-12 19:42:27 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"6"}
+  [1m[35mFilm Load (1.0ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 6]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517172393.mp4 (0.4ms)
+Completed 200 OK in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/films/6/view" for ::1 at 2018-04-12 19:42:29 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (2.4ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517172393.mp4 (0.3ms)
+Completed 200 OK in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/tags/1" for ::1 at 2018-04-12 19:49:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTag Load (0.4ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFilm Load (0.6ms)[0m  [1mSELECT "films".* FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  ORDER BY "films"."title" ASC[0m  [["tag_id", 1]]
+  Rendered partials/_nav.html.erb (0.9ms)
+  Rendered tags/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 126ms (Views: 48.6ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:49:20 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:49:20 -0400
+
+
+Started GET "/tags/" for ::1 at 2018-04-12 19:49:22 -0400
+Processing by TagsController#index as HTML
+  Rendered tags/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:14: syntax error, unexpected tGVAR, expecting keyword_end
+/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:16: unknown regexp options - dv
+/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:17: syntax error, unexpected '<'
+                </div>
+                 ^
+/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:18: unknown regexp options - dv
+/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:19: syntax error, unexpected '<'
+        <% end 
+         ^
+/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/devinfan/private/67373/university-libraries/app/views/tags/index.html.erb:26: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/tags/index.html.erb:14: syntax error, unexpected tGVAR, expecting keyword_end
+  app/views/tags/index.html.erb:16: unknown regexp options - dv
+  app/views/tags/index.html.erb:17: syntax error, unexpected '<'
+  app/views/tags/index.html.erb:18: unknown regexp options - dv
+  app/views/tags/index.html.erb:19: syntax error, unexpected '<'
+  app/views/tags/index.html.erb:24: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/tags/index.html.erb:26: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.3ms)
+
+
+Started GET "/tags/" for ::1 at 2018-04-12 19:50:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.0ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     9:                 <div class="col s12">
+    10:                     <div class="card blue-grey darken-1">
+    11: 			            <div class="card-content white-text">
+    12: 			                <%= link_to tag_path(@tag.id) do %>
+    13:                                 <span class="card-title"><%= tag.name %></span>
+    14:                             <% end %>
+    15: 			            </div>
+  app/views/tags/index.html.erb:12:in `block in _app_views_tags_index_html_erb__3794118446922442131_70311344782240'
+  app/views/tags/index.html.erb:7:in `_app_views_tags_index_html_erb__3794118446922442131_70311344782240'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.2ms)
+
+
+Started GET "/tags/" for ::1 at 2018-04-12 19:50:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#index as HTML
+  Rendered partials/_nav.html.erb (0.7ms)
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 68ms (Views: 49.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-12 19:50:32 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-12 19:50:32 -0400
+
+
+Started GET "/tags/1" for ::1 at 2018-04-12 19:50:34 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (2.6ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFilm Load (0.5ms)[0m  SELECT "films".* FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  ORDER BY "films"."title" ASC  [["tag_id", 1]]
+  Rendered partials/_nav.html.erb (0.2ms)
+  Rendered tags/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 81ms (Views: 9.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/tags/2" for ::1 at 2018-04-12 19:50:38 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  ORDER BY "films"."title" ASC  [["tag_id", 2]]
+  Rendered partials/_nav.html.erb (1.9ms)
+  Rendered tags/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tags/1" for ::1 at 2018-04-12 19:51:14 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFilm Load (0.5ms)[0m  SELECT "films".* FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  ORDER BY "films"."title" ASC  [["tag_id", 1]]
+  Rendered partials/_nav.html.erb (0.2ms)
+  Rendered tags/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.9ms)
