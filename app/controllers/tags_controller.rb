@@ -6,6 +6,7 @@ class TagsController < ApplicationController
     end
 
     def show
+        @related_films = @tag.films.alphabetical.to_a
     end
 
     def new
