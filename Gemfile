@@ -36,6 +36,9 @@ gem 'simple_form'
 #For passwords
 gem 'bcrypt'
 
+#Authentication
+gem 'cancancan'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
