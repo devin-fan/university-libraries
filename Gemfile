@@ -36,6 +36,9 @@ gem 'simple_form'
 #For passwords
 gem 'bcrypt'
 
+#Fuzzy search for video name and tag
+gem 'fuzzily'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

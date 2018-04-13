@@ -1,6 +1,7 @@
 class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download, :view]
-     
+    # skip_before_action :set_film, only: [:search]
+
     def index
         @base_films = Film.base_films
     end
@@ -65,6 +66,13 @@ class FilmsController < ApplicationController
     end
 
     def edit
+    end
+
+    def search
+        search_query = params[:q]
+        @matched_by_title = Film.find_by_fuzzy_title(search_query)
+        @matched_by_director = Film.find_by_fuzzy_director(search_query)
+        @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
     end
     
     private 

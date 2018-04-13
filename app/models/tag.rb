@@ -1,4 +1,6 @@
 class Tag < ActiveRecord::Base
+    fuzzily_searchable :name
+    
     has_many :film_tags
     has_many :films, through: :film_tags
 

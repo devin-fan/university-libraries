@@ -3,6 +3,7 @@ UniversityLibraries::Application.routes.draw do
 
     resources :films
     resources :tags
+    get 'search' => 'films#search'
     get 'films/:id/download' => 'films#download'
     get 'films/:id/view' => 'films#view'
 

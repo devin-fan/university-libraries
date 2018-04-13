@@ -1,4 +1,7 @@
 class Film < ActiveRecord::Base
+    fuzzily_searchable :title
+    fuzzily_searchable :director
+
     has_many :film_tags
     has_many :tags, through: :film_tags
 

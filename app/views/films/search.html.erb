@@ -1,0 +1,27 @@
+<!-- Navigation -->
+<%= render partial: "partials/nav" %>
+
+
+  <div class="container">
+    Film title results: 
+    <ul>
+        <% @matched_by_title.each do |f| %>
+            <li><%= f.title %>, by <%= f.director %></li>
+        <% end %>
+    </ul>
+
+    Film director results: 
+    <ul>
+        <% @matched_by_director.each do |f| %>
+            <li><%= f.title %>, by <%= f.director %></li>
+        <% end %>
+    </ul>
+
+    Film title results: 
+    <ul>
+        <% @matched_by_tag.each do |t| %>
+            <li><%= t.name %></li>
+        <% end %>
+    </ul>
+
+  </div>
