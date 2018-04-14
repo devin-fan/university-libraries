@@ -1,6 +1,8 @@
 class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download, :view]
-     
+    layout 'application'
+
+
     def index
         @base_films = Film.base_films
     end

@@ -1,5 +1,5 @@
 UniversityLibraries::Application.routes.draw do
-    root 'films#index'
+    # root 'films#index' -------> ROOT FOR PAGE, changed to home, can toggle
 
     resources :films
     resources :tags
