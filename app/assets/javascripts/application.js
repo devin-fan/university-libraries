@@ -17,7 +17,7 @@
 //= require taggle-full
 //= require_tree .
 
-
+// --------Create function to initialize tags---------
 // var tags = new Taggle('tags');
 // var container = example4.getContainer();
 // var input = example4.getInput();

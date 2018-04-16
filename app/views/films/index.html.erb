@@ -10,13 +10,11 @@
 			<%video = Film.new%>
 			<div class="carousel carousel-slider">
 			<% @base_films.each do |film| %>
-			<%video.title = film.title%>
-			<%video.description = film.description%>
-			<%video.id = film.id%>
-			<%video.director = film.director%>
+				<%video.title = film.title%>
+				<%video.description = film.description%>
+				<%video.id = film.id%>
+				<%video.director = film.director%>
 				<%= link_to image_tag("#{film.image_path}"), "/films/#{film.id}", :class=> "carousel-item", :id=> "carousel-img"%>
-
-
 			   
 
 			<% end %>
@@ -24,7 +22,7 @@
 
 			<div id="film-describe">
 					  <%= render partial: "partials/describe",  locals: {title: video.title, description: video.description, id: video.id, director: video.director} %>
-				</div>
+				</div>      
 
 	
 

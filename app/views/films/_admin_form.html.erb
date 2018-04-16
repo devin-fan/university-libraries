@@ -1,5 +1,3 @@
-
-
 <%= simple_form_for @film, html: {multipart: true} do |f| %>
     <div id="film_form">
     <b>Title: </b> <%= f.input :title %> <br>
@@ -19,12 +17,16 @@
     <%= f.input :tag_names, wrapper_html: {id: "tags"}%>
 
 
-
     <b>Description: </b> <%= f.input :description, as: :text %> <br>
     <b>Upload film: </b> <%= f.file_field :film_path, :label => "Films "%> <br>
+    <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
+    <b>Base Film: </b>  <%= f.input :film_type,  collection: [[1, 'Yes'], [0, 'No']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+
 
      <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
     <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+
+     <b>Upload Cover-Art: </b> <%= f.file_field :image_path, :label => "Cover-Art "%><br>
 
 
     <b>Upload essay: </b> <%= f.file_field :essay_path, :label => "Essays "%><br>
