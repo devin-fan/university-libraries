@@ -1,16 +1,36 @@
+
+
 <%= simple_form_for @film, html: {multipart: true} do |f| %>
     <div id="film_form">
-    Title: <%= f.input :title %>
-    Uploaded by: <%= f.input :director %>
+    <b>Title: </b> <%= f.input :title %> <br>
+    <b>Uploaded by: </b> <%= f.input :director %> <br>
     <%# Put in nested form for tags later %>
-    Tags (separated by space)
-    <%= f.input :tag_names %>
-    Description: <%= f.input :description, as: :text %>
-    Upload film: <%= f.file_field :film_path, :label => "Films "%>
-    Permission: <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> 
+<!-- 
+    <div class="input textarea clearfix example1">
+        <span class="taggle_placeholder" style="opacity: 1;">Enter tags...</span>
+        <ul class="taggle_list">
+        <li><input type="text" class="taggle_input" tabindex="1" style="padding-left: 0px; padding-right: 0px; width: 300px;"></li>
+        </ul>
+        <div class="taggle_sizer" style="font-size: 16px;">s</div>
+    </div> -->
+
+    <b>Tags (separated by space)</b> <br>
+
+    <%= f.input :tag_names, wrapper_html: {id: "tags"}%>
 
 
-    Upload essay: <%= f.file_field :essay_path, :label => "Essays "%>
+
+    <b>Description: </b> <%= f.input :description, as: :text %> <br>
+    <b>Upload film: </b> <%= f.file_field :film_path, :label => "Films "%> <br>
+    <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
+    <b>Base Film: </b>  <%= f.input :film_type,  collection: [[1, 'Yes'], [0, 'No']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+
+
+     <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
+    <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+
+
+    <b>Upload essay: </b> <%= f.file_field :essay_path, :label => "Essays "%><br>
 
     <%= f.button :submit, :class => "blue darken-3"%>
 
