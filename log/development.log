@@ -7877,3 +7877,89 @@ Processing by TagsController#show as HTML
   Rendered partials/_nav.html.erb (0.2ms)
   Rendered tags/show.html.erb within layouts/application (1.9ms)
 Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'film_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'films'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.3ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "base_film_path" character varying) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.9ms)[0m  DROP TABLE "film_tags" CASCADE
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "film_id" integer, "tag_id" integer) [0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "films" CASCADE
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "base_film_path" character varying) [0m
+  [1m[35m (4.6ms)[0m  DROP TABLE "tags" CASCADE
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ten Minutes to Live"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "uploads/base_films/10_minutes_to_live.mp4"], ["permission", 0], ["description", "Ten Minutes to Live is a 1932 American film directed by Oscar Micheaux.  A movie producer offers a nightclub singer a role in his latest film, but all he really wants to do is bed her. She knows, but accepts anyway. Meanwhile, a patron at the club gets a note saying that she'll soon get another note, and that she will be killed ten minutes after that."], ["created_at", "2018-04-17 02:43:21.927470"], ["updated_at", "2018-04-17 02:43:21.927470"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Swing"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "uploads/base_films/swing.mp4"], ["permission", 0], ["description", "Swing! is a 1938 American race film directed, produced and written by Oscar Micheaux.  Mandy Jenkins (Cora Green), an African American cook for a wealthy white family in Birmingham, Alabama, discovers her husband Cornell is having an affair with Eloise Jackson (Hazel Diaz). When she confronts her husband and Eloise at a nightclub, a violent fight ensues. Eloise leaves Birmingham and relocates to the Harlem section of New York City, where she gets a job as a cabaret vocalist under the false name of Cora Smith. She is followed to Harlem by her husband, Lem, who becomes mixed up in the local crime scene. Mandy also arrives in New York, having left Cornell. She gets a job as the wardrobe mistress at the cabaret where Eloise is performing. When Eloise breaks her leg during a drunken fall, Mandy is recruited as the last-minute substitute and becomes a musical star as the revue is transferred to Broadway. Cornell, who is now destitute, reunites with Mandy and agrees never to cheat on her again."], ["created_at", "2018-04-17 02:43:21.934111"], ["updated_at", "2018-04-17 02:43:21.934111"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Notorious Elinor Lee"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "uploads/base_films/the_notorious_elinor_lee.mp4"], ["permission", 0], ["description", "The Notorious Elinor Lee is a 1940 race film directed, written, and co-produced by the African-American filmmaker Oscar Micheaux.  Elinor Lee, a gangster’s moll living in the Harlem section of New York City, has signed up-and-coming boxer Benny Blue to a 10-year contract. Lee and a pair of corrupt fight promoter scheme to build up Blue as a potential champion, with the goal of betting against him when they force him to take a dive in a champion fight. Lee conspires to hire Fredi, an old friend of Blue and an escaped convict hiding from the law, to be his sweetheart and to control him for Lee and her partners.\n    The plans are derailed when Blue loses a key fight to a German boxer, but he works to regain his standing in the sport and is able to meet the German in a rematch after two years have passed. Lee and her partners bet against Blue, but they are financially ruined when Blue prevails in the fight and comes out the winner."], ["created_at", "2018-04-17 02:43:21.936651"], ["updated_at", "2018-04-17 02:43:21.936651"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "Underworld"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "uploads/base_films/underworld.mp4"], ["permission", 0], ["description", "A young college student falls under the influence of a murderous gambler."], ["created_at", "2018-04-17 02:43:21.939158"], ["updated_at", "2018-04-17 02:43:21.939158"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "films" ("title", "film_type", "director", "base_film_path", "permission", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Exile"], ["film_type", 1], ["director", "Oscar Micheaux"], ["base_film_path", "uploads/base_films/the_exile.mp4"], ["permission", 0], ["description", "The Exile is a 1931 American film by Oscar Micheaux with the co-direction of the Dances and Ensemble by Leonard Harper. A drama–romance of the race film genre, it was Micheaux's first feature-length talkie, and the first African American talkie. Adapted from Micheaux's first novel, The Conquest (1913), it has some autobiographical elements: like the film's central character Jean Baptiste (played by Stanley Morrell), Micheaux spent several years as a cattle rancher in an otherwise all-white area of South Dakota."], ["created_at", "2018-04-17 02:43:21.941703"], ["updated_at", "2018-04-17 02:43:21.941703"]]
+  [1m[35m (0.3ms)[0m  COMMIT
