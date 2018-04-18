@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 20180416014542) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "base_film_path"
+<<<<<<< HEAD
     t.string   "image_path"
+
   end
 
   create_table "tags", force: :cascade do |t|
