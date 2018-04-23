@@ -1,5 +1,5 @@
 class FilmsController < ApplicationController
-    before_action :set_film, only: [:show, :download, :view]
+    before_action :set_film, only: [:show, :download, :view], except: :admin_film
      
     def index
         @base_films = Film.base_films
@@ -10,7 +10,7 @@ class FilmsController < ApplicationController
 
     def download
         if(@film.film_type == 1)
-            redirect_to @film.base_film_path
+            redirect_to @film.base_film_path.url
         else
             redirect_to @film.film_path.url
         end
@@ -38,6 +38,11 @@ class FilmsController < ApplicationController
         @film = Film.new
     end
 
+    def admin_form
+        @film = Film.new
+        render 'admin_form'
+    end
+
     def create
         @film = Film.new(film_params)
         #if the admin uploader has not specified the type, then it is set to student and not base
@@ -45,6 +50,7 @@ class FilmsController < ApplicationController
             @film.film_type = 0
         end
         #Create and save all film tags
+        puts @film
         if @film.save!
             for tag_name in @film.tag_names.split
                 @film_tag = FilmTag.new
@@ -73,7 +79,7 @@ class FilmsController < ApplicationController
     end
 
     def film_params
-        params.require(:film).permit(:title, :tag_names, :essay_path, :film_type, :director, :film_path, :permission, :description)
+        params.require(:film).permit(:title, :tag_names, :essay_path, :film_type, :director, :film_path, :base_film_path, :permission, :description)
     end
         
 end

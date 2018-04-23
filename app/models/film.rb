@@ -5,7 +5,9 @@ class Film < ActiveRecord::Base
     attr_accessor :tag_names
 
     mount_uploader :film_path, StudentFilmUploader
+    mount_uploader :base_film_path, BaseFilmUploader
     mount_uploader :essay_path, EssayUploader
+    # mount_uploader :image_path, ImageUploader
 
     validates_presence_of :title, :film_type, :director, :description
     validates_presence_of :base_film_path, if: :is_base?
