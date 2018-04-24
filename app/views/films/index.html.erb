@@ -7,9 +7,11 @@
   	<br>
   	<div class="center">
 		<!-- Carousel Through Videos -->
-			<%video = Film.new%>
+			
 			<div class="carousel carousel-slider">
+				<%video = Film.new%>
 			<% @base_films.each do |film| %>
+
 				<%video.title = film.title%>
 				<%video.description = film.description%>
 				<%video.id = film.id%>

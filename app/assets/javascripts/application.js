@@ -35,12 +35,22 @@
  $(document).ready(function(){
     $('.carousel').carousel({
     	// fullWidth: true,
-  		indicators: true
+  		indicators: true,
+      numVisible: 3
     });
+    
 
-    new Taggle($('.example1.textarea')[0])
-	new Taggle($('tags'))
+    // new Taggle($('.tags')[0])
+
+    new Taggle($('.tag')[0])
+	// new Taggle($('tags'))
+
+  // var instance = M.Carousel.getInstance(elem);
+  // console.log(instance.center)
   });
+
+
+ 
 
 
      
