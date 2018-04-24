@@ -1,8 +1,8 @@
 class FilmsController < ApplicationController
-    before_action :set_film, only: [:show, :download, :view], except: :admin_film
+    before_action :set_film, only: [:show, :download, :view, :edit, :update, :destroy]
      
     def index
-        @base_films = Film.base_films
+        @base_films = Film.base_films.alphabetical
     end
       
     def show
@@ -17,16 +17,6 @@ class FilmsController < ApplicationController
     end
 
     def view
-        # movie = FFMPEG::Movie.new(@film.film_path.path)
-        # transcoder_options = { preserve_aspect_ratio: :width, preserve_aspect_ratio: :height }
-        # base_path = /^(.*[\\\/])/.match(@film.film_path.path)
-        # file_name = @film.film_path.path.split('/')[-1].split('.')[0]
-        # transcoded_movie = movie.transcode(base_path[0] + file_name + "_transcoded.mp4", transcoder_options)
-        # puts transcoded_movie.inspect
-        # @film_path = transcoded_movie.path.split('public')[1]
-
-        # send_file File.join([Rails.root, "public", @film_path]), 
-        #       :disposition => :inline, :stream => true
         if(@film.film_type == 1)
             redirect_to @film.base_film_path
         else
@@ -72,8 +62,27 @@ class FilmsController < ApplicationController
 
     def edit
     end
-    
-    private 
+
+    def update
+      if @film.update(film_params)
+        redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
+      else
+        render action: 'edit'
+      end   
+    end 
+
+    def destroy
+      @film.destroy
+      redirect_to films_path, notice: "Successfully removed #{@film.name} from the system."   
+    end
+
+    private
+    def remove_base_film (film)
+    end
+
+    def remove_film_and_essay
+    end
+     
     def set_film
         @film = Film.find(params[:id])
     end

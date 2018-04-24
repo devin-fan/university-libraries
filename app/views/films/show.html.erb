@@ -16,6 +16,7 @@
 	  	<br>
         <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true %>
 	  	<br>
+      <%= button_to "delete", @film, :method => :delete %>
   	</div>
   	
 

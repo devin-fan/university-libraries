@@ -4,6 +4,8 @@ UniversityLibraries::Application.routes.draw do
     get 'films/admin' => 'films#admin_form'
     resources :films
     resources :tags
+    resources :users
+    get 'films/:id/edit' => 'films#edit'
     get 'films/:id/download' => 'films#download'
     get 'films/:id/view' => 'films#view'
 
