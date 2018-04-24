@@ -2,10 +2,11 @@ class TagsController < ApplicationController
     before_action :set_tag, only: [:show]
 
     def index
-        @tags = Tag.all
+        @tags = Tag.alphabetical
     end
 
     def show
+        @tagged_films = @tag.films.alphabetical
     end
 
     def new

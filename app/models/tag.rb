@@ -5,4 +5,5 @@ class Tag < ActiveRecord::Base
     validates_presence_of :name
 
     scope :has_name, -> (in_name) { where(name: in_name) }
+    scope :alphabetical, -> { order(name: :asc) }
 end
