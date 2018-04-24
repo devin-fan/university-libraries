@@ -1,6 +1,7 @@
 UniversityLibraries::Application.routes.draw do
     root 'films#index'
-
+    
+    get 'films/admin' => 'films#admin_form'
     resources :films
     resources :tags
     resources :users

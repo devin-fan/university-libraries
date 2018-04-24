@@ -1,4 +1,8 @@
 /tmp/
+/db/
 /log/development.log
+/tmp/
+/public/uploads/
 .DS_Store
 Gemfile.lock
+/config/database.yml
