@@ -16,8 +16,8 @@
 				<%video.description = film.description%>
 				<%video.id = film.id%>
 				<%video.director = film.director%>
-				<%= link_to image_tag("#{film.image_path}"), "/films/#{film.id}", :class=> "carousel-item", :id=> "carousel-img"%>
-			   
+				
+				<%= link_to image_tag("#{film.image_path}"), "/films/#{film.id}", :class=> "carousel-item", :id=> "carousel-img"%>		   
 
 			<% end %>
 		</div>

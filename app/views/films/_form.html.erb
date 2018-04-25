@@ -7,11 +7,8 @@
     <%# Put in nested form for tags later %>
 
 
-     <b>Tags (separated by space)</b> <br>
-    <!-- <div class="input tags">
-    </div>
- -->
-    <%= f.input :tag_names, wrapper_html: {class: "tag"}%>
+     <b>Tags (separated by shift)</b> <br>
+    <%= f.input :tag_names, label_html: {class: "tags", id: "tags-view"}%>
 
 
 

@@ -23,31 +23,43 @@
 // var input = example4.getInput();
 
 
-
-// $('.carousel.carousel-slider').carousel({
-//     fullWidth: true
-//   });
-
-  // var instance = M.Carousel.init({
-  //   fullWidth: true
-  // });
-
  $(document).ready(function(){
     $('.carousel').carousel({
-    	// fullWidth: true,
-  		indicators: true,
+     // fullWidth: true,
+      indicators: true,
       numVisible: 3
     });
-    
 
-    // new Taggle($('.tags')[0])
+    new Taggle($('.tags')[0])
 
-    new Taggle($('.tag')[0])
-	// new Taggle($('tags'))
 
-  // var instance = M.Carousel.getInstance(elem);
-  // console.log(instance.center)
   });
+
+
+
+  // INITIATES THE CAROUSEL FOR THE FILM
+
+ // $(document).ready(function(){
+ //    // $('.carousel').carousel({
+ //    // 	// fullWidth: true,
+ //  		// indicators: true,
+ //    //   numVisible: 3
+ //    // });
+
+ //    // new Taggle($('.tags')[0])
+
+ //    // var instance = M.Carousel.init({
+ //    //     // fullWidth: true,
+ //    //     indicators: true,
+ //    //     numVisible: 3
+ //    //   });
+
+ //    var elem = document.querySelector('.carousel');
+ //    var instance = M.Carousel.init(elem)
+ //    console.log(instance.center)
+
+ //  });
+
 
 
  
