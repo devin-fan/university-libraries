@@ -1,9 +1,12 @@
 UniversityLibraries::Application.routes.draw do
     root 'films#index'
-
+    
+    get 'films/admin' => 'films#admin_form'
     resources :films
     resources :tags
     get 'search' => 'films#search'
+    resources :users
+    get 'films/:id/edit' => 'films#edit'
     get 'films/:id/download' => 'films#download'
     get 'films/:id/view' => 'films#view'
 
