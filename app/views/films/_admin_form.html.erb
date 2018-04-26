@@ -26,7 +26,7 @@
      <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
     <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
-     <b>Upload Cover-Art: </b> <%= f.file_field :image_path, :label => "Cover-Art "%><br>
+     <b>Upload Cover-Art: </b><br> <%= f.file_field :image_path, :label => "Cover-Art "%><br><br>
 
 
     <b>Upload essay: </b> <%= f.file_field :essay_path, :label => "Essays "%><br>
