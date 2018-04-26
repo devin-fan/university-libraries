@@ -54,6 +54,8 @@ GEM
     crass (1.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    fuzzily (0.3.3)
+      activerecord (>= 2.3.17)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hike (1.2.3)
@@ -154,6 +156,7 @@ DEPENDENCIES
   bcrypt
   carrierwave
   coffee-rails (~> 4.0.0)
+  fuzzily
   jbuilder (~> 1.2)
   jquery-rails
   jquery-slick-rails
