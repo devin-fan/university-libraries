@@ -30,7 +30,7 @@
       numVisible: 3
     });
 
-    new Taggle($('.tags')[0])
+    new Taggle($('#film-tags')[0])
 
 
   });

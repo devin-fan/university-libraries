@@ -1,13 +1,27 @@
-<nav>
-    <div class="nav-wrapper blue darken-3">
-    <a href="#" class="brand-logo"> <i class="material-icons">videocam</i></a>	
-      <%= link_to 'Oscar Micheaux Society', films_path, class: "brand-logo center"%>
+
+
+
+  <nav id="site-nav">
+    <div class="nav-wrapper">
+    <a href="#" class="brand-logo"> <%= link_to image_tag('film.png'), home_path, :class=> "left"%></a> 
+
+     <!--  <%= link_to 'Oscar Micheaux Society', films_path, class: "brand-logo center"%> -->
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li> <%# link_to 'Home', films_path%> </li> 
-         <li><%= link_to 'Home', films_path %></li>
+        
+         <li><%= link_to 'Home', home_path %></li>
+         <!-- Complete After about page is finished -->
+         <!-- <li><%= link_to 'About', about_path %></li> -->
+         <li><%= link_to 'Films', films_path %></li>
           <li><%= link_to 'Upload', new_film_path %></li>
+          <li><%= link_to 'Login', new_film_path %></li>
       </ul>
     </div>
   </nav>
+
+
+
+
+
+
 
   

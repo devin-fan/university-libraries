@@ -1,0 +1,22 @@
+  
+  .landing{
+
+  	background-image: url(background.jpg);
+  	background-size: cover;
+  }
+
+
+  #site-nav{
+  	background-color: transparent;
+  }
+
+  #title{
+  	color: white;
+  	size: 2em;
+  	font-size: 5.5em;
+  }
+
+  #home-description{
+  	color: white;
+  	font-size: 1.2em;
+  }
