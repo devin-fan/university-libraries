@@ -7611,3 +7611,201 @@ Started GET "/assets/download.png" for ::1 at 2018-04-26 04:11:54 -0400
 
 
 Started GET "/assets/youtube.png" for ::1 at 2018-04-26 04:11:54 -0400
+
+
+Started GET "/films" for ::1 at 2018-04-26 04:14:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (7.8ms)
+  [1m[35mFilm Load (0.7ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  [["film_type", 1]]
+  Rendered partials/_describe.html.erb (7.7ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+  Rendered films/index.html.erb within layouts/application (110.5ms)
+Completed 200 OK in 918ms (Views: 858.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-04-26 04:14:52 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-04-26 04:14:52 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-04-26 04:14:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-04-26 04:14:52 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-04-26 04:14:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-04-26 04:14:52 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.button.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-04-26 04:14:53 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/ten-minutes.jpg" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/swing.jpg" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/notorious.jpg" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/youtube.png" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/download.png" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/underworld.jpg" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/assets/exile.jpg" for ::1 at 2018-04-26 04:14:54 -0400
+
+
+Started GET "/films" for ::1 at 2018-04-26 04:14:59 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_nav.html.erb (8.2ms)
+  [1m[36mFilm Load (16.2ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1[0m  [["film_type", 1]]
+  Rendered partials/_describe.html.erb (2.4ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (108.1ms)
+Completed 200 OK in 209ms (Views: 191.3ms | ActiveRecord: 16.2ms)

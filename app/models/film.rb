@@ -1,10 +1,14 @@
 class Film < ActiveRecord::Base
+    fuzzily_searchable :title
+    fuzzily_searchable :director
+
     has_many :film_tags
     has_many :tags, through: :film_tags
 
     attr_accessor :tag_names
 
     mount_uploader :film_path, StudentFilmUploader
+    mount_uploader :base_film_path, BaseFilmUploader
     mount_uploader :essay_path, EssayUploader
     # mount_uploader :image_path, ImageUploader
 
