@@ -66,7 +66,7 @@ class FilmsController < ApplicationController
     def edit
     end
 
-<<<<<<< HEAD
+
     def search
         search_query = params[:q]
         @matched_by_title = Film.find_by_fuzzy_title(search_query)
@@ -75,7 +75,6 @@ class FilmsController < ApplicationController
     end
     
     private 
-=======
     def update
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
@@ -96,7 +95,7 @@ class FilmsController < ApplicationController
     def remove_film_and_essay
     end
      
->>>>>>> 1fa1c3fe90000f0f6ce56b79ea933541b4201592
+
     def set_film
         @film = Film.find(params[:id])
     end
