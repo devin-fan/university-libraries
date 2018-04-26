@@ -67,8 +67,12 @@ body {
 
 
 
-.nav-wrapper{
+.nav-wrapper {
   background-color: #353B5A;
+}
+
+#page-footer{
+   background-color: #353B5A;
 }
 
 /*.clear{
