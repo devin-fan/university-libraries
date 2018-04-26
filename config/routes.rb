@@ -1,13 +1,19 @@
 UniversityLibraries::Application.routes.draw do
-    root 'films#index'
-    
-    get 'films/admin' => 'films#admin_form'
+    # root 'films#index' -------> ROOT FOR PAGE, changed to home, can toggle
+
     resources :films
     resources :tags
+    get 'search' => 'films#search'
     resources :users
     get 'films/:id/edit' => 'films#edit'
     get 'films/:id/download' => 'films#download'
     get 'films/:id/view' => 'films#view'
+
+# Semi-static page routes
+    get 'home' => 'home#home', as: :home
+    get 'about' => 'home#about', as: :about
+
+    root :to => 'home#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

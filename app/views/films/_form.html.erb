@@ -5,18 +5,11 @@
     <b>Title: </b> <%= f.input :title %> <br>
     <b>Uploaded by: </b> <%= f.input :director %> <br>
     <%# Put in nested form for tags later %>
-<!-- 
-    <div class="input textarea clearfix example1">
-        <span class="taggle_placeholder" style="opacity: 1;">Enter tags...</span>
-        <ul class="taggle_list">
-        <li><input type="text" class="taggle_input" tabindex="1" style="padding-left: 0px; padding-right: 0px; width: 300px;"></li>
-        </ul>
-        <div class="taggle_sizer" style="font-size: 16px;">s</div>
-    </div> -->
+
 
     <b>Tags (separated by space)</b> <br>
 
-    <%= f.input :tag_names, wrapper_html: {id: "tags"}%>
+    <%= f.input :tag_names, label_html: {id: "film-tags"}%>
 
 
 

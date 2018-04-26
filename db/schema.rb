@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180419043330) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "base_film_path"
+    t.string   "image_path"
     t.integer  "user_id"
   end
 
@@ -42,6 +43,17 @@ ActiveRecord::Schema.define(version: 20180419043330) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "trigrams", force: :cascade do |t|
+    t.string  "trigram",     limit: 3
+    t.integer "score",       limit: 2
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.string  "fuzzy_field"
+  end
+
+  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match", using: :btree
+  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.integer  "role"

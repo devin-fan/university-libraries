@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+
  */
 
 
@@ -33,4 +34,93 @@ body {
 	display: block;
 	margin: auto;
 }
+
+#carousel-img{
+  width: 300px;
+  height: 500px;
+}
+
+
+#film-describe{
+  top: 400px;
+}
+
+
+
+#download-img{
+  margin-right: 5em;
+}
+
+#download-img-show{
+  width: 20px;
+  height: 30px;
+}
+
+
+#play-img{
+  margin-left: 20px;
+}
+
+#tags-view{
+  
+}
+
+
+
+.nav-wrapper {
+  background-color: #353B5A;
+}
+
+#page-footer{
+   background-color: #353B5A;
+}
+
+.search {
+  width: 10%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+/*  border: 3px solid #353B5A;*/
+  padding: 5px;
+  height: 20px;
+  /*border-radius: 5px;*/
+  outline: none;
+  color: white;
+}
+
+.searchTerm:focus{
+  color: white;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  border: 3px solid #353B5A;
+  width: 40px;
+  height: 26px;
+  top: -5px;
+  background: #353B5A;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+/*.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/
+
+/*.clear{
+  opacity: 0.5;
+  background-color: none;
+}*/
+
 

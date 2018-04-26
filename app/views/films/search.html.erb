@@ -1,0 +1,37 @@
+<!-- Navigation -->
+<%= render partial: "partials/nav" %>
+  <div class="container">
+
+    <h2 class=" blue-text text-darken-3 center">Search Results</h2
+    <div class="row">
+        <div class="col s4">
+            <!-- tags -->
+            Tag results:
+            <ul class=tag_searches>
+                <% @matched_by_tag.each do |t| %>
+                    <li class="tag"><%= t.name %></li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="col s7">
+            <!-- directors and titles -->
+
+            <ul>
+                <% @matched_by_title.each do |f| %>
+                    <li><%= f.title %>, by <%= f.director %></li>
+                <% end %>
+            </ul>
+            Film director results: 
+            <ul>
+                <% @matched_by_director.each do |f| %>
+                    <li><%= f.title %>, by <%= f.director %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+  </div>
+
+
+
+
+  <%= render partial: "partials/footer" %>
