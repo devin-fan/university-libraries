@@ -21,7 +21,7 @@ class FilmsController < ApplicationController
 
     def view
         if(@film.film_type == 1)
-            redirect_to @film.base_film_path
+            redirect_to @film.base_film_path.url
         else
             send_file @film.film_path.path, :disposition => :inline, :stream => true
         end

@@ -10,6 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require slick
+ *= require slick-theme
 
  */
 
@@ -107,6 +109,10 @@ body {
   color: #fff;
   cursor: pointer;
   font-size: 20px;
+}
+
+.c_item {
+  border:1px solid black;
 }
 
 /*Resize the wrap to see the search bar change!*/

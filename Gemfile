@@ -41,8 +41,6 @@ gem 'bcrypt'
 gem "jquery-slick-rails"
 gem 'taggle'
 
-
-
 #Fuzzy search for video name and tag
 gem 'fuzzily'
 
