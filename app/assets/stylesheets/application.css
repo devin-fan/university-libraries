@@ -115,6 +115,11 @@ body {
   border:1px solid black;
 }
 
+#results-page{
+  color: #353B5A;
+  font-size: 2em;
+}
+
 /*Resize the wrap to see the search bar change!*/
 /*.wrap{
   width: 30%;
