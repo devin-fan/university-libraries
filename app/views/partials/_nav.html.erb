@@ -3,7 +3,7 @@
 
   <nav id="site-nav">
     <div class="nav-wrapper">
-    <a href="#" class="brand-logo"> <%= link_to image_tag('film.png'), home_path, :class=> "left"%></a> 
+    <a href="#" class="brand-logo"> <%= link_to image_tag('film.png'), root_path, :class=> "left"%></a> 
 
       <% unless current_page?(root_path) %>
         <%= render partial: "partials/search_bar" %>
