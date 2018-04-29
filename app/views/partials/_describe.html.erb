@@ -1,0 +1,16 @@
+<div class="center">
+	<h4 class="blue-text text-darken-3 center"><%= title %></h4>
+	<p><%= director %></p>
+	<p><%= description%></p>
+	</div>
+
+	 <%= link_to(image_tag('download.png'), "/films/#{id}/download", download: 'download', :id=> "download-img")%>
+
+
+
+	 <%= link_to(image_tag('youtube.png'), "/films/#{id}", :id=> "play-img")%>
+
+
+
+
+

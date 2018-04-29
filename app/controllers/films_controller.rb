@@ -1,6 +1,9 @@
 class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download, :view, :edit, :update, :destroy]
-     
+    # skip_before_action :set_film, only: [:search]
+    layout 'application'
+
+
     def index
         @base_films = Film.base_films.alphabetical
     end
@@ -63,6 +66,15 @@ class FilmsController < ApplicationController
     def edit
     end
 
+
+    def search
+        search_query = params[:q]
+        @matched_by_title = Film.find_by_fuzzy_title(search_query)
+        @matched_by_director = Film.find_by_fuzzy_director(search_query)
+        @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
+    end
+    
+    private 
     def update
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
@@ -83,6 +95,7 @@ class FilmsController < ApplicationController
     def remove_film_and_essay
     end
      
+
     def set_film
         @film = Film.find(params[:id])
     end
