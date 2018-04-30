@@ -43,7 +43,9 @@ class FilmsController < ApplicationController
             @film.film_type = 0
         end
         #Create and save all film tags
-        puts @film
+        if logged_in?
+            @film.user_id = current_user.id
+        end
         if @film.save!
             for tag_name in @film.tag_names.split
                 @film_tag = FilmTag.new
