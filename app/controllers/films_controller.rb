@@ -76,7 +76,6 @@ class FilmsController < ApplicationController
         @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
     end
     
-    private 
     def update
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
