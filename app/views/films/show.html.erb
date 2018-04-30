@@ -1,28 +1,35 @@
 <!-- Navigation -->
 <%= render partial: "partials/nav" %>
-
-
+   
+      <!-- Re adjust to fit screen -->
   <div class="container">
+
   	<h2 class=" blue-text text-darken-3 center"><%= @film.title %></h2>
   	
   	<div class="center">
   		<div id="film_info">
-        By: <strong><%= @film.director %></strong> <br />
-        <%= @film.description %> <br /> <br />
-	  	</div>
-      <div id="download">
-        <%= link_to("Download Now!", "/films/#{@film.id}/download", class: 'waves-effect waves-light btn-large blue darken-3', download: '')%>
-      </div>
+       <p> By: <strong><%= @film.director %></strong> <br /> </p>
+	  	</div>   
 	  	<br>
-        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true %>
+        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true %> <br>
+
+
+         <!-- Add css generated tag set up, link to tag show page -->
+     <!--     <p> Tags (Placeholder)</p> -->
+
+
+        <%= link_to(image_tag('download.png'), "/films/#{@film.id}/download", download: 'download', :id=> "download-img-show")%>
+
+
+
 	  	<br>
+      <!-- To add after finished view -->
+       <%#= button_to "delete", @film, :method => :delete %>
   	</div>
-  	
 
 
   </div>
-
-	<!--  <footer class="page-footer blue darken-3"></footer> -->
+<%= render partial: "partials/footer" %>
 
 
 
