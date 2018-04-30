@@ -3,11 +3,14 @@ UniversityLibraries::Application.routes.draw do
 
     resources :films
     resources :tags
-    get 'search' => 'films#search'
+    resources :sessions
     resources :users
+    get 'search' => 'films#search'
     get 'films/:id/edit' => 'films#edit'
     get 'films/:id/download' => 'films#download'
     get 'films/:id/view' => 'films#view'
+    get 'login' => 'sessions#new', as: :login
+    get 'logout' => 'sessions#destroy', as: :logout
 
 # Semi-static page routes
     get 'home' => 'home#home', as: :home
