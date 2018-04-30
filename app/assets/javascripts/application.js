@@ -17,6 +17,9 @@
 //= require taggle-full
 //= require_tree .
 //= require jquery.slick
+//= require owl.carousel
+
+
 
 
 // --------Create function to initialize tags---------
@@ -26,31 +29,18 @@
 
 
  $(document).ready(function(){
-    $('.films').slick({
-      centerMode: true,
-  centerPadding: '60px',
-  slidesToShow: 3,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
-    });
+    $('.carousel').carousel({
+    	indicators: true,
+    	numVisible: 3,
+    	onCycleTo: function(art) {
+      		var film = art.href.split('films/')[1];
+
+
+    		$("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
+
+
+   		}
+  });
 
     new Taggle($('#film-tags')[0])
 

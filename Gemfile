@@ -40,6 +40,7 @@ gem 'bcrypt'
 #UI Gems
 gem "jquery-slick-rails"
 gem 'taggle'
+gem 'owlcarousel-rails'
 
 
 

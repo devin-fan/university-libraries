@@ -11,8 +11,10 @@
  *= require_self
  *= require_tree .
  *= require slick
-
+ *= require owl.carousel
+ *= require owl.theme.default
  */
+ 
 
 
 body {
