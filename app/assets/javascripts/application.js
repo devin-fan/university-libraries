@@ -17,7 +17,7 @@
 //= require taggle-full
 //= require_tree .
 //= require jquery.slick
-//= require owl.carousel
+
 
 
 
@@ -32,6 +32,7 @@
     $('.carousel').carousel({
     	indicators: true,
     	numVisible: 3,
+
     	onCycleTo: function(art) {
       		var film = art.href.split('films/')[1];
 
@@ -58,8 +59,6 @@
 	//       });
 	//   }
 	// });
-
-
   });
 
 
