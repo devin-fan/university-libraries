@@ -20,6 +20,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    overflow-x:hidden;
   }
 
   main {
@@ -73,6 +74,10 @@ body {
   background-color: #353B5A;
 }
 
+.nav_user{
+  margin-right:20%;
+}
+
 #page-footer{
    position: relative;
   right: 0;
@@ -85,8 +90,10 @@ body {
 }
 
 .search {
-  width: 10%;
-  position: relative
+  width: 20%;
+  /*position: relative;*/
+  /*float:right;*/
+  margin-right: -5px;
 }
 
 .searchTerm {
@@ -125,6 +132,10 @@ body {
 #results-page{
   color: #353B5A;
   font-size: 2em;
+}
+
+#session_container{
+  width:40%;
 }
 
 /*Resize the wrap to see the search bar change!*/

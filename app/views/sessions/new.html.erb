@@ -1,20 +1,24 @@
-<h3>Log In</h3>
+<!-- Navigation -->
+<%= render partial: "partials/nav" %>
+<div class="container" id="session_container">
+  <h3>Log In</h3>
 
-<%= form_tag sessions_path do %>
+  <%= form_tag sessions_path do %>
 
-	<div class="control-group">
-    <%= label_tag :andrewid %>
-    <div class="controls">
-      <%= text_field_tag :andrewid, params[:andrewid] %>
+  	<div class="control-group">
+      <%= label_tag :andrewid %>
+      <div class="controls">
+        <%= text_field_tag :andrewid, params[:andrewid] %>
+      </div>
     </div>
-  </div>
 
-	<div class="control-group">
-    <%= label_tag :password %>
-    <div class="controls">
-      <%= password_field_tag :password %>
+  	<div class="control-group">
+      <%= label_tag :password %>
+      <div class="controls">
+        <%= password_field_tag :password %>
+      </div>
     </div>
-  </div>
 
-  <div class="actions"><%= submit_tag "Log In" %></div>
-<% end %>
+    <div class="actions"><%= submit_tag "Log In" %></div>
+  <% end %>
+</div>

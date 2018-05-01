@@ -85,8 +85,10 @@ class FilmsController < ApplicationController
     end 
 
     def destroy
-      @film.destroy
-      redirect_to films_path, notice: "Successfully removed #{@film.name} from the system."   
+        @film.remove_film_path!
+        @film.save
+        @film.destroy 
+        redirect_to films_path, notice: "Successfully removed #{@film.title} from the system."   
     end
 
     private
@@ -95,7 +97,6 @@ class FilmsController < ApplicationController
 
     def remove_film_and_essay
     end
-     
 
     def set_film
         @film = Film.find(params[:id])
