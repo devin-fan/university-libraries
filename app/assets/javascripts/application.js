@@ -10,14 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// = require jquery
+//= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require turbolinks
 //= require taggle-full
 //= require_tree .
 //= require jquery.slick
-
 
 // --------Create function to initialize tags---------
 // var tags = new Taggle('tags');
@@ -26,6 +25,32 @@
 
 
  $(document).ready(function(){
+    console.log("Running carousel");
+    $('.carousel').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+
     $('.films').slick({
       centerMode: true,
   centerPadding: '60px',
@@ -52,10 +77,13 @@
   ]
     });
 
-    new Taggle($('#film-tags')[0])
+     //    $('.carousel').carousel({
+     //     // fullWidth: true,
+     //      indicators: true,
+     //      numVisible: 3
+     //    });
 
-
-
+     //    new Taggle($('#film-tags')[0])
  //    $(window).bind("load", function () {
 	//   var footer = $("#page-footer");
 	//   var pos = footer.position();
@@ -69,27 +97,37 @@
 	//   }
 	// });
 
-
+     //    $(window).bind("load", function () {
+        //   var footer = $("#page-footer");
+        //   var pos = footer.position();
+        //   var height = $(window).height();
+        //   height = height - pos.top;
+        //   height = height - footer.height();
+        //   if (height > 0) {
+        //       footer.css({
+        //           'margin-top': height + 'px'
+        //       });
+        //   }
+        // });
   });
-
 
 
   // INITIATES THE CAROUSEL FOR THE FILM
 
  // $(document).ready(function(){
- //    // $('.carousel').carousel({
- //    // 	// fullWidth: true,
- //  		// indicators: true,
- //    //   numVisible: 3
- //    // });
+ //    $('.carousel').carousel({
+ //    	// fullWidth: true,
+ //  		indicators: true,
+ //      numVisible: 3
+ //    });
 
- //    // new Taggle($('.tags')[0])
+ //    new Taggle($('.tags')[0])
 
- //    // var instance = M.Carousel.init({
- //    //     // fullWidth: true,
- //    //     indicators: true,
- //    //     numVisible: 3
- //    //   });
+ //    var instance = M.Carousel.init({
+ //        // fullWidth: true,
+ //        indicators: true,
+ //        numVisible: 3
+ //      });
 
  //    var elem = document.querySelector('.carousel');
  //    var instance = M.Carousel.init(elem)

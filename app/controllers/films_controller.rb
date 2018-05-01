@@ -21,7 +21,7 @@ class FilmsController < ApplicationController
 
     def view
         if(@film.film_type == 1)
-            redirect_to @film.base_film_path
+            redirect_to @film.base_film_path.url
         else
             send_file @film.film_path.path, :disposition => :inline, :stream => true
         end
@@ -43,7 +43,9 @@ class FilmsController < ApplicationController
             @film.film_type = 0
         end
         #Create and save all film tags
-        puts @film
+        if logged_in?
+            @film.user_id = current_user.id
+        end
         if @film.save!
             for tag_name in @film.tag_names.split
                 @film_tag = FilmTag.new
@@ -74,7 +76,6 @@ class FilmsController < ApplicationController
         @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
     end
     
-    private 
     def update
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
@@ -84,8 +85,10 @@ class FilmsController < ApplicationController
     end 
 
     def destroy
-      @film.destroy
-      redirect_to films_path, notice: "Successfully removed #{@film.name} from the system."   
+        @film.remove_film_path!
+        @film.save
+        @film.destroy 
+        redirect_to films_path, notice: "Successfully removed #{@film.title} from the system."   
     end
 
     private
@@ -94,7 +97,6 @@ class FilmsController < ApplicationController
 
     def remove_film_and_essay
     end
-     
 
     def set_film
         @film = Film.find(params[:id])
