@@ -18,10 +18,6 @@
 //= require_tree .
 //= require jquery.slick
 
-
-
-
-
 // --------Create function to initialize tags---------
 // var tags = new Taggle('tags');
 // var container = example4.getContainer();
@@ -32,59 +28,12 @@
     $('.carousel').carousel({
     	indicators: true,
     	numVisible: 3,
-
-    	onCycleTo: function(art) {
-      		var film = art.href.split('films/')[1];
-
-
-    		// $("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
-
-
-   		}
   });
 
     new Taggle($('#film-tags')[0])
 
-
-
- //    $(window).bind("load", function () {
-	//   var footer = $("#page-footer");
-	//   var pos = footer.position();
-	//   var height = $(window).height();
-	//   height = height - pos.top;
-	//   height = height - footer.height();
-	//   if (height > 0) {
-	//       footer.css({
-	//           'margin-top': height + 'px'
-	//       });
-	//   }
-	// });
   });
 
-
-
-  // INITIATES THE CAROUSEL FOR THE FILM
-
- // $(document).ready(function(){
- //    // $('.carousel').carousel({
- //    // 	// fullWidth: true,
- //  		// indicators: true,
- //    //   numVisible: 3
- //    // });
-
- //    // new Taggle($('.tags')[0])
-
- //    // var instance = M.Carousel.init({
- //    //     // fullWidth: true,
- //    //     indicators: true,
- //    //     numVisible: 3
- //    //   });
-
- //    var elem = document.querySelector('.carousel');
- //    var instance = M.Carousel.init(elem)
- //    console.log(instance.center)
-
- //  });
 
 
 

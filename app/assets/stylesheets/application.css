@@ -17,16 +17,15 @@
  
 
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-
+    margin: 0 0 100px;
+    /* bottom = footer height */
+}
 
   select {
   display: block !important;
@@ -74,8 +73,10 @@ body {
   background-color: #353B5A;
 }
 
+
 #page-footer{
-   position: relative;
+   /*position: relative;*/
+   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
@@ -122,6 +123,10 @@ body {
 #results-page{
   color: #353B5A;
   font-size: 2em;
+}
+
+h1, h2, h3, h4{
+  color: #353B5A;
 }
 
 /*Resize the wrap to see the search bar change!*/
