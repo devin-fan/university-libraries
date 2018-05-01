@@ -1,5 +1,9 @@
 
 
+
+
+
+
 <%= simple_form_for @film, html: {multipart: true} do |f| %>
     <div id="film_form">
     <b>Title: </b> <%= f.input :title %> <br>
@@ -24,5 +28,5 @@
 
     <%= f.button :submit, :class => "blue darken-3"%>
 
-
+</div>
 <% end %>

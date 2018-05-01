@@ -6,9 +6,9 @@
 	<%base.title = film.title%>
 	<%base.description = film.description%>
 	<%base.id = film.id%>
-	<%base.director = film.director%><%=>
+	<%base.director = film.director%>>
 <div class="center">
-	<h4 class="blue-text text-darken-3 center"<%= base.title %></h4>
+	<h4 class="blue-text text-darken-3 center"><%= base.title %> </h4>
 	<p><%= base.director %></p>
 	<p><%= base.description%></p>
 	</div>
@@ -18,8 +18,5 @@
 
 
 	 <%= link_to(image_tag('youtube.png'), "/films/#{base.id}", :id=> "play-img")%>
-
-
-
 
 

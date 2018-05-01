@@ -11,11 +11,18 @@
        <p> By: <strong><%= @film.director %></strong> <br /> </p>
 	  	</div>   
 	  	<br>
-        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true %> <br>
+        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true, :size => "640x360" %> <br>
+
+
 
 
          <!-- Add css generated tag set up, link to tag show page -->
-     <!--     <p> Tags (Placeholder)</p> -->
+         <!-- <p> Tags (Placeholder)</p> -->
+        <%#@film.film_tags.each do |tag| %>
+          <!-- <p> <#%tag%> </p> -->
+        <%# end %>
+
+
 
 
         <%= link_to(image_tag('download.png'), "/films/#{@film.id}/download", download: 'download', :id=> "download-img-show")%>

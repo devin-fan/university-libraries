@@ -37,7 +37,7 @@
       		var film = art.href.split('films/')[1];
 
 
-    		$("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
+    		// $("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
 
 
    		}
