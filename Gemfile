@@ -42,10 +42,26 @@ gem "jquery-slick-rails"
 gem 'taggle'
 
 
-
 #Fuzzy search for video name and tag
 gem 'fuzzily'
 
+
+group :test do
+    gem 'shoulda'
+    gem 'shoulda-matchers'
+    gem 'minitest'
+    gem 'minitest-rails'
+    gem 'minitest-reporters'
+    gem 'factory_bot_rails'
+    gem 'mocha'
+    gem 'capybara'
+    gem 'database_cleaner'
+    gem 'launchy'
+    gem 'nokogiri'
+    gem 'simplecov'
+    gem 'simplecov-console'
+    gem 'single_test'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
