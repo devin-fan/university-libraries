@@ -3,23 +3,24 @@
 
   <nav id="site-nav">
     <div class="nav-wrapper">
-    <a href="#" class="brand-logo"> <%= link_to image_tag('film.png'), root_path, :class=> "left"%></a> 
-
-      <% unless current_page?(root_path) %>
-        <%= render partial: "partials/search_bar" %>
-      <% end %>
-      
-
-     <!--  <%= link_to 'Oscar Micheaux Society', films_path, class: "brand-logo center"%> -->
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <a class="brand-logo"> <%= link_to image_tag('film.png'), root_path, :class=> "left"%></a> 
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
         
          <li><%= link_to 'Home', root_path %></li>
          <!-- Complete After about page is finished -->
          <!-- <li><%= link_to 'About', about_path %></li> -->
          <li><%= link_to 'Films', films_path %></li>
-          <li><%= link_to 'Upload', new_film_path %></li>
-         <!--  <li><%= link_to 'Login', new_film_path %></li> -->
+         <li><%= link_to 'Upload', new_film_path %></li>
       </ul>
+      <ul class="right nav_user">
+        <% if current_user.nil? %>
+          <li><%= link_to 'Login', login_path %></li> 
+        <% else %>
+          <li><%= link_to current_user.first_name, current_user %></li>
+          <li><%= link_to 'Logout', logout_path %></li>
+        <% end %>
+      </ul>
+      <%= render partial: "partials/search_bar" %>
     </div>
   </nav>
 

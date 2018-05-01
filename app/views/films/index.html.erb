@@ -25,37 +25,7 @@
 			    </div>
 			</div>
 		<% end %>
-		<!-- Carousel Through Videos -->
-			
-			<!-- <div class="carousel carousel-slider"> -->
-			<!-- <div class="films"> 
-				<%video = Film.new%>
-			<% @base_films.each do |film| %>
-
-				<%video.title = film.title%>
-				<%video.description = film.description%>
-				<%video.id = film.id%>
-				<%video.director = film.director%>
-				<div class="link">
-					<%= link_to image_tag("#{film.image_path}"), "/films/#{film.id}", :class=> "carousel-item", :id=> "carousel-img"%>
-				</div>
-						   
-
-			<% end %>
-		</div> -->
-
-			<!-- <div id="film-describe">
-					  <#%= render partial: "partials/describe",  locals: {title: video.title, description: video.description, id: video.id, director: video.director} %>
-				</div>  -->     
-
-	
-
-			  
-        
-
   	</div>
-  	
-
   </div>
 
 

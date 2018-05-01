@@ -21,6 +21,6 @@ class Film < ActiveRecord::Base
     scope :student_films, -> { where(film_type: 0) }
 
     def is_base?
-        film_type == 1
+        film_type == "1"
     end
 end
