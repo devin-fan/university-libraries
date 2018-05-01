@@ -11,8 +11,13 @@
  *= require_self
  *= require_tree .
  *= require slick
+<<<<<<< HEAD
  *= require owl.carousel
  *= require owl.theme.default
+=======
+ *= require slick-theme
+
+>>>>>>> b228b35920a9d2222a46115d7bff0e425d1849af
  */
  
 
@@ -21,6 +26,7 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 
 body {
     margin: 0 0 100px;
@@ -73,8 +79,11 @@ body {
   background-color: #353B5A;
 }
 
+.nav_user{
+  margin-right:20%;
+}
 
-#page-footer{
+#page-footer {
    /*position: relative;*/
    position: absolute;
   right: 0;
@@ -87,8 +96,10 @@ body {
 }
 
 .search {
-  width: 10%;
-  position: relative
+  width: 20%;
+  /*position: relative;*/
+  /*float:right;*/
+  margin-right: -5px;
 }
 
 .searchTerm {
@@ -120,13 +131,24 @@ body {
   font-size: 20px;
 }
 
+.c_item {
+  border:1px solid black;
+}
+
 #results-page{
   color: #353B5A;
   font-size: 2em;
 }
 
+
 h1, h2, h3, h4{
   color: #353B5A;
+
+}
+
+#session_container{
+  width:40%;
+
 }
 
 /*Resize the wrap to see the search bar change!*/

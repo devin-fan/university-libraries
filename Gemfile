@@ -42,7 +42,7 @@ gem "jquery-slick-rails"
 gem 'taggle'
 gem 'owlcarousel-rails'
 
-
+gem 'cancancan'
 
 #Fuzzy search for video name and tag
 gem 'fuzzily'
