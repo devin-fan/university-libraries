@@ -43,7 +43,9 @@ class FilmsController < ApplicationController
             @film.film_type = 0
         end
         #Create and save all film tags
-        puts @film
+        if logged_in?
+            @film.user_id = current_user.id
+        end
         if @film.save!
             for tag_name in @film.tag_names.split
                 @film_tag = FilmTag.new
@@ -74,7 +76,6 @@ class FilmsController < ApplicationController
         @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
     end
     
-    private 
     def update
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."

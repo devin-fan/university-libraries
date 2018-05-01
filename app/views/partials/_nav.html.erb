@@ -3,7 +3,7 @@
 
   <nav id="site-nav">
     <div class="nav-wrapper">
-    <a href="#" class="brand-logo"> <%= link_to image_tag('film.png'), home_path, :class=> "left"%></a> 
+    <a href="#" class="brand-logo"> <%= link_to image_tag('film.png'), root_path, :class=> "left"%></a> 
 
       <% unless current_page?(root_path) %>
         <%= render partial: "partials/search_bar" %>
@@ -18,7 +18,12 @@
          <!-- <li><%= link_to 'About', about_path %></li> -->
          <li><%= link_to 'Films', films_path %></li>
           <li><%= link_to 'Upload', new_film_path %></li>
-         <!--  <li><%= link_to 'Login', new_film_path %></li> -->
+          <% if current_user.nil? %>
+            <li><%= link_to 'Login', login_path %></li> 
+          <% else %>
+            <li><%= link_to 'Logout', logout_path %></li>
+          <% end %>
+          
       </ul>
     </div>
   </nav>

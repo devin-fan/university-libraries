@@ -50,6 +50,31 @@
           }
         }
       ]
+
+    $('.films').slick({
+      centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
     });
 
      //    $('.carousel').carousel({
@@ -59,8 +84,18 @@
      //    });
 
      //    new Taggle($('#film-tags')[0])
-
-
+ //    $(window).bind("load", function () {
+	//   var footer = $("#page-footer");
+	//   var pos = footer.position();
+	//   var height = $(window).height();
+	//   height = height - pos.top;
+	//   height = height - footer.height();
+	//   if (height > 0) {
+	//       footer.css({
+	//           'margin-top': height + 'px'
+	//       });
+	//   }
+	// });
 
      //    $(window).bind("load", function () {
         //   var footer = $("#page-footer");
