@@ -33,12 +33,6 @@
     	onCycleTo: function(art) {
       		var film = art.href.split('films/')[1];
     		// $("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
-
-    		$.ajax({
-		        url : "/films",
-		        type : "post",
-		        data : { data_value: JSON.stringify(film) }
-   			 });
    		}
   });
 

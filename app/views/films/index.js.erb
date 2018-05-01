@@ -1,0 +1,10 @@
+
+
+    $('.carousel').carousel({
+    	onCycleTo: function(art) {
+      		var film = art.href.split('films/')[1];
+    		$("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'},locals: {number: film}").html_safe %>");
+    		// $("#film-describe").html("<%= escape_javascript(render partial: "users/user", locals: {user: @user}) %>");
+    		console.log(film)
+   		}
+  });

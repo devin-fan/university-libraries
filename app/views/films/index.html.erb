@@ -12,7 +12,7 @@
 			<div class="carousel"> 
 				<%video = Film.new%>
 				<% @base_films.each do |film| %>
-				<%= link_to image_tag("#{film.image_path}"), "/films/#{film.id}", :class=> "carousel-item", :id=> "carousel-img"%>		   
+				<%= link_to image_tag("#{film.image_path}"), "/films/#{film.id}", :class=> "carousel-item", :id=> "carousel-img", :remote => true%>		   
 
 			<% end %>
 		</div>
