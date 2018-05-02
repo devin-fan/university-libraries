@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show]
+    before_action :set_user, only: [:show, :destroy, :edit]
 
     def index
         @users = User.alphabetical.to_a
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     
     def show
         @user_films = @user.films.alphabetical.to_a
+        authorize! :show, @user
     end
 
     def new
@@ -26,7 +27,6 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find(params[:id])
     end
 
     def update
@@ -39,12 +39,15 @@ class UsersController < ApplicationController
     end
     
     def destroy
-        if logged_in? and current_user.id == @user.id 
+        if current_user.role? :admin
+            @user.destroy
+            redirect_to :back
+        elsif logged_in? and current_user.id == @user.id
             @user.destroy
             redirect_to logout_path, notice: "Successfully removed #{@user.andrewid} from the system."
-        else
-            @user.destroy
-            redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
+        # else
+        #     @user.destroy
+        #     redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
         end
     end
     private

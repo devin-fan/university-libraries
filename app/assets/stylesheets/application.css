@@ -102,6 +102,9 @@ body {
   margin-right: -5px;
 }
 
+/*Search bar fix*/
+.nav-wrapper, .nav-wrapper form, .nav-wrapper form .input-field{ height: 100%; }
+
 .searchTerm {
   float: left;
   width: 100%;
