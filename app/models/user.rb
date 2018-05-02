@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
         puts authorized_role, ROLES[authorized_role], self.role
         self.role == ROLES[authorized_role]
     end
+
+    def name
+    	last_name + ", " + first_name
+    end
+
 end

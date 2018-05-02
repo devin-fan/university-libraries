@@ -1,32 +1,33 @@
 <% if current_user.role? :admin %>
+<%= simple_form_for @film, html: {multipart: true} do |f| %>
+    <div id="film_form">
 
-    <%= simple_form_for @film, html: {multipart: true} do |f| %>
-        <div id="film_form">
-        <b>Title: </b> <%= f.input :title %> <br>
-        <b>Uploaded by: </b> <%= f.input :director %> <br>
-        <%# Put in nested form for tags later %>
-    <!-- 
-        <div class="input textarea clearfix example1">
-            <span class="taggle_placeholder" style="opacity: 1;">Enter tags...</span>
-            <ul class="taggle_list">
-            <li><input type="text" class="taggle_input" tabindex="1" style="padding-left: 0px; padding-right: 0px; width: 300px;"></li>
-            </ul>
-            <div class="taggle_sizer" style="font-size: 16px;">s</div>
-        </div> -->
+    <div class="row">
 
-        <b>Tags (separated by space)</b> <br>
+      <div class="col s6">      
+            <b>Title: </b> 
+            <%= f.input :title %> <br>
+            <b>Uploaded by: </b> 
+            <%= f.input :director %> <br>
+            <b>Tags</b> <br>
+            <%= f.input :tag_names, label_html: {id: "film-tags"}%>
 
-        <%= f.input :tag_names, label_html: {id: "film-tags"}%>
+             <b>Upload film: </b> <br><br>
+            <%= f.file_field :base_film_path%> <br>
 
+            <b>Base Film: </b>  <%= f.input :film_type,  collection: [[1, 'Yes'], [0, 'No']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
-        <b>Description: </b> <%= f.input :description, as: :text %> <br>
-        <b>Upload film: </b> <%= f.file_field :film_path, :label => "Films "%> <br>
-        <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
-        <b>Base Film: </b>  <%= f.input :film_type,  collection: [[1, 'Yes'], [0, 'No']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+            <b>Upload essay: </b> <br><br>
+            <%= f.file_field :essay_path, :label => "Essays "%><br>
 
+      </div>
 
-         <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
-        <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+      <div class="col s6">
+        <b>Description: 
+        </b> <%= f.input :description, as: :text %> <br>
+
+         <b>Permission: </b> 
+         <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
          <b>Upload Cover-Art: </b><br> <%= f.file_field :image_path, :label => "Cover-Art "%><br><br>
 
@@ -41,22 +42,33 @@
 <% else %>
     <%= simple_form_for @film, html: {multipart: true} do |f| %>
         <div id="film_form">
-        <b>Title: </b> <%= f.input :title %> <br>
-        <b>Uploaded by: </b> <%= f.input :director %> <br>
-        <%# Put in nested form for tags later %>
+
+        <div class="row">
+
+          <div class="col s6">      
+                <b>Title: </b> 
+                <%= f.input :title %> <br>
+                <b>Uploaded by: </b> 
+                <%= f.input :director %> <br>
+                <b>Tags</b> <br>
+                <%= f.input :tag_names, label_html: {id: "film-tags"}%>
+
+                 <b>Upload film: </b> <br><br>
+                <%= f.file_field :film_path%> <br>
 
 
-        <b>Tags (separated by space)</b> <br>
+                <b>Upload essay: </b> <br><br>
+                <%= f.file_field :essay_path, :label => "Essays "%><br>
 
-        <%= f.input :tag_names, label_html: {id: "film-tags"}%>
+          </div>
 
+          <div class="col s6">
+            <b>Description: 
+            </b> <%= f.input :description, as: :text %> <br>
 
+             <b>Permission: </b> 
+             <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
-        <b>Description: </b> <%= f.input :description, as: :text %> <br>
-        <b>Upload film: </b> <%= f.file_field :film_path, :label => "Films "%> <br>
-
-         <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
-        <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
         
         <b>Upload essay: </b> <%= f.file_field :essay_path, :label => "Essays "%><br>

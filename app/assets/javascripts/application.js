@@ -25,115 +25,33 @@
 
 
  $(document).ready(function(){
-    console.log("Running carousel");
-    $('.carousel').slick({
-      centerMode: true,
-      centerPadding: '60px',
-      slidesToShow: 3,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
-          }
-        }
-      ]
+    $("#license").hide();
+    $('.carousel').carousel({
+    	indicators: true,
+    	numVisible: 3,
 
-    $('.films').slick({
-      centerMode: true,
-  centerPadding: '60px',
-  slidesToShow: 3,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
+    	onCycleTo: function(art) {
+      		var film = art.href.split('films/')[1];
+    		// $("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
+   		}
+  });
+
+    $('#film_permission').change(function(){
+        if($(this).val() == 0)
+        {
+          $("#license").show();
+        }
+        else
+        {
+          $("#license").hide();
+        }
     });
 
-     //    $('.carousel').carousel({
-     //     // fullWidth: true,
-     //      indicators: true,
-     //      numVisible: 3
-     //    });
+    new Taggle($('#film-tags')[0])
 
-     //    new Taggle($('#film-tags')[0])
- //    $(window).bind("load", function () {
-	//   var footer = $("#page-footer");
-	//   var pos = footer.position();
-	//   var height = $(window).height();
-	//   height = height - pos.top;
-	//   height = height - footer.height();
-	//   if (height > 0) {
-	//       footer.css({
-	//           'margin-top': height + 'px'
-	//       });
-	//   }
-	// });
-
-     //    $(window).bind("load", function () {
-        //   var footer = $("#page-footer");
-        //   var pos = footer.position();
-        //   var height = $(window).height();
-        //   height = height - pos.top;
-        //   height = height - footer.height();
-        //   if (height > 0) {
-        //       footer.css({
-        //           'margin-top': height + 'px'
-        //       });
-        //   }
-        // });
   });
 
 
-  // INITIATES THE CAROUSEL FOR THE FILM
-
- // $(document).ready(function(){
- //    $('.carousel').carousel({
- //    	// fullWidth: true,
- //  		indicators: true,
- //      numVisible: 3
- //    });
-
- //    new Taggle($('.tags')[0])
-
- //    var instance = M.Carousel.init({
- //        // fullWidth: true,
- //        indicators: true,
- //        numVisible: 3
- //      });
-
- //    var elem = document.querySelector('.carousel');
- //    var instance = M.Carousel.init(elem)
- //    console.log(instance.center)
-
- //  });
 
 
 
