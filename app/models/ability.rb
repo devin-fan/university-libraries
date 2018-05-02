@@ -10,10 +10,14 @@ class Ability
         can :manage, User do |_user|
             _user.id == user.id
         end
+        can :upload, Film
         can :manage, Film do |film|
-            user.films.include? film
+            user.films.all.map(&:id).include? film.id
         end
+        can :create, Tag
+    else
         can :read, Tag
+        can :read, Film
     end
     
          
