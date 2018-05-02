@@ -196,12 +196,6 @@
         null,
         null
       ],
-      "/Users/devinfan/private/67373/university-libraries/app/models/film_tag.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/devinfan/private/67373/university-libraries/app/models/tag.rb": [
         1,
         1,
@@ -211,6 +205,12 @@
         null,
         1,
         null,
+        2,
+        2,
+        null
+      ],
+      "/Users/devinfan/private/67373/university-libraries/app/models/film_tag.rb": [
+        1,
         1,
         1,
         null
@@ -218,6 +218,24 @@
       "/Users/devinfan/private/67373/university-libraries/app/models/trigram.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/devinfan/private/67373/university-libraries/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/devinfan/private/67373/university-libraries/app/controllers/home_controller.rb": [
@@ -253,22 +271,6 @@
         null,
         1,
         0,
-        null,
-        null
-      ],
-      "/Users/devinfan/private/67373/university-libraries/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
         null,
         null
       ],
@@ -356,6 +358,10 @@
         0,
         0,
         0,
+        null,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -377,6 +383,16 @@
         0,
         0,
         null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -522,6 +538,6 @@
         0
       ]
     },
-    "timestamp": 1525240308
+    "timestamp": 1525244787
   }
 }
