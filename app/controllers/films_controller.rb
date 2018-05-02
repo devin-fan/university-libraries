@@ -12,7 +12,7 @@ class FilmsController < ApplicationController
     def show
         @essay = Array.new()
 
-        unless @film.essay_path.nil?
+        unless @film.essay_path.path.nil?
             doc = Docx::Document.open(@film.essay_path.path)
             doc.paragraphs.each do |p|
                 @essay.push(p) 
