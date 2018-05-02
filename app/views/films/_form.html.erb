@@ -19,9 +19,12 @@
      <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
     <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
-
+    
     <b>Upload essay: </b> <%= f.file_field :essay_path, :label => "Essays "%><br>
-
+    <div id="license">    
+    <p>Grant of Rights Regarding Provided Materials.  By depositing Provided Materials, you hereby agree that CMU has a non-exclusive, world-wide, royalty-free, sub-licensable, perpetual right to store, reproduce, publish, display and distribute any and all such Provided Materials to the public when you upload the Provided Materials as well as for archival and preservation purposes (including but not limited to the right to transfer the Provided Materials into a different format now known or later developed).  By agreeing to this Deposit Agreement, you are not relinquishing any ownership interest you may have in the Provided Materials, and CMU is not relinquishing any ownership it may have in the Provided Materials.</p>
+    </div>
+    <p>By clicking the upload button below, I hereby agree to the terms and conditions stated above.</p>
     <%= f.button :submit, :class => "blue darken-3"%>
 
 

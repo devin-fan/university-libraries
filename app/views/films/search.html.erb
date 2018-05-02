@@ -22,7 +22,7 @@
                 <div class="collection">
                 
                 <% @matched_by_tag.each do |t| %>
-                <%count = @tag.films.alphabetical.count%>
+                <%count = t.films.alphabetical.count%>
                 <a class="collection-item"><%= link_to "#{t.name} (#{count}) ", @t %></a>    
                 <% end %>
                 <% end %>

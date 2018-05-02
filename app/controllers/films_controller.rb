@@ -70,7 +70,7 @@ class FilmsController < ApplicationController
 
 
     def search
-        search_query = params[:q]
+        search_query = params[:search]
         @matched_by_title = Film.find_by_fuzzy_title(search_query)
         @matched_by_director = Film.find_by_fuzzy_director(search_query)
         @matched_by_tag = Tag.find_by_fuzzy_name(search_query)

@@ -204,11 +204,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
-<<<<<<< HEAD
   capybara
-=======
   cancancan
->>>>>>> b228b35920a9d2222a46115d7bff0e425d1849af
   carrierwave
   coffee-rails (~> 4.0.0)
   database_cleaner

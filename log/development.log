@@ -50752,3 +50752,1678 @@ Started GET "/assets/application.js?body=1" for ::1 at 2018-05-01 02:03:21 -0400
 
 
 Started GET "/assets/film.png" for ::1 at 2018-05-01 02:03:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'film_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'films'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'trigrams'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTags (20180318183121)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180318183121"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFilmTags (20180320203150)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "film_tags" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180320203150"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20180320203320)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "role" integer, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180320203320"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFilms (20180327040507)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "films" ("id" serial primary key, "title" character varying, "film_type" integer, "director" character varying, "film_path" character varying, "essay_path" character varying, "permission" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180327040507"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddFilmTagIDs (20180402050925)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "film_tags" ADD "film_id" int[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "film_tags" ADD "tag_id" int
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180402050925"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to AddBaseFilmPathToFilms (20180403161925)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "films" ADD "base_film_path" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180403161925"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddTrigramsModel (20180413000414)
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "trigrams" ("id" serial primary key, "trigram" character varying(3), "score" smallint, "owner_id" integer, "owner_type" character varying, "fuzzy_field" character varying) 
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_for_match" ON "trigrams"  ("owner_id", "owner_type", "fuzzy_field", "trigram", "score")[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_by_owner" ON "trigrams"  ("owner_id", "owner_type")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180413000414"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddImagePathToFilms (20180416014542)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "films" ADD "image_path" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180416014542"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddUserIdToFilms (20180419043330)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "films" ADD "user_id" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180419043330"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddAndrewidToUsers (20180426033142)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "andrewid" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180426033142"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddPasswordDigestToUsers (20180430182306)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "password_digest" character varying
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20180430182306"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'film_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'films'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'trigrams'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/films" for ::1 at 2018-05-01 21:12:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_nav.html.erb (20.5ms)
+  Rendered films/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 4.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/partials/_nav.html.erb:16:in `_app_views_partials__nav_html_erb___3984179439401541943_70258241786860'
+  app/views/films/index.html.erb:2:in `_app_views_films_index_html_erb___1714171049028192160_70258214766780'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.3ms)
+
+
+Started GET "/logout" for ::1 at 2018-05-01 21:13:38 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-01 21:13:38 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (2.9ms)
+  Rendered home/home.html.erb within layouts/landing (5.7ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:13:39 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:13:39 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:13:39 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:13:39 -0400
+
+
+Started GET "/assets/background.jpg" for ::1 at 2018-05-01 21:13:39 -0400
+
+
+Started GET "/films" for ::1 at 2018-05-01 21:13:50 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.6ms)
+  Rendered films/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 471ms (Views: 469.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.button.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:13:51 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:13:52 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-01 21:13:54 -0400
+Processing by FilmsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.2ms)
+  Rendered films/_form.html.erb (81.5ms)
+  Rendered films/new.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 136ms (Views: 109.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/back.png" for ::1 at 2018-05-01 21:13:55 -0400
+
+
+Started POST "/films" for ::1 at 2018-05-01 21:15:03 -0400
+Processing by FilmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pj4F+D+bf5ZXNJHZuC2cu09oDbDBzEAZGZVvPVAgsDPObcd4cdCEYsLnrcLXmYLVklProS/5cu1BaKtdIFGXTQ==", "film"=>{"title"=>"asdf", "director"=>"asdf", "tag_names"=>"asdf asdf1 asdf2", "description"=>"asdf", "film_path"=>#<ActionDispatch::Http::UploadedFile:0x007fcc881fba10 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180501-64712-1vug2eh.mp4>, @original_filename="video-1517174640.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"film[film_path]\"; filename=\"video-1517174640.mp4\"\r\nContent-Type: video/mp4\r\n">, "permission"=>"0", "essay_path"=>#<ActionDispatch::Http::UploadedFile:0x007fcc881fba88 @tempfile=#<Tempfile:/var/folders/9_/84bcgqrs3753t7bz5xcq_syc0000gn/T/RackMultipart20180501-64712-1irm7o4.docx>, @original_filename="S18ClientContextIntialAnalysisand5userstories.docx", @content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document", @headers="Content-Disposition: form-data; name=\"film[essay_path]\"; filename=\"S18ClientContextIntialAnalysisand5userstories.docx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document\r\n">}, "commit"=>"Create Film"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "films" ("title", "essay_path", "director", "film_path", "permission", "description", "film_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "asdf"], ["essay_path", "S18ClientContextIntialAnalysisand5userstories.docx"], ["director", "asdf"], ["film_path", "video-1517174640.mp4"], ["permission", 0], ["description", "asdf"], ["film_type", 0], ["created_at", "2018-05-02 01:15:03.208079"], ["updated_at", "2018-05-02 01:15:03.208079"]]
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "title"]]
+  [1m[36mFilm Load (0.2ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.5ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**a' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'title') LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "title"], ["score", 4], ["trigram", "**a"]]
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTrigram Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*as' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'title') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "title"], ["score", 4], ["trigram", "*as"]]
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'asd' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'title') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "title"], ["score", 4], ["trigram", "asd"]]
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTrigram Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'sdf' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'title') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "title"], ["score", 4], ["trigram", "sdf"]]
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.5ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'df*' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'title') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "title"], ["score", 4], ["trigram", "df*"]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "director"]]
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**a' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'director') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "director"], ["score", 4], ["trigram", "**a"]]
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*as' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'director') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "director"], ["score", 4], ["trigram", "*as"]]
+  [1m[36mFilm Load (0.2ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'asd' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'director') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "director"], ["score", 4], ["trigram", "asd"]]
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'sdf' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'director') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "director"], ["score", 4], ["trigram", "sdf"]]
+  [1m[36mFilm Load (0.2ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'df*' AND "trigrams"."owner_type" = 'Film' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'director') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Film"], ["fuzzy_field", "director"], ["score", 4], ["trigram", "df*"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1[0m  [["name", "asdf"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdf"], ["created_at", "2018-05-02 01:15:03.447444"], ["updated_at", "2018-05-02 01:15:03.447444"]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3  [["owner_id", 1], ["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**a' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 4], ["trigram", "**a"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTrigram Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*as' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 1], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 4], ["trigram", "*as"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'asd' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 4], ["trigram", "asd"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'sdf' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 1], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 4], ["trigram", "sdf"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'df*' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 1 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 1], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 4], ["trigram", "df*"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["film_id", 1], ["tag_id", 1], ["created_at", "2018-05-02 01:15:03.477559"], ["updated_at", "2018-05-02 01:15:03.477559"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."name" = $1  [["name", "asdf1"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "asdf1"], ["created_at", "2018-05-02 01:15:03.481580"], ["updated_at", "2018-05-02 01:15:03.481580"]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3[0m  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**a' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 2 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "**a"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*as' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 2 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "*as"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'asd' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 2 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "asd"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'sdf' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 2 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "sdf"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTrigram Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'df*' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 2 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "df*"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'f**' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 2 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 2], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "f**"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["film_id", 1], ["tag_id", 2], ["created_at", "2018-05-02 01:15:03.510524"], ["updated_at", "2018-05-02 01:15:03.510524"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."name" = $1  [["name", "asdf2"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "asdf2"], ["created_at", "2018-05-02 01:15:03.514170"], ["updated_at", "2018-05-02 01:15:03.514170"]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3[0m  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mTrigram Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**a' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 3 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "**a"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*as' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 3 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "*as"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mTrigram Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'asd' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 3 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "asd"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'sdf' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 3 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "sdf"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'df*' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 3 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "df*"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'f**' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 3 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 3], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 5], ["trigram", "f**"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "film_tags" ("film_id", "tag_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["film_id", 1], ["tag_id", 3], ["created_at", "2018-05-02 01:15:03.557532"], ["updated_at", "2018-05-02 01:15:03.557532"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/films/1
+Completed 302 Found in 371ms (ActiveRecord: 38.1ms)
+
+
+Started GET "/films/1" for ::1 at 2018-05-01 21:15:03 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.2ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:15:03 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/assets/download.png" for ::1 at 2018-05-01 21:15:04 -0400
+
+
+Started GET "/films/1/view" for ::1 at 2018-05-01 21:15:04 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.6ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517174640.mp4 (0.3ms)
+Completed 200 OK in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/films/search?search=asdf" for ::1 at 2018-05-01 21:15:08 -0400
+Processing by FilmsController#show as HTML
+  Parameters: {"search"=>"asdf", "id"=>"search"}
+  [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Film with 'id'=search):
+  app/controllers/films_controller.rb:102:in `set_film'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.4ms)
+
+
+Started GET "/films/1/view" for ::1 at 2018-05-01 21:15:12 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517174640.mp4 (0.2ms)
+Completed 200 OK in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/films" for ::1 at 2018-05-01 21:15:18 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (11.7ms)
+  [1m[35mFilm Load (2.2ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 74ms (Views: 70.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/films/1/view" for ::1 at 2018-05-01 21:15:19 -0400
+Processing by FilmsController#view as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Sent file /Users/devinfan/private/67373/university-libraries/public/uploads/student_films/video-1517174640.mp4 (0.2ms)
+Completed 200 OK in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/search?search=asdf" for ::1 at 2018-05-01 21:15:23 -0400
+Processing by FilmsController#search as HTML
+  Parameters: {"search"=>"asdf"}
+  [1m[35mTrigram Load (0.3ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "title"]]
+  [1m[36mTrigram Load (0.3ms)[0m  [1mSELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0[0m  [["owner_type", "Film"], ["fuzzy_field", "director"]]
+  [1m[35mTrigram Load (0.3ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  Rendered partials/_search_bar.html.erb (0.2ms)
+  Rendered partials/_nav.html.erb (4.9ms)
+  Rendered partials/_footer.html.erb (0.0ms)
+  Rendered films/search.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:15:23 -0400
+
+
+Started GET "/search?search=asdf" for ::1 at 2018-05-01 21:15:47 -0400
+Processing by FilmsController#search as HTML
+  Parameters: {"search"=>"asdf"}
+  [1m[36mTrigram Load (0.5ms)[0m  [1mSELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0[0m  [["owner_type", "Film"], ["fuzzy_field", "title"]]
+  [1m[35mTrigram Load (0.3ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "director"]]
+  [1m[36mTrigram Load (0.2ms)[0m  [1mSELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0[0m  [["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (2.6ms)
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/search.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:15:47 -0400
+
+
+Started GET "/search?search=asdf" for ::1 at 2018-05-01 21:18:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#search as HTML
+  Parameters: {"search"=>"asdf"}
+  [1m[35mTrigram Load (1.0ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "title"]]
+  [1m[36mTrigram Load (0.3ms)[0m  [1mSELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0[0m  [["owner_type", "Film"], ["fuzzy_field", "director"]]
+  [1m[35mTrigram Load (0.3ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND 1=0 GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (4.3ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+  Rendered films/search.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 491ms (Views: 409.7ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:18:25 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:18:26 -0400
+
+
+Started GET "/search?search=asdf" for ::1 at 2018-05-01 21:19:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#search as HTML
+  Parameters: {"search"=>"asdf"}
+  [1m[35mTrigram Load (0.8ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND "trigrams"."trigram" IN ('**a', '*as', 'asd', 'sdf', 'df*') GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "title"]]
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Load (0.6ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND "trigrams"."trigram" IN ('**a', '*as', 'asd', 'sdf', 'df*') GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "director"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Load (0.4ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND "trigrams"."trigram" IN ('**a', '*as', 'asd', 'sdf', 'df*') GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[36mTag Load (3.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (1, 2, 3)[0m
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (9.5ms)
+  Rendered films/search.html.erb within layouts/application (23.0ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 12.6ms)
+
+ActionView::Template::Error (undefined method `films' for nil:NilClass):
+    22:                 <div class="collection">
+    23:                 
+    24:                 <% @matched_by_tag.each do |t| %>
+    25:                 <%count = @tag.films.alphabetical.count%>
+    26:                 <a class="collection-item"><%= link_to "#{t.name} (#{count}) ", @t %></a>    
+    27:                 <% end %>
+    28:                 <% end %>
+  app/views/films/search.html.erb:25:in `block in _app_views_films_search_html_erb___714405132314434004_70233228781940'
+  app/views/films/search.html.erb:24:in `each'
+  app/views/films/search.html.erb:24:in `_app_views_films_search_html_erb___714405132314434004_70233228781940'
+
+
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/devinfan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (113.8ms)
+
+
+Started GET "/search?search=asdf" for ::1 at 2018-05-01 21:20:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#search as HTML
+  Parameters: {"search"=>"asdf"}
+  [1m[35mTrigram Load (1.1ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND "trigrams"."trigram" IN ('**a', '*as', 'asd', 'sdf', 'df*') GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "title"]]
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Load (0.4ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND "trigrams"."trigram" IN ('**a', '*as', 'asd', 'sdf', 'df*') GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Film"], ["fuzzy_field", "director"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTrigram Load (0.4ms)[0m  SELECT  owner_id, owner_type, count(*) AS matches, MAX(score) AS score FROM "trigrams" WHERE "trigrams"."owner_type" = $1 AND "trigrams"."fuzzy_field" = $2 AND "trigrams"."trigram" IN ('**a', '*as', 'asd', 'sdf', 'df*') GROUP BY owner_id, owner_type  ORDER BY matches DESC, score ASC LIMIT 10 OFFSET 0  [["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (1, 2, 3)[0m
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (4.2ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  [["tag_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1[0m  [["tag_id", 2]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "films" INNER JOIN "film_tags" ON "films"."id" = "film_tags"."film_id" WHERE "film_tags"."tag_id" = $1  [["tag_id", 3]]
+  Rendered partials/_footer.html.erb (0.4ms)
+  Rendered films/search.html.erb within layouts/application (67.3ms)
+Completed 200 OK in 614ms (Views: 437.8ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:20:19 -0400
+
+
+Started GET "/films" for ::1 at 2018-05-01 21:44:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (4.5ms)
+  [1m[35mFilm Load (0.5ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.3ms)
+  Rendered films/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 441ms (Views: 407.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.button.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-01 21:44:04 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-01 21:44:05 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-01 21:44:06 -0400
+Processing by FilmsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (2.4ms)
+  Rendered films/_form.html.erb (79.5ms)
+  Rendered films/new.html.erb within layouts/application (86.1ms)
+Completed 200 OK in 140ms (Views: 110.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/back.png" for ::1 at 2018-05-01 21:44:06 -0400
