@@ -51344,3 +51344,94 @@ Processing by FilmsController#view as */*
   [1m[35mFilm Load (0.2ms)[0m  SELECT  "films".* FROM "films" WHERE "films"."id" = $1 LIMIT 1  [["id", 2]]
 Redirected to http://localhost:3000/uploads/base_films/video-1517172393.mp4
 Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "testtag"], ["created_at", "2018-05-02 16:25:05.374787"], ["updated_at", "2018-05-02 16:25:05.374787"]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3[0m  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mTrigram Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**t' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "**t"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*te' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "*te"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tes' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "tes"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mTrigram Exists (2.9ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'est' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "est"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'stt' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "stt"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tta' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "tta"]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mTrigram Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tag' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "tag"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'ag*' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 6 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 6], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 7], ["trigram", "ag*"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "testtag2"], ["created_at", "2018-05-02 16:25:05.586697"], ["updated_at", "2018-05-02 16:25:05.586697"]]
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3[0m  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**t' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "**t"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*te' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "*te"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tes' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "tes"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'est' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "est"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'stt' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "stt"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mTrigram Exists (0.8ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tta' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "tta"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tag' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "tag"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'ag*' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "ag*"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mTrigram Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'g**' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 7 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 7], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "g**"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "testtag3"], ["created_at", "2018-05-02 16:25:05.645503"], ["updated_at", "2018-05-02 16:25:05.645503"]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "trigrams" WHERE "trigrams"."owner_id" = $1 AND "trigrams"."owner_type" = $2 AND "trigrams"."fuzzy_field" = $3  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '**t' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "**t"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mTrigram Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = '*te' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "*te"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tes' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "tes"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'est' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "est"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'stt' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "stt"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mTrigram Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tta' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "tta"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mTrigram Exists (0.3ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'tag' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "tag"]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mTrigram Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'ag*' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "ag*"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mTrigram Exists (0.4ms)[0m  SELECT  1 AS one FROM "trigrams" WHERE ("trigrams"."trigram" = 'g**' AND "trigrams"."owner_type" = 'Tag' AND "trigrams"."owner_id" = 8 AND "trigrams"."fuzzy_field" = 'name') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "trigrams" ("owner_id", "owner_type", "fuzzy_field", "score", "trigram") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["owner_id", 8], ["owner_type", "Tag"], ["fuzzy_field", "name"], ["score", 8], ["trigram", "g**"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags"  ORDER BY "tags"."name" ASC[0m

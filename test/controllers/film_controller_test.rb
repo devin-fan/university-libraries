@@ -5,7 +5,7 @@ class FilmsControllerTest < ActionController::TestCase
         create_films
     end
 
-    setup do
+    teardown do
         destroy_films
     end
 
