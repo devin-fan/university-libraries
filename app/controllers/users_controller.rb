@@ -40,7 +40,6 @@ class UsersController < ApplicationController
     def destroy
         if logged_in? and current_user.id == @user.id 
             @user.destroy
-            
             redirect_to logout_path, notice: "Successfully removed #{@user.andrewid} from the system."
         else
             @user.destroy
@@ -55,5 +54,4 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:first_name, :last_name, :andrewid, :password, :password_confirmation)
     end
-
 end
