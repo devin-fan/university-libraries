@@ -47,22 +47,21 @@ gem 'cancancan'
 gem 'fuzzily'
 
 
-group :test do
-    gem 'shoulda'
-    gem 'shoulda-matchers'
-    gem 'minitest'
-    gem 'minitest-rails'
-    gem 'minitest-reporters'
-    gem 'factory_bot_rails'
-    gem 'mocha'
-    gem 'capybara'
-    gem 'database_cleaner'
-    gem 'launchy'
-    gem 'nokogiri'
-    gem 'simplecov'
-    gem 'simplecov-console'
-    gem 'single_test'
-end
+gem 'test-unit'
+gem 'shoulda', '~> 3.5'
+gem 'shoulda-matchers', '~> 2.0'
+gem 'minitest'
+gem 'minitest-rails'
+gem 'minitest-reporters'
+gem 'factory_bot_rails'
+gem 'mocha'
+gem 'capybara'
+gem 'database_cleaner'
+gem 'launchy'
+gem 'nokogiri'
+gem 'simplecov'
+gem 'simplecov-console'
+gem 'single_test'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
