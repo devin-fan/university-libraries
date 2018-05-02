@@ -1,8 +1,10 @@
 <!-- Navigation -->
 <%= render partial: "partials/nav" %>
   <div class="container">
-  	<h3 class=" blue-text text-darken-3 center">Hello, <%= @user.first_name %>!</h3>
-    <h6 class=" blue-text text-darken-3 center"><%= link_to 'Edit Account', edit_user_path(@user) %></h6>
+
+  	<h3 class="center">Hello, <%= @user.first_name %>!</h3>
+    <h6 class="center"><%= link_to 'Edit Account', edit_user_path(@user) %></h6>
+    <h6 class="center"><%= link_to 'Delete Account', delete_user_path(@user) %></h6>
   	
   	<div class="center">
 
@@ -29,3 +31,9 @@
 		<% end %>
    </div>
 </div>	
+
+<br>
+<br>
+<br>
+
+  <%= render partial: "partials/footer" %>

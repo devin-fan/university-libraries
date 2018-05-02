@@ -1,28 +1,62 @@
-
-
 <%= simple_form_for @film, html: {multipart: true} do |f| %>
     <div id="film_form">
-    <b>Title: </b> <%= f.input :title %> <br>
-    <b>Uploaded by: </b> <%= f.input :director %> <br>
-    <%# Put in nested form for tags later %>
+
+    <div class="row">
+
+      <div class="col s6">      
+            <b>Title: </b> 
+            <%= f.input :title %> <br>
+            <b>Uploaded by: </b> 
+            <%= f.input :director %> <br>
+
+             <b>Upload film: </b> <br><br>
+            <%= f.file_field :film_path%> <br>
 
 
-    <b>Tags (separated by space)</b> <br>
+            <b>Upload essay: </b> <br><br>
+            <%= f.file_field :essay_path, :label => "Essays "%><br>
 
-    <%= f.input :tag_names, label_html: {id: "film-tags"}%>
+      </div>
 
+      <div class="col s6">
+        <b>Description: 
+        </b> <%= f.input :description, as: :text %> <br>
 
-
-    <b>Description: </b> <%= f.input :description, as: :text %> <br>
-    <b>Upload film: </b> <%= f.file_field :film_path, :label => "Films "%> <br>
-
-     <!-- SHOULD CREATE NEW VIEW FOR ADMINISTRATOR VS STUDENTS -->
-    <b>Permission: </b> <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
-
-
-    <b>Upload essay: </b> <%= f.file_field :essay_path, :label => "Essays "%><br>
-
-    <%= f.button :submit, :class => "blue darken-3"%>
+         <b>Permission: </b> 
+         <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
 
 
+         <b>Tags</b> <br>
+   
+             <%= f.input :tag_names, label_html: {id: "film-tags"}%>
+
+         
+      </div>
+
+    </div>
+
+
+    
+
+    <div class="center">
+        
+        <div id="license">
+          <h4> <strong>Licensing Agreement</strong> </h4>
+
+          Grant of Rights Regarding Provided Materials.  By depositing Provided Materials, you hereby agree that CMU has a non-exclusive, world-wide, royalty-free, sub-licensable, perpetual right to store, reproduce, publish, display and distribute any and all such Provided Materials to the public when you upload the Provided Materials as well as for archival and preservation purposes (including but not limited to the right to transfer the Provided Materials into a different format now known or later developed).  By agreeing to this Deposit Agreement, you are not relinquishing any ownership interest you may have in the Provided Materials, and CMU is not relinquishing any ownership it may have in the Provided Materials.
+        </div>
+     </div>
+
+     <br>
+     <br>
+    
+   
+          
+    <%= f.button :submit, :class => "indigo darken-4"%>
+
+</div>
 <% end %>
+
+
+
+
