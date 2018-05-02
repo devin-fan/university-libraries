@@ -53022,3 +53022,4393 @@ Processing by FilmsController#view as */*
 Redirected to http://localhost:3000/uploads/base_films/video-1517172393.mp4
 Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
 >>>>>>> db7b12bda92dcdc707ac39c1849698eab49c2a52
+  [1m[36mActiveRecord::SchemaMigration Load (12.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminUser (20180502192524)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (1.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminUser (20180502192524)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (48.1ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "andrewid", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jeff"], ["last_name", "Hinkelman"], ["andrewid", "jh51"], ["password_digest", "$2a$10$aCL1KwK.9dn2OewpNhXXB.Vs/W.JO.53YbdTcnPJjf/Zgf3aVDQCm"], ["role", 0], ["created_at", "2018-05-02 19:28:55.610330"], ["updated_at", "2018-05-02 19:28:55.610330"]]
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20180502192524"]]
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (6.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'film_tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'films'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'trigrams'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2018-05-02 15:31:44 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (16.5ms)
+  Rendered home/home.html.erb within layouts/landing (28.8ms)
+Completed 200 OK in 75ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/landing.css?body=1" for ::1 at 2018-05-02 15:31:45 -0400
+
+
+Started GET "/assets/landing.js?body=1" for ::1 at 2018-05-02 15:31:45 -0400
+
+
+Started GET "/assets/styling.js?body=1" for ::1 at 2018-05-02 15:31:45 -0400
+
+
+Started GET "/assets/film.png" for ::1 at 2018-05-02 15:31:45 -0400
+
+
+Started GET "/assets/background.jpg" for ::1 at 2018-05-02 15:31:49 -0400
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:31:52 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.9ms)
+  [1m[35mFilm Load (7.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.6ms)
+  Rendered films/index.html.erb within layouts/application (30.4ms)
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 8.9ms)
+
+ActionView::Template::Error (couldn't find file 'jquery.ui.all'
+  (in /Users/pavangollapalli/Documents/67373/university-libraries/app/assets/javascripts/application.js:15)):
+     6:   <%= csrf_meta_tags %>
+     7: 
+     8:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+     9:     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    10:   	<!-- Icons -->
+    11:     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    12: 
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__3770744223006960770_70296619660540'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (110.5ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:35:02 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.7ms)
+  [1m[36mFilm Load (0.6ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (couldn't find file 'jquery.ui'
+  (in /Users/pavangollapalli/Documents/67373/university-libraries/app/assets/javascripts/application.js:15)):
+     6:   <%= csrf_meta_tags %>
+     7: 
+     8:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+     9:     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    10:   	<!-- Icons -->
+    11:     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    12: 
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__3770744223006960770_70296619660540'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.2ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:35:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (1.1ms)
+  Rendered partials/_nav.html.erb (8.9ms)
+  [1m[35mFilm Load (2.6ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.5ms)
+  Rendered films/index.html.erb within layouts/application (35.7ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 4.9ms)
+
+ActionView::Template::Error (couldn't find file 'jquery.ui'
+  (in /Users/pavangollapalli/Documents/67373/university-libraries/app/assets/javascripts/application.js:15)):
+     6:   <%= csrf_meta_tags %>
+     7: 
+     8:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+     9:     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    10:   	<!-- Icons -->
+    11:     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    12: 
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__1383493364957894318_70109675469380'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.5ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (116.1ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:35:57 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.4ms)
+  Rendered partials/_nav.html.erb (7.0ms)
+  [1m[35mFilm Load (1.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.6ms)
+  Rendered films/index.html.erb within layouts/application (27.4ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 2.7ms)
+
+ActionView::Template::Error (couldn't find file 'jquery.ui.all'
+  (in /Users/pavangollapalli/Documents/67373/university-libraries/app/assets/javascripts/application.js:15)):
+     6:   <%= csrf_meta_tags %>
+     7: 
+     8:   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+     9:     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    10:   	<!-- Icons -->
+    11:     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    12: 
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___621707096978601137_70354637495140'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (120.7ms)
+
+
+Started GET "/" for ::1 at 2018-05-02 15:43:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.5ms)
+  Rendered partials/_nav.html.erb (15.6ms)
+  Rendered home/home.html.erb within layouts/landing (28.7ms)
+Completed 200 OK in 74ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:43:02 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  [1m[35mFilm Load (0.8ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.3ms)
+  Rendered films/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 1279ms (Views: 1246.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/film.css?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/home.css?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 15:43:04 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/taggle-ie8.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/taggle-ie9.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/taggle.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/taggle-full.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/film.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/home.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 15:43:05 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:49:50 -0400
+Processing by FilmsController#new as HTML
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 9.3ms)
+
+NoMethodError (undefined method `admin?' for #<User:0x007ffb66552170>):
+  app/models/ability.rb:7:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:52:13 -0400
+Processing by FilmsController#new as HTML
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 6.0ms)
+
+NoMethodError (undefined method `admin?' for #<User:0x007ffb60439000>):
+  app/models/ability.rb:8:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.8ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:53:24 -0400
+Processing by FilmsController#new as HTML
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 6.2ms)
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/models/ability.rb:7:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (116.4ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:53:45 -0400
+Processing by FilmsController#new as HTML
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 5.4ms)
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/models/ability.rb:7:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.7ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:54:29 -0400
+Processing by FilmsController#new as HTML
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 5.0ms)
+
+NoMethodError (undefined method `link_to' for #<FilmsController:0x007ffb6694f638>):
+  app/controllers/application_controller.rb:22:in `block in <class:ApplicationController>'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.5ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:57:10 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 44ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 15:57:10 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.3ms)
+  Rendered home/home.html.erb within layouts/landing (7.3ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:57:12 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 15:57:12 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.2ms)
+  Rendered home/home.html.erb within layouts/landing (4.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:57:14 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.9ms)
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.0ms)
+  Rendered films/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 15:57:14 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:57:15 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 15:57:15 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.3ms)
+  Rendered home/home.html.erb within layouts/landing (3.9ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 15:57:23 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  Rendered home/home.html.erb within layouts/landing (4.2ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:57:24 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 45ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 15:57:24 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.7ms)
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 15:57:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 15:57:25 -0400
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:57:27 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (3.2ms)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 15:57:28 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 15:57:28 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-05-02 15:57:29 -0400
+Processing by UsersController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.3ms)
+  Rendered users/_form.html.erb (80.9ms)
+  Rendered users/new.html.erb within layouts/application (87.9ms)
+Completed 200 OK in 120ms (Views: 119.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 15:57:31 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2018-05-02 15:57:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ceeSuPjS16j6B3rmaEhPM0RrbnrAOvN0cv11KtDjrsfY36QPNi3NiECyoW0gmXAeQkHY5aP1mlR7WrpymIz+wQ==", "andrewid"=>"jh51", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (17.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1[0m  [["andrewid", "jh51"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1  [["andrewid", "jh51"]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 152ms (ActiveRecord: 17.6ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 15:57:36 -0400
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (9.5ms)
+  Rendered home/home.html.erb within layouts/landing (12.9ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/films" for ::1 at 2018-05-02 15:57:39 -0400
+Processing by FilmsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.8ms)
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 15:57:39 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 15:57:40 -0400
+
+
+Started GET "/users/3" for ::1 at 2018-05-02 15:57:41 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."user_id" = $1  ORDER BY "films"."title" ASC[0m  [["user_id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.8ms)
+  Rendered users/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 82ms (Views: 36.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/3/edit" for ::1 at 2018-05-02 15:57:43 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (8.6ms)
+  Rendered users/_form.html.erb (4.5ms)
+  Rendered users/edit.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 91ms (Views: 86.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2018-05-02 15:57:45 -0400
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.5ms)
+  Rendered home/home.html.erb within layouts/landing (6.3ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-05-02 16:06:14 -0400
+Processing by HomeController#home as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (32.9ms)
+  Rendered home/home.html.erb within layouts/landing (35.7ms)
+Completed 200 OK in 49ms (Views: 40.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:06:18 -0400
+
+SyntaxError (/Users/pavangollapalli/Documents/67373/university-libraries/app/controllers/films_controller.rb:114: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/films_controller.rb:114: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.5ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:06:27 -0400
+Processing by FilmsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (15.5ms)
+  [1m[35mFilm Load (0.6ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 87ms (Views: 59.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:06:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:06:28 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:06:34 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.3ms)
+
+NoMethodError (undefined method `to_sym' for 0:Fixnum):
+  app/models/user.rb:18:in `role?'
+  app/models/ability.rb:7:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.6ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:00 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `to_sym' for 0:Fixnum):
+  app/models/user.rb:18:in `role?'
+  app/models/ability.rb:7:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.7ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:13 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 38ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:08:13 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (6.5ms)
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:08:13 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:16 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:08:16 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (6.4ms)
+  Rendered sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:17 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:08:17 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.4ms)
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:08:18 -0400
+Processing by FilmsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.0ms)
+  [1m[35mFilm Load (1.1ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:18 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:08:19 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.5ms)
+  Rendered sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2018-05-02 16:08:22 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oacYxOV6bi9AALObWl2N7DuotdbUuR6sLTD3EMDuWuIIny5zK4V0D/q1aBASjLLBPYIDSbd2d4wklzhIiIEK5A==", "andrewid"=>"jh51", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1[0m  [["andrewid", "jh51"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1  [["andrewid", "jh51"]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 84ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 16:08:22 -0400
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.5ms)
+  Rendered home/home.html.erb within layouts/landing (7.7ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:24 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:24 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:08:24 -0400
+Processing by FilmsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.3ms)
+  Rendered partials/_nav.html.erb (4.9ms)
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:08:24 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.0ms)
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:08:24 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:08:40 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 33ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:08:40 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (4.1ms)
+  Rendered sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:09:07 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (25.3ms)
+  Rendered sessions/new.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 79ms (Views: 74.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:09:07 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:09:08 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:09:14 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 32ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:09:14 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.3ms)
+  Rendered sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:10:01 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 7.8ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/models/user.rb:18:in `[]'
+  app/models/user.rb:18:in `role?'
+  app/models/ability.rb:7:in `initialize'
+  app/controllers/films_controller.rb:33:in `new'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.7ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:11:05 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 36ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:11:05 -0400
+Processing by FilmsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (9.3ms)
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.0ms)
+  Rendered films/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:11:05 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:11:05 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:11:06 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:11:08 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:11:08 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.1ms)
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2018-05-02 16:11:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UPIgdU3Hr/troXlnEyNSPtsEHZtSHZhzDaLYczKVYXr5yhbCgzi129EUouxb8m0T3S6rBDHS8VMEBRcrevoxfA==", "andrewid"=>"jh51", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1  [["andrewid", "jh51"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1[0m  [["andrewid", "jh51"]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 16:11:32 -0400
+Processing by HomeController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.3ms)
+  Rendered home/home.html.erb within layouts/landing (7.1ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:11:34 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 26ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:11:34 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:11:34 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.9ms)
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:11:34 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:11:45 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:11:45 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.8ms)
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:13:13 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 40ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:13:13 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.9ms)
+  Rendered sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:13:36 -0400
+Processing by FilmsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (14.5ms)
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.0ms)
+  Rendered films/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 69ms (Views: 48.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:13:37 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 26ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:13:37 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.9ms)
+  Rendered sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:14:10 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 76ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:14:10 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (10.7ms)
+  Rendered sessions/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 98ms (Views: 96.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:16:35 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_nav.html.erb (3.8ms)
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/pavangollapalli/Documents/67373/university-libraries/app/models/user.rb:5: syntax error, unexpected ':', expecting =>
+    ROLES = {:admin: 0, :student: 1}
+                    ^):
+  app/models/user.rb:5: syntax error, unexpected ':', expecting =>
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/partials/_nav.html.erb:16:in `_app_views_partials__nav_html_erb___2108937189152484982_70358824940520'
+  app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb___2747144173451823560_70358863166780'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:16:48 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_nav.html.erb (1.6ms)
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/pavangollapalli/Documents/67373/university-libraries/app/models/user.rb:5: syntax error, unexpected ':', expecting =>
+    ROLES = {:admin: 0, :student: 1}
+                    ^):
+  app/models/user.rb:5: syntax error, unexpected ':', expecting =>
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/partials/_nav.html.erb:16:in `_app_views_partials__nav_html_erb___2108937189152484982_70358824940520'
+  app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb___2747144173451823560_70358863166780'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.7ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:16:50 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_nav.html.erb (1.5ms)
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/pavangollapalli/Documents/67373/university-libraries/app/models/user.rb:5: syntax error, unexpected ':', expecting =>
+    ROLES = {:admin: 0, :student: 1}
+                    ^):
+  app/models/user.rb:5: syntax error, unexpected ':', expecting =>
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/partials/_nav.html.erb:16:in `_app_views_partials__nav_html_erb___2108937189152484982_70358824940520'
+  app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb___2747144173451823560_70358863166780'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.9ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:16:58 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (22.1ms)
+  Rendered sessions/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 74ms (Views: 70.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:16:58 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:16:59 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:16:59 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:16:59 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:16:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:16:59 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:17:00 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 74ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:17:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (6.9ms)
+  Rendered sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:17:57 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (15.2ms)
+  Rendered sessions/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:17:58 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:17:59 -0400
+Processing by FilmsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (2.7ms)
+  Rendered films/_form.html.erb (20.9ms)
+  Rendered films/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 93ms (Views: 60.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/back.png" for ::1 at 2018-05-02 16:17:59 -0400
+
+
+Started GET "/logout" for ::1 at 2018-05-02 16:18:06 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 16:18:06 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.8ms)
+  Rendered home/home.html.erb within layouts/landing (4.4ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-05-02 16:18:07 -0400
+Processing by UsersController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.3ms)
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered users/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:18:11 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:18:11 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (5.2ms)
+  Rendered sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:18:14 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:18:14 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.5ms)
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:18:15 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:18:15 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.7ms)
+  Rendered sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:18:16 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:18:16 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:18:16 -0400
+Processing by FilmsController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:18:16 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.8ms)
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2018-05-02 16:18:19 -0400
+Processing by UsersController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (3.0ms)
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-05-02 16:18:28 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4ZzOZjyigHqn8zo+TT5j21AjWSAd8cJdjtpqIvAF4vmvkWOVg2QIVAqF2Ox5caia2o7++O4ril/nKbww69HjQ==", "user"=>{"first_name"=>"Pavan", "last_name"=>"Gollapalli", "andrewid"=>"pgollapa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "andrewid", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "Pavan"], ["last_name", "Gollapalli"], ["andrewid", "pgollapa"], ["password_digest", "$2a$10$ee4hod8TDZa3i0rohYFjK.anDs9QUzsklgi3Oo6ldhb9wR6PqX95y"], ["role", 1], ["created_at", "2018-05-02 20:18:28.821670"], ["updated_at", "2018-05-02 20:18:28.821670"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 86ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/users/4" for ::1 at 2018-05-02 16:18:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."user_id" = $1  ORDER BY "films"."title" ASC[0m  [["user_id", 4]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (3.0ms)
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 41ms (Views: 34.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:18:28 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:18:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:18:29 -0400
+
+
+Started GET "/films/new" for ::1 at 2018-05-02 16:18:32 -0400
+Processing by FilmsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."user_id" = $1  [["user_id", 4]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.4ms)
+  Rendered films/_form.html.erb (8.4ms)
+  Rendered films/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 57ms (Views: 52.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2018-05-02 16:19:13 -0400
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (6.2ms)
+  Rendered home/home.html.erb within layouts/landing (9.6ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for ::1 at 2018-05-02 16:19:15 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 16:19:15 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  Rendered home/home.html.erb within layouts/landing (4.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 16:20:49 -0400
+Processing by HomeController#home as HTML
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.2ms)
+  Rendered home/home.html.erb within layouts/landing (7.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:20:51 -0400
+Processing by FilmsController#index as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.8ms)
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 66ms (Views: 42.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:20:51 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:20:52 -0400
+
+
+Started GET "/login" for ::1 at 2018-05-02 16:20:53 -0400
+Processing by SessionsController#new as HTML
+  Rendered partials/_search_bar.html.erb (0.0ms)
+  Rendered partials/_nav.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2018-05-02 16:20:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DFExdiUAV4q8Uh4Q5ske5UQvLzYLgZX1VTCYPNCxgeelaQfB6/9NqgbnxZuuGCHIQgWZqWhO/NVcl1dkmN7R4Q==", "andrewid"=>"jh51", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1[0m  [["andrewid", "jh51"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."andrewid" = $1 LIMIT 1  [["andrewid", "jh51"]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 83ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/home" for ::1 at 2018-05-02 16:20:58 -0400
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (4.6ms)
+  Rendered home/home.html.erb within layouts/landing (7.2ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/films" for ::1 at 2018-05-02 16:21:00 -0400
+Processing by FilmsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered partials/_search_bar.html.erb (0.1ms)
+  Rendered partials/_nav.html.erb (5.8ms)
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."film_type" = $1  ORDER BY "films"."title" ASC[0m  [["film_type", 1]]
+  Rendered partials/_footer.html.erb (0.1ms)
+  Rendered films/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/version.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/slick.css?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/disable-selection.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/slick-theme.css?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/focusable.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/data.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/ie.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/form.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/keycode.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/escape-selector.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/labels.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/jquery-1-7.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/safe-blur.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/plugin.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/safe-active-element.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/scroll-parent.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/unique-id.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effect.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/form-reset-mixin.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/tabbable.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-clip.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-bounce.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-drop.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-blind.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-explode.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fold.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-highlight.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-fade.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-scale.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-puff.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-size.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-shake.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/accordion.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/menu.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-pulsate.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-transfer.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/effects/effect-slide.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/autocomplete.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/checkboxradio.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/button.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/datepicker.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/mouse.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/controlgroup.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/resizable.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/droppable.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/progressbar.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectable.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/dialog.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/draggable.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/selectmenu.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/slider.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/spinner.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tooltip.js?body=1" for ::1 at 2018-05-02 16:21:00 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/sortable.js?body=1" for ::1 at 2018-05-02 16:21:01 -0400
+
+
+Started GET "/assets/jquery-ui/widgets/tabs.js?body=1" for ::1 at 2018-05-02 16:21:01 -0400
+
+
+Started GET "/assets/jquery-ui.js?body=1" for ::1 at 2018-05-02 16:21:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2018-05-02 16:21:01 -0400
+
+
+Started GET "/assets/jquery.slick.js?body=1" for ::1 at 2018-05-02 16:21:01 -0400
+
+
+Started GET "/users" for ::1 at 2018-05-02 16:21:02 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (13.3ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."andrewid" ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 13.7ms)
+
+ActionView::MissingTemplate (Missing template users/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/pavangollapalli/Documents/67373/university-libraries/app/views"
+):
+  actionview (4.2.7) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.7) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/pavangollapalli/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/pavangollapalli/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pavangollapalli/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pavangollapalli/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/pavangollapalli/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (100.9ms)

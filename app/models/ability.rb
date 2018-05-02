@@ -4,13 +4,13 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    if user.admin?
+    if user.role? :admin
         can :manage, :all
-    elsif user.student?
+    elsif user.role? :student
         can :manage, User do |_user|
             _user.id == user.id
         end
-        can :upload, Film
+        can :create, Film
         can :manage, Film do |film|
             user.films.all.map(&:id).include? film.id
         end

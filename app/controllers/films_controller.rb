@@ -9,6 +9,7 @@ class FilmsController < ApplicationController
     end
       
     def show
+        authorize! :show, @film
     end
 
     def download
@@ -29,13 +30,9 @@ class FilmsController < ApplicationController
 
     def new
         @film = Film.new
+        authorize! :new, @film
     end
-
-    def admin_form
-        @film = Film.new
-        render 'admin_form'
-    end
-
+    
     def create
         @film = Film.new(film_params)
         #if the admin uploader has not specified the type, then it is set to student and not base
@@ -77,6 +74,7 @@ class FilmsController < ApplicationController
     end
     
     def update
+      authorize! :update, @film
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
       else
@@ -85,6 +83,7 @@ class FilmsController < ApplicationController
     end 
 
     def destroy
+        authorize! :destroy, @film
         @film.remove_film_path!
         @film.save
         @film.destroy 

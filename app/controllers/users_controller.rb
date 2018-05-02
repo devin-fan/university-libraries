@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
     def index
         @users = User.alphabetical.to_a
+        authorize! :read, @users
     end
     
     def show
