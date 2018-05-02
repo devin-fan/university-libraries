@@ -1,16 +1,22 @@
+<% video = number>
+<% base = Film.new%>
+<% @base_films.each do |film| %>
+
+<%if film.id == video%>
+	<%base.title = film.title%>
+	<%base.description = film.description%>
+	<%base.id = film.id%>
+	<%base.director = film.director%>>
 <div class="center">
-	<h4 class="blue-text text-darken-3 center"><%= title %></h4>
-	<p><%= director %></p>
-	<p><%= description%></p>
+	<h4 class="blue-text text-darken-3 center"><%= base.title %> </h4>
+	<p><%= base.director %></p>
+	<p><%= base.description%></p>
 	</div>
 
-	 <%= link_to(image_tag('download.png'), "/films/#{id}/download", download: 'download', :id=> "download-img")%>
+	 <%= link_to(image_tag('download.png'), "/films/#{base.id}/download", download: 'download', :id=> "download-img")%>
 
 
 
-	 <%= link_to(image_tag('youtube.png'), "/films/#{id}", :id=> "play-img")%>
-
-
-
+	 <%= link_to(image_tag('youtube.png'), "/films/#{base.id}", :id=> "play-img")%>
 
 
