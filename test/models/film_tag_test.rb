@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class FilmTagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    should belong_to(:tag)
+    should belong_to(:film)
 end

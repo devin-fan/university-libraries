@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show]
 
+    def index
+        @users = User.alphabetical.to_a
+    end
+    
     def show
         @user_films = @user.films.alphabetical.to_a
     end
@@ -32,7 +36,17 @@ class UsersController < ApplicationController
             render :action => 'edit'
         end
     end
-
+    
+    def destroy
+        if logged_in? and current_user.id == @user.id 
+            @user.destroy
+            
+            redirect_to logout_path, notice: "Successfully removed #{@user.andrewid} from the system."
+        else
+            @user.destroy
+            redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
+        end
+    end
     private
     def set_user
         @user = User.find(params[:id])
