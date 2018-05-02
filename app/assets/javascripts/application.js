@@ -25,7 +25,7 @@
 
 
  $(document).ready(function(){
-
+    $("#license").hide();
     $('.carousel').carousel({
     	indicators: true,
     	numVisible: 3,
@@ -35,6 +35,17 @@
     		// $("#film-describe").append("<%= escape_javascript("#{render :partial => 'partials/describe'}").html_safe %>");
    		}
   });
+
+    $('#film_permission').change(function(){
+        if($(this).val() == 0)
+        {
+          $("#license").show();
+        }
+        else
+        {
+          $("#license").hide();
+        }
+    });
 
     new Taggle($('#film-tags')[0])
 

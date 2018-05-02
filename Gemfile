@@ -47,6 +47,9 @@ gem 'cancancan'
 #Fuzzy search for video name and tag
 gem 'fuzzily'
 
+#Gem for rendering docx files in html
+gem 'docx', '~> 0.2.07', :require => ["docx"]
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

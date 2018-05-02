@@ -85,7 +85,7 @@ body {
 
 #page-footer {
    /*position: relative;*/
-   position: absolute;
+  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
@@ -154,6 +154,19 @@ h1, h2, h3, h4{
   font-style: italic;
   font-size: 1.4em;
   font-color: #353B5A;
+}
+
+#description{
+  font-style: italic;
+}
+
+#director{
+  font-style: italic;
+  font-color: #353B5A;
+}
+
+#essay{
+  text-decoration: underline;
 }
 
 /*Resize the wrap to see the search bar change!*/
