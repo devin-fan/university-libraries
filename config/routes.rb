@@ -11,7 +11,7 @@ UniversityLibraries::Application.routes.draw do
     get 'films/:id/view' => 'films#view'
     get 'login' => 'sessions#new', as: :login
     get 'logout' => 'sessions#destroy', as: :logout
-
+    get 'admin_form' => 'films#admin_form', as: :admin_form
 # Semi-static page routes
     get 'home' => 'home#home', as: :home
     get 'about' => 'home#about', as: :about
