@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show]
+    before_action :set_user, only: [:show, :update]
 
     def show
         @user_films = @user.films.alphabetical.to_a
@@ -25,8 +25,7 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.new(user_params)
-        if @user.save
+        if @user.update(user_params)
             redirect_to(@user, :notice => 'Account information was successfully updated.')
         else
             render :action => 'edit'

@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20180430182306) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "base_film_path"
-    t.string   "image_path"
     t.integer  "user_id"
+    t.string   "image_path"
   end
 
   create_table "tags", force: :cascade do |t|
