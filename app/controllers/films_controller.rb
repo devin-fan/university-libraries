@@ -1,4 +1,3 @@
-require 'docx'
 class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download, :view, :edit, :update, :destroy]
     # skip_before_action :set_film, only: [:search]
@@ -10,15 +9,6 @@ class FilmsController < ApplicationController
     end
       
     def show
-        authorize! :show, @film
-        @essay = Array.new()
-
-        unless @film.essay_path.nil?
-            doc = Docx::Document.open(@film.essay_path.path)
-            doc.paragraphs.each do |p|
-                @essay.push(p) 
-            end 
-        end
     end
 
     def download
@@ -39,9 +29,13 @@ class FilmsController < ApplicationController
 
     def new
         @film = Film.new
-        authorize! :new, @film
     end
-    
+
+    def admin_form
+        @film = Film.new
+        render 'admin_form'
+    end
+
     def create
         @film = Film.new(film_params)
         #if the admin uploader has not specified the type, then it is set to student and not base
@@ -83,7 +77,6 @@ class FilmsController < ApplicationController
     end
     
     def update
-      authorize! :update, @film
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
       else
@@ -92,7 +85,6 @@ class FilmsController < ApplicationController
     end 
 
     def destroy
-        authorize! :destroy, @film
         @film.remove_film_path!
         @film.save
         @film.destroy 
