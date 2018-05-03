@@ -40,11 +40,15 @@ gem 'bcrypt'
 #UI Gems
 gem "jquery-slick-rails"
 gem 'taggle'
+gem 'owlcarousel-rails'
 
 gem 'cancancan'
 
 #Fuzzy search for video name and tag
 gem 'fuzzily'
+
+#Gem for rendering docx files in html
+gem 'docx', '~> 0.2.07', :require => ["docx"]
 
 
 gem 'test-unit'

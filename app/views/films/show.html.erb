@@ -4,31 +4,49 @@
       <!-- Re adjust to fit screen -->
   <div class="container">
 
-  	<h2 class=" blue-text text-darken-3 center"><%= @film.title %></h2>
+  	<h2 class="center"><%= @film.title %></h2>
   	
   	<div class="center">
   		<div id="film_info">
-       <p> By: <strong><%= @film.director %></strong> <br /> </p>
+
+        <h6 id="description"><%= @film.description %></h6>
+       <p id="director"> By: <strong><%= @film.director %></strong> <br /> </p>
 	  	</div>   
 	  	<br>
-        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true %> <br>
+        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true, :size => "640x360" %> <br>
+
+
 
 
          <!-- Add css generated tag set up, link to tag show page -->
-     <!--     <p> Tags (Placeholder)</p> -->
+         <!-- <p> Tags (Placeholder)</p> -->
+        <%#@film.film_tags.each do |tag| %>
+          <!-- <p> <#%tag%> </p> -->
+        <%# end %>
 
-
+        <br>
+        <br>
         <%= link_to(image_tag('download.png'), "/films/#{@film.id}/download", download: 'download', :id=> "download-img-show")%>
-
-
-
 	  	<br>
+      <br>
+
+      <% unless @film.essay_path.nil?%>
+        <h5 id="essay"> Essay</h5>
+          <% @essay.each do |paragraph|%>
+                <p> <%= paragraph %> </p>
+            <% end %>
+      <% end %>
       <!-- To add after finished view -->
        <%#= button_to "delete", @film, :method => :delete %>
   	</div>
 
 
   </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
 <%= render partial: "partials/footer" %>
 
 
