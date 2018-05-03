@@ -50,6 +50,9 @@ class UsersController < ApplicationController
         #     redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
         end
     end
+
+
+
     private
     def set_user
         @user = User.find(params[:id])

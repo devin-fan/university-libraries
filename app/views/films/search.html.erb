@@ -1,32 +1,8 @@
 <!-- Navigation -->
 <%= render partial: "partials/nav" %>
     
-    <!-- To get url query string -->
-    <%# uri = URI.parse(@object.location)%>
-    <%# uri_params = CGI.parse(uri.query)%>
-    <%#string = uri_params['search']%>
   <div class="container">
     <% tag = params[:search]%>
-    <h2 class=" blue-text text-darken-3 center">Search Results for '<%="#{tag}"%>'</h2>
-    <div class="row">
-        <div class="col s4">
-            <!-- tags -->
-           
-             <p id="results-page"><strong>Tag results:</strong> </p>
-            <ul class=tag_searches>
-
-                <%unless @matched_by_director.any?%>
-                    <p> No Results!</p>
-                <%else%>
-
-                <div class="collection">
-                
-                <% @matched_by_tag.each do |t| %>
-                <%count = t.films.alphabetical.count%>
-                <a class="collection-item"><%= link_to "#{t.name} (#{count}) ", @t %></a>    
-                <% end %>
-                <% end %>
-                </div>
     <h2 class="center">Search Results for '<%="#{tag}"%>'</h2>
 
 
@@ -44,7 +20,7 @@
                 <% @matched_by_tag.each do |t| %>
                   <%count = t.film_tags.count%>
 
-                  <a class="collection-item"><%= link_to "#{t.name} (#{count}) ", @t %> </a>    
+                  <a class="collection-item"><h6 id="search-title" class="center">Similar Tags</h6><%= link_to "#{t.name} (#{count}) ", "/tags/#{t.id}", :class=> "center" %> </a>    
                 <% end %>           
               <% end %>
               </ul>
@@ -86,8 +62,11 @@
       </div>
 
 
-
-
+<!-- Breaks for the sticky footer -->
+<br>
+<br>
+<br>
+<br>
 
 
 

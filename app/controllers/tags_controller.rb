@@ -13,6 +13,13 @@ class TagsController < ApplicationController
         @tag = Tag.new(tag_params)
         @tag.save
     end
+
+    def search
+        search_query = params[:search]
+        @matched_by_title = Film.find_by_fuzzy_title(search_query)
+        @matched_by_director = Film.find_by_fuzzy_director(search_query)
+        @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
+    end
     
     private
     def set_tag
