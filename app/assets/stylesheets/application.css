@@ -11,13 +11,9 @@
  *= require_self
  *= require_tree .
  *= require slick
-<<<<<<< HEAD
- *= require owl.carousel
- *= require owl.theme.default
-=======
- *= require slick-theme
 
->>>>>>> b228b35920a9d2222a46115d7bff0e425d1849af
+
+ *= require slick-theme
  */
  
 
