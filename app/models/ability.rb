@@ -11,13 +11,18 @@ class Ability
             _user.id == user.id
         end
         can :create, Film
+	can :read, Film do |film|
+            film.is_base? or film.permission==1 or film.permission==0
+	end
         can :manage, Film do |film|
             user.films.all.map(&:id).include? film.id
         end
         can :create, Tag
     else
         can :read, Tag
-        can :read, Film
+        can :read, Film do |film|
+	    film.is_base? or film.permission==0
+	end
     end
     
          

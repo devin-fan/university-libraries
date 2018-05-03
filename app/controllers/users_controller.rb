@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :destroy]
+    before_action :set_user, only: [:show, :update, :destroy]
 
     def index
         @users = User.alphabetical.to_a
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.new(user_params)
-        if @user.save
+	authorize! :update, @user
+        if @user.update(user_params)
             redirect_to(@user, :notice => 'Account information was successfully updated.')
         else
             render :action => 'edit'

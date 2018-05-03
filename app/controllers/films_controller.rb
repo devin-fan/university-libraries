@@ -83,8 +83,12 @@ class FilmsController < ApplicationController
 
     def search
         search_query = params[:search]
-        @matched_by_title = Film.find_by_fuzzy_title(search_query)
-        @matched_by_director = Film.find_by_fuzzy_director(search_query)
+        @matched_by_title = Film.find_by_fuzzy_title(search_query).to_a.select do |f|
+	    can_view? f
+	end
+        @matched_by_director = Film.find_by_fuzzy_director(search_query).to_a.select do |f|
+	    can_view? f
+	end
         @matched_by_tag = Tag.find_by_fuzzy_name(search_query)
     end
     
@@ -102,16 +106,10 @@ class FilmsController < ApplicationController
         @film.remove_film_path!
         @film.save
         @film.destroy 
-        redirect_to films_path, notice: "Successfully removed #{@film.title} from the system."   
+        redirect_to user_path(current_user), notice: "Successfully removed #{@film.title} from the system."   
     end
 
     private
-    def remove_base_film (film)
-    end
-
-    def remove_film_and_essay
-    end
-
     def set_film
         @film = Film.find(params[:id])
     end
