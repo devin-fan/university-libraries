@@ -1,7 +1,7 @@
-<%= render partial: "partials/nav" %>
+<%= render partial: "partials/nav_no_search" %>
 
 	<div class="container">
-		<h3 class=" blue-text text-darken-3 center">Upload Film</h3>
+		<h3 class= "indigo-darken-3-text center">Film Upload</h3>
 
 		<div class="center row">
 		    <div class="col-sm-12">
@@ -11,10 +11,21 @@
 		    </div>
 		</div>
 
-	<%= link_to image_tag('back.png'), films_path, :class=> "left"%>
+	<%= link_to image_tag('share.png'), films_path, :class=> "left"%>
+
+
 
 
 
 </div>
 
-<%#= render partial: "partials/footer" %>
+<!-- Breaks for the sticky footer -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<%= render partial: "partials/footer" %>

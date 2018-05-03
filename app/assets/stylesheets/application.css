@@ -11,22 +11,27 @@
  *= require_self
  *= require_tree .
  *= require slick
+<<<<<<< HEAD
+ *= require owl.carousel
+ *= require owl.theme.default
+=======
  *= require slick-theme
 
+>>>>>>> b228b35920a9d2222a46115d7bff0e425d1849af
  */
+ 
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    overflow-x:hidden;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-
+    margin: 0 0 100px;
+    /* bottom = footer height */
+}
 
   select {
   display: block !important;
@@ -78,8 +83,9 @@ body {
   margin-right:20%;
 }
 
-#page-footer{
-   position: relative;
+#page-footer {
+   /*position: relative;*/
+  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
@@ -95,6 +101,9 @@ body {
   /*float:right;*/
   margin-right: -5px;
 }
+
+/*Search bar fix*/
+.nav-wrapper, .nav-wrapper form, .nav-wrapper form .input-field{ height: 100%; }
 
 .searchTerm {
   float: left;
@@ -134,8 +143,33 @@ body {
   font-size: 2em;
 }
 
+
+h1, h2, h3, h4{
+  color: #353B5A;
+
+}
+
 #session_container{
   width:40%;
+
+}
+.taggle-text{
+  font-style: italic;
+  font-size: 1.4em;
+  font-color: #353B5A;
+}
+
+#description{
+  font-style: italic;
+}
+
+#director{
+  font-style: italic;
+  font-color: #353B5A;
+}
+
+#essay{
+  text-decoration: underline;
 }
 
 /*Resize the wrap to see the search bar change!*/

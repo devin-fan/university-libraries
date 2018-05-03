@@ -9,16 +9,9 @@ class TagsController < ApplicationController
         @tagged_films = @tag.films.alphabetical
     end
 
-    def new
-        @tag = Tag.new
-    end
-
     def create
         @tag = Tag.new(tag_params)
-        if @tag.save
-        else
-            render action 'new'
-        end
+        @tag.save
     end
     
     private
