@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show]
+    before_action :set_user, only: [:show, :destroy, :edit]
 
     def index
         @users = User.alphabetical.to_a
+        authorize! :read, @users
     end
     
     def show
         @user_films = @user.films.alphabetical.to_a
+        authorize! :show, @user
     end
 
     def new
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         @user.role ||= 1
-        if @user.save!
+        if @user.save
             session[:user_id] = @user.id
             redirect_to(@user, :notice => 'Account was successfully created.')
         else
@@ -25,12 +27,11 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find(params[:id])
     end
 
     def update
         @user = User.new(user_params)
-        if @user.save
+        if @user.save!
             redirect_to(@user, :notice => 'Account information was successfully updated.')
         else
             render :action => 'edit'
@@ -38,13 +39,15 @@ class UsersController < ApplicationController
     end
     
     def destroy
-        if logged_in? and current_user.id == @user.id 
+        if current_user.role? :admin
             @user.destroy
-            
+            redirect_to :back
+        elsif logged_in? and current_user.id == @user.id
+            @user.destroy
             redirect_to logout_path, notice: "Successfully removed #{@user.andrewid} from the system."
-        else
-            @user.destroy
-            redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
+        # else
+        #     @user.destroy
+        #     redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
         end
     end
     private
@@ -53,7 +56,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :andrewid, :password, :password_confirmation)
+        params.require(:user).permit(:first_name, :last_name, :andrewid, :role, :password, :password_confirmation)
     end
-
 end

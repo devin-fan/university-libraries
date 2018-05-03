@@ -1,4 +1,3 @@
-require 'docx'
 class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download, :view, :edit, :update, :destroy]
     # skip_before_action :set_film, only: [:search]
@@ -18,7 +17,6 @@ class FilmsController < ApplicationController
                 @essay.push(p) 
             end 
         end
-
     end
 
     def download
@@ -56,22 +54,24 @@ class FilmsController < ApplicationController
         if logged_in?
             @film.user_id = current_user.id
         end
-        if @film.save!
-            for tag_name in @film.tag_names.split
-                @film_tag = FilmTag.new
-                @tag = Tag.has_name(tag_name).to_a.first
-                if @tag.nil?
-                    @tag = Tag.new
-                    @tag.name = tag_name
-                    @tag.save
-                end
-                @film_tag.film_id = @film.id
-                @film_tag.tag_id = @tag.id
-                @film_tag.save
-            end 
+        if @film.save
+            unless @film.tag_names.nil?
+                for tag_name in @film.tag_names.split
+                    @film_tag = FilmTag.new
+                    @tag = Tag.has_name(tag_name).to_a.first
+                    if @tag.nil?
+                        @tag = Tag.new
+                        @tag.name = tag_name
+                        @tag.save
+                    end
+                    @film_tag.film_id = @film.id
+                    @film_tag.tag_id = @tag.id
+                    @film_tag.save
+                end 
+            end
             redirect_to film_path(@film)
         else
-            redirect_to films_path
+            render 'new'
         end
     end
 
