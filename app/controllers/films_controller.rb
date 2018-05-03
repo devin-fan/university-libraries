@@ -9,6 +9,14 @@ class FilmsController < ApplicationController
     end
       
     def show
+        @essay = Array.new()
+
+        unless @film.essay_path.path.nil?
+            doc = Docx::Document.open(@film.essay_path.path)
+            doc.paragraphs.each do |p|
+                @essay.push(p) 
+            end 
+        end
     end
 
     def download

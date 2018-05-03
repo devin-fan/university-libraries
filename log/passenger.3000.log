@@ -43,3 +43,10 @@ App 123593 stdout:
 [ N 2018-05-03 13:50:31.3729 123541/Tc Ser/Server.h:559 ]: [ApiServer] Shutdown finished
 [ N 2018-05-03 13:50:31.3729 123541/T1 age/Cor/CoreMain.cpp:1075 ]: Checking whether to disconnect long-running connections for process 123593, application /home/oms_admin/university-libraries (development)
 [ N 2018-05-03 13:50:31.6248 123541/T1 age/Cor/CoreMain.cpp:1234 ]: Passenger core shutdown finished
+[ N 2018-05-03 14:09:53.5321 124925/T1 age/Wat/WatchdogMain.cpp:1258 ]: Starting Passenger watchdog...
+[ N 2018-05-03 14:09:53.5471 124928/T1 age/Cor/CoreMain.cpp:1249 ]: Starting Passenger core...
+[ N 2018-05-03 14:09:53.5472 124928/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-05-03 14:09:53.5536 124928/T1 age/Cor/CoreMain.cpp:984 ]: Passenger core online, PID 124928
+App 124966 stdout: 
+[ N 2018-05-03 14:09:56.0671 124928/T5 age/Cor/SecurityUpdateChecker.h:517 ]: Security update check: no update found (next check in 24 hours)
+App 124981 stdout: 

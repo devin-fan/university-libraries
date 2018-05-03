@@ -30,7 +30,7 @@
 	  	<br>
       <br>
 
-      <% unless @film.essay_path.nil?%>
+      <% unless @film.essay_path.path.nil?%>
         <h5 id="essay"> Essay</h5>
           <% @essay.each do |paragraph|%>
                 <p> <%= paragraph %> </p>

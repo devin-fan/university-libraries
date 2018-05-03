@@ -1,0 +1,59 @@
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.about {
+    margin: 0 0 100px;
+    background-color: #353B5A;
+    /* bottom = footer height */
+}
+
+  select {
+  display: block !important;
+}
+
+
+
+.nav-wrapper {
+  background-color: #353B5A;
+}
+
+.nav_user{
+  margin-right:20%;
+}
+
+#page-footer {
+   /*position: relative;*/
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+   background-color: #353B5A;
+}
+
+.headers{
+	color: white;
+	font-style: italic;
+}
+
+.about-p{
+	color: white;
+}
+
+
+.container-about{
+	width: 70%;
+}
+
+
+.micheaux-img{
+	margin-top: 20px;
+	border-radius: 70%;
+}

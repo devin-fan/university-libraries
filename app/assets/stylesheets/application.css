@@ -172,6 +172,10 @@ h1, h2, h3, h4{
   text-decoration: underline;
 }
 
+#search-title{
+  color: #353B5A;
+}
+
 /*Resize the wrap to see the search bar change!*/
 /*.wrap{
   width: 30%;

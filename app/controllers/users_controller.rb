@@ -46,12 +46,15 @@ class UsersController < ApplicationController
             redirect_to users_path, notice: "Successfully removed #{@user.andrewid} from the system."
         end
     end
+
+
+
     private
     def set_user
         @user = User.find(params[:id])
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :andrewid, :password, :password_confirmation)
+        params.require(:user).permit(:first_name, :last_name, :andrewid, :role, :password, :password_confirmation)
     end
 end
