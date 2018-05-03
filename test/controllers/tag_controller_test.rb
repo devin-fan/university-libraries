@@ -22,4 +22,5 @@ class TagsControllerTest < ActionController::TestCase
         assert_not_nil assigns(:tagged_films)
         assert_response :success
     end
+    
 end 

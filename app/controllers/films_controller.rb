@@ -46,22 +46,24 @@ class FilmsController < ApplicationController
         if logged_in?
             @film.user_id = current_user.id
         end
-        if @film.save!
-            for tag_name in @film.tag_names.split
-                @film_tag = FilmTag.new
-                @tag = Tag.has_name(tag_name).to_a.first
-                if @tag.nil?
-                    @tag = Tag.new
-                    @tag.name = tag_name
-                    @tag.save
-                end
-                @film_tag.film_id = @film.id
-                @film_tag.tag_id = @tag.id
-                @film_tag.save
-            end 
+        if @film.save
+            unless @film.tag_names.nil?
+                for tag_name in @film.tag_names.split
+                    @film_tag = FilmTag.new
+                    @tag = Tag.has_name(tag_name).to_a.first
+                    if @tag.nil?
+                        @tag = Tag.new
+                        @tag.name = tag_name
+                        @tag.save
+                    end
+                    @film_tag.film_id = @film.id
+                    @film_tag.tag_id = @tag.id
+                    @film_tag.save
+                end 
+            end
             redirect_to film_path(@film)
         else
-            redirect_to films_path
+            render 'new'
         end
     end
 
@@ -70,7 +72,7 @@ class FilmsController < ApplicationController
 
 
     def search
-        search_query = params[:q]
+        search_query = params[:search]
         @matched_by_title = Film.find_by_fuzzy_title(search_query)
         @matched_by_director = Film.find_by_fuzzy_director(search_query)
         @matched_by_tag = Tag.find_by_fuzzy_name(search_query)

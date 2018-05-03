@@ -11,10 +11,7 @@ class TagsController < ApplicationController
 
     def create
         @tag = Tag.new(tag_params)
-        if @tag.save
-        else
-            render action 'new'
-        end
+        @tag.save
     end
     
     private
