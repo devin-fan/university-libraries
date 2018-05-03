@@ -1,0 +1,39 @@
+<%= simple_form_for @film, html: {multipart: true} do |f| %>
+      <div id="film_form">
+
+      <div class="row">
+
+        <div class="col s6">      
+              <b>Title: </b> 
+              <%= f.input :title %> <br>
+              <b>Uploaded by: </b> 
+              <%= f.input :director %> <br>
+               <b>Upload film: </b> <br><br>
+              <%= f.file_field :base_film_path%> <br>
+
+              <b>Base Film: </b>  <%= f.input :film_type,  collection: [[1, 'Yes'], [0, 'No']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+
+              <b>Upload essay: </b> <br><br>
+              <%= f.file_field :essay_path, :label => "Essays "%><br>
+
+              <b>Upload Cover-Art: </b><br><br> <%= f.file_field :image_path, :label => "Cover-Art "%><br><br>
+
+        </div>
+
+        <div class="col s6">
+          <b>Description: 
+          </b> <%= f.input :description, as: :text %> <br>
+
+           <b>Permission: </b> 
+           <%= f.input :permission,  collection: [[0, 'public'], [1, 'partial'], [2, 'private']], label_method: :second, value_method: :first, input_html: {class:"avg"}  %> <br>
+
+            <b>Tags</b> <br>
+            <%= f.input :tag_names, label_html: {id: "film-tags"}%>
+            </div>
+        </div>
+
+    </div>
+
+          <%= f.button :submit, :class => "indigo darken-3"%>
+
+   <% end %>

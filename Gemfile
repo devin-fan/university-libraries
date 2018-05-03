@@ -7,7 +7,7 @@ gem 'rails', '4.2.7'
 gem 'pg', '~> 0.20.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 5.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -49,6 +49,9 @@ gem 'fuzzily'
 
 #Gem for rendering docx files in html
 gem 'docx', '~> 0.2.07', :require => ["docx"]
+
+#Gem for rendering pdfs
+gem 'pdfjs_viewer-rails'
 
 
 gem 'test-unit'
