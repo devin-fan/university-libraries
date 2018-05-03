@@ -15,7 +15,6 @@
       <ul class="right nav_user">
 
         <% if current_user.nil? %>
-         <%= render partial: "partials/search_bar" %>
           <li><%= link_to 'Login', login_path %></li>
           <li><%= link_to 'Sign Up', new_user_path %></li> 
         <% else %>
@@ -25,6 +24,7 @@
           <li><%= link_to current_user.first_name, current_user %></li>
           <li><%= link_to 'Logout', logout_path %></li>
         <% end %>
+         <%= render partial: "partials/search_bar" %>
       </ul>
       
     </div>
