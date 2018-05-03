@@ -7,6 +7,26 @@
     <%#string = uri_params['search']%>
   <div class="container">
     <% tag = params[:search]%>
+    <h2 class=" blue-text text-darken-3 center">Search Results for '<%="#{tag}"%>'</h2>
+    <div class="row">
+        <div class="col s4">
+            <!-- tags -->
+           
+             <p id="results-page"><strong>Tag results:</strong> </p>
+            <ul class=tag_searches>
+
+                <%unless @matched_by_director.any?%>
+                    <p> No Results!</p>
+                <%else%>
+
+                <div class="collection">
+                
+                <% @matched_by_tag.each do |t| %>
+                <%count = t.films.alphabetical.count%>
+                <a class="collection-item"><%= link_to "#{t.name} (#{count}) ", @t %></a>    
+                <% end %>
+                <% end %>
+                </div>
     <h2 class="center">Search Results for '<%="#{tag}"%>'</h2>
 
 

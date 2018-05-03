@@ -1,4 +1,3 @@
-require 'docx'
 class FilmsController < ApplicationController
     before_action :set_film, only: [:show, :download, :view, :edit, :update, :destroy]
     # skip_before_action :set_film, only: [:search]
@@ -10,15 +9,6 @@ class FilmsController < ApplicationController
     end
       
     def show
-        @essay = Array.new()
-
-        unless @film.essay_path.nil?
-            doc = Docx::Document.open(@film.essay_path.path)
-            doc.paragraphs.each do |p|
-                @essay.push(p) 
-            end 
-        end
-
     end
 
     def download

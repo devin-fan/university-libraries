@@ -11,6 +11,11 @@
     <%= f.label :andrewid %><br />
     <%= f.text_field :andrewid %>
     <p>
+    <% if logged_in? and current_user.role? :admin %>
+        <%= f.input :role, collection: [[0, 'Admin'], [1, 'Student']], label_method: :second, value_method: :first, input_html: {class:'avg'} %> <br />
+    <% else %>
+        <%= f.input :role, :as => :hidden, :input_html => { :value => 1 } %>
+    <% end %>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
     </p>
