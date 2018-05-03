@@ -1,4 +1,4 @@
-vigation -->
+<!-- Navigation -->
 <%= render partial: "partials/nav" %>
 
   <div class="container">
@@ -53,6 +53,32 @@ vigation -->
 
               </ul>
             </div>
+          <div class="col s6">
+            <!-- directors and titles -->
+            <p id="results-page"><strong>Title Results: </strong></p>
+            <ul>
+                  <%if @matched_by_title.empty?%>
+                      <h4> No Results!</h4>
+                  <%else%>
+
+                  <% @matched_by_title.each do |f| %>
+
+                    <div class="card blue darken-2">
+                      <div class="card-content white-text">
+                        <span class="card-title"><%= f.title %></span>
+                        <p><%= f.director %></p>
+                        <p><%= f.description %></p>
+                      </div>
+                      <div class="card-action">
+                        <%= link_to("Watch", film_path(f))%>
+                  </div>
+
+                  <% end %>
+                  <% end %>
+
+              </ul>
+            </div>
+
 
 
          </div>
