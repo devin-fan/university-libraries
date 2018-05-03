@@ -9,6 +9,7 @@ class FilmsController < ApplicationController
     end
       
     def show
+	authorize! :show, @film
         @essay = Array.new()
 
         unless @film.essay_path.path.nil?
@@ -37,6 +38,7 @@ class FilmsController < ApplicationController
 
     def new
         @film = Film.new
+	authorize! :new, @film
     end
 
     def admin_form
@@ -87,6 +89,7 @@ class FilmsController < ApplicationController
     end
     
     def update
+      authorize! :update, @film
       if @film.update(film_params)
         redirect_to film_path(@film), notice: "Successfully updated #{@film.title}."
       else
@@ -95,6 +98,7 @@ class FilmsController < ApplicationController
     end 
 
     def destroy
+        authorize! :destroy, @film
         @film.remove_film_path!
         @film.save
         @film.destroy 
