@@ -50,3 +50,5 @@ App 123593 stdout:
 App 124966 stdout: 
 [ N 2018-05-03 14:09:56.0671 124928/T5 age/Cor/SecurityUpdateChecker.h:517 ]: Security update check: no update found (next check in 24 hours)
 App 124981 stdout: 
+[ N 2018-05-04 13:09:56.6178 124928/T5 age/Cor/SecurityUpdateChecker.h:517 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-05-05 10:09:57.1439 124928/T5 age/Cor/SecurityUpdateChecker.h:517 ]: Security update check: no update found (next check in 24 hours)

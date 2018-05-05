@@ -23,6 +23,10 @@
 // var container = example4.getContainer();
 // var input = example4.getInput();
 
+ $(document).on('page:before-change', function(event) {
+   $('video').pause();
+   return true;
+ });
 
  $(document).ready(function(){
     $("#license").hide();
@@ -46,9 +50,7 @@
           $("#license").hide();
         }
     });
-
     new Taggle($('#film-tags')[0])
-
   });
 
 

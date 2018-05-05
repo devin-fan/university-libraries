@@ -13,7 +13,7 @@
        <p id="director"> By: <strong><%= @film.director %></strong> <br /> </p>
 	  	</div>   
 	  	<br>
-        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => true, :size => "640x360" %> <br>
+        <%= video_tag "/films/#{@film.id}/view", :controls => true, :autoplay => false, :size => "640x360" %> <br>
 
 
 
